@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { AnimatePresence, motion } from "framer-motion";
 import SmoothScroll from "./components/SmoothScroll";
+import HeadingAnimations from "./components/HeadingAnimations";
 import ScrollToTop from "./components/ScrollToTop";
 import ShoppingCart from "./components/ShoppingCart";
 import HomePage from "./pages/HomePage";
@@ -30,6 +31,7 @@ function App() {
   return (
     <Router>
       <SmoothScroll />
+      <HeadingAnimations />
       <ScrollToTop />
       <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
       <Routes>

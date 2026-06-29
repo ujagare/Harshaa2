@@ -31,7 +31,7 @@ const AnimatedHeading = ({ as: Tag = "h1", className = "", children }) => {
   }, [children]);
 
   return (
-    <Tag ref={headingRef} className={className}>
+    <Tag ref={headingRef} className={className} data-gsap-heading>
       {children}
     </Tag>
   );
