@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const headingSelector =
   "h1:not([data-gsap-heading]), h2:not([data-gsap-heading]), h3:not([data-gsap-heading]), h4:not([data-gsap-heading])";
@@ -38,8 +39,16 @@ const HeadingAnimations = () => {
           stagger: { each: 0.04, from: "start" },
           duration: 0.6,
           ease: "sine.out",
+          scrollTrigger: {
+            trigger: heading,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true,
+          },
         });
       });
+
+      ScrollTrigger.refresh();
     };
 
     const scheduleAnimation = () => {

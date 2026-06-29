@@ -1,8 +1,9 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const AnimatedHeading = ({ as: Tag = "h1", className = "", children }) => {
   const headingRef = useRef(null);
@@ -21,7 +22,15 @@ const AnimatedHeading = ({ as: Tag = "h1", className = "", children }) => {
         stagger: { each: 0.04, from: "start" },
         duration: 0.6,
         ease: "sine.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
       });
+
+      ScrollTrigger.refresh();
     }, headingRef);
 
     return () => {

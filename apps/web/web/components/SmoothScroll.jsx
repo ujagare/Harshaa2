@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
@@ -23,8 +24,10 @@ const SmoothScroll = () => {
     });
 
     window.lenis = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
 
     return () => {
+      lenis.off("scroll", ScrollTrigger.update);
       lenis.destroy();
       delete window.lenis;
     };
