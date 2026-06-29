@@ -1,6 +1,7 @@
 node_modules/
-Apps/Web/node_modules/
+apps/web/node_modules/
 dist/
+apps/web/dist/
 _screens/
 .env
 .env.*
