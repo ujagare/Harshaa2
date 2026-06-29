@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 import ProductsList from "@/components/ProductsList.jsx";
@@ -27,9 +28,9 @@ const ShopPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center mb-16"
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              <AnimatedHeading className="text-5xl md:text-6xl font-bold text-foreground mb-6">
                 Book your session
-              </h1>
+              </AnimatedHeading>
               <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
                 Choose from our carefully crafted packages designed to support
                 your unique journey. Each session is a sacred space for

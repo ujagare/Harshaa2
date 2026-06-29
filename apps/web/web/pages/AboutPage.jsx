@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Award, Heart, Sparkles, BookOpen } from "lucide-react";
+import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
@@ -37,9 +38,9 @@ const AboutPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center mb-16"
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              <AnimatedHeading className="text-5xl md:text-6xl font-bold text-foreground mb-6">
                 The story of Midas Touch Magick
-              </h1>
+              </AnimatedHeading>
               <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
                 Where ancient wisdom meets modern healing to unlock your true
                 potential
@@ -74,9 +75,9 @@ const AboutPage = ({ setIsCartOpen }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-4xl font-bold text-foreground mb-6">
+                <AnimatedHeading as="h2" className="text-4xl font-bold text-foreground mb-6">
                   A journey of transformation
-                </h2>
+                </AnimatedHeading>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   Midas Touch Magick was born from a deep calling to bridge the
                   ancient mystical arts with modern healing practices. After
@@ -111,9 +112,9 @@ const AboutPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Our philosophy
-              </h2>
+              </AnimatedHeading>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 True transformation happens when we honor both the mystical and
                 the practical, the ancient and the modern, the spiritual and the
@@ -212,9 +213,9 @@ const AboutPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Credentials & training
-              </h2>
+              </AnimatedHeading>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Years of dedicated study and practice across multiple healing
                 modalities

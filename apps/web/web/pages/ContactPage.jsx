@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
@@ -180,9 +181,9 @@ const ContactPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center mb-16"
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              <AnimatedHeading className="text-5xl md:text-6xl font-bold text-foreground mb-6">
                 Get in touch
-              </h1>
+              </AnimatedHeading>
               <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
                 Have questions or ready to book your session? We would love to
                 hear from you.
@@ -199,9 +200,9 @@ const ContactPage = ({ setIsCartOpen }) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl font-bold text-foreground mb-8">
+                <AnimatedHeading as="h2" className="text-3xl font-bold text-foreground mb-8">
                   Send us a message
-                </h2>
+                </AnimatedHeading>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -276,9 +277,9 @@ const ContactPage = ({ setIsCartOpen }) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl font-bold text-foreground mb-8">
+                <AnimatedHeading as="h2" className="text-3xl font-bold text-foreground mb-8">
                   Contact information
-                </h2>
+                </AnimatedHeading>
 
                 <div className="space-y-6 mb-12">
                   {contactInfo.map((info, index) => (

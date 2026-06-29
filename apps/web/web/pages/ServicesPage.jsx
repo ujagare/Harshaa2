@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, MessageCircle, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 import ServiceCard from "@/components/ServiceCard.jsx";
@@ -88,9 +89,9 @@ const ServicesPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center mb-16"
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              <AnimatedHeading className="text-5xl md:text-6xl font-bold text-foreground mb-6">
                 Our services
-              </h1>
+              </AnimatedHeading>
               <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
                 Choose the path that calls to your soul. Each modality offers
                 unique gifts on your journey to transformation.
@@ -121,9 +122,9 @@ const ServicesPage = ({ setIsCartOpen }) => {
                         A 6-week Deep Transformation Experience
                       </span>
                     </div>
-                    <h2 className="mb-5 text-3xl font-bold text-primary-foreground md:text-5xl">
+                    <AnimatedHeading as="h2" className="mb-5 text-3xl font-bold text-primary-foreground md:text-5xl">
                       Abundance Breakthrough Program
-                    </h2>
+                    </AnimatedHeading>
                     <p className="mb-5 max-w-none text-lg text-primary-foreground/85">
                       A transformative 4 session package combining Oracle, EFT
                       and counselling to unlock your full abundance potential.
@@ -233,9 +234,9 @@ const ServicesPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Ready to begin your journey?
-              </h2>
+              </AnimatedHeading>
               <p className="mx-auto text-center text-xl text-muted-foreground mb-8 leading-relaxed">
                 Each service can be experienced individually or combined for a
                 holistic approach to transformation. Book your session today and

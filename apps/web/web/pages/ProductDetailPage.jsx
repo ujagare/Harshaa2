@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getProduct, getProductQuantities } from "@/api/EcommerceApi";
 import { Button } from "@/components/ui/button";
+import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import { useCart } from "@/hooks/useCart";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -283,9 +284,9 @@ function ProductDetailPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col"
           >
-            <h1 className="text-4xl font-bold text-card-foreground mb-2">
+            <AnimatedHeading className="text-4xl font-bold text-card-foreground mb-2">
               {product.title}
-            </h1>
+            </AnimatedHeading>
             <p className="text-lg text-card-foreground/75 mb-4">{product.subtitle}</p>
 
             <div className="flex items-baseline gap-3 mb-6">

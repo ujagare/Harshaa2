@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Heart, Zap, Eye, X } from "lucide-react";
+import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
@@ -84,9 +85,9 @@ const HomePage = ({ setIsCartOpen }) => {
                     New program
                   </span>
                 </div>
-                <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+                <AnimatedHeading as="h2" className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
                   Abundance Breakthrough Program
-                </h2>
+                </AnimatedHeading>
                 <p className="mb-6 max-w-none text-lg text-muted-foreground">
                   A transformative 4 session package combining Oracle, EFT and
                   counselling to unlock your full abundance potential.
@@ -165,9 +166,9 @@ const HomePage = ({ setIsCartOpen }) => {
                 </span>
               </motion.div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 drop-shadow-sm">
+              <AnimatedHeading className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 drop-shadow-sm">
                 Unlock abundance through ancient wisdom
-              </h1>
+              </AnimatedHeading>
 
               <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 leading-relaxed max-w-3xl mx-auto">
                 Experience profound transformation through tarot, EFT tapping,
@@ -209,9 +210,9 @@ const HomePage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-6">
+              <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-extrabold text-foreground mb-6">
                 Why choose Midas Touch Magick
-              </h2>
+              </AnimatedHeading>
               <p className="text-xl font-medium text-muted-foreground max-w-2xl mx-auto">
                 A unique blend of ancient practices and modern healing
                 techniques designed to unlock your fullest potential.
@@ -254,9 +255,9 @@ const HomePage = ({ setIsCartOpen }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-4xl md:text-6xl font-extrabold text-foreground mb-8 leading-tight">
+                <AnimatedHeading as="h2" className="text-4xl md:text-6xl font-extrabold text-foreground mb-8 leading-tight">
                   Begin your transformation
-                </h2>
+                </AnimatedHeading>
                 <p className="text-xl font-semibold text-muted-foreground mb-6 leading-relaxed">
                   Whether you seek clarity through tarot, emotional release
                   through EFT tapping, sacred connection through tantra, or

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CheckCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
@@ -38,9 +39,9 @@ const SuccessPage = ({ setIsCartOpen }) => {
                 <CheckCircle className="w-12 h-12 text-gold" />
               </motion.div>
 
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              <AnimatedHeading className="text-5xl md:text-6xl font-bold text-foreground mb-6">
                 Your session is booked
-              </h1>
+              </AnimatedHeading>
 
               <p className="mx-auto text-center text-xl text-muted-foreground mb-8 leading-relaxed">
                 Thank you for choosing Midas Touch Magick. You will receive a
@@ -51,9 +52,9 @@ const SuccessPage = ({ setIsCartOpen }) => {
               <div className="glass-card mystical-border rounded-2xl p-8 mb-8">
                 <div className="flex items-center gap-2 justify-center mb-4">
                   <Sparkles className="w-5 h-5 text-gold" />
-                  <h2 className="text-2xl font-semibold text-foreground">
+                  <AnimatedHeading as="h2" className="text-2xl font-semibold text-foreground">
                     What happens next
-                  </h2>
+                  </AnimatedHeading>
                 </div>
                 <ul className="text-left space-y-3 text-muted-foreground max-w-md mx-auto">
                   <li className="flex items-start gap-2">
