@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 38 36% 96%;
+        --foreground: 0 0% 18%;
+
+        --card: 38 36% 96%;
+        --card-foreground: 0 0% 18%;
+
+        --popover: 38 36% 96%;
+        --popover-foreground: 0 0% 18%;
+
+        --primary: 159 30% 23%;
+        --primary-foreground: 38 36% 96%;
+
+        --secondary: 97 21% 80%;
+        --secondary-foreground: 159 30% 23%;
+
+        --muted: 97 21% 86%;
+        --muted-foreground: 0 0% 32%;
+
+        --accent: 40 46% 60%;
+        --accent-foreground: 159 30% 23%;
+
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 97 21% 80%;
+        --input: 97 21% 88%;
+        --ring: 40 46% 60%;
+
+        --gold: 40 46% 60%;
+        --gold-light: 40 46% 70%;
+        --gold-dark: 40 36% 45%;
+
+        --radius: 0.75rem;
+
+        --sidebar-background: 159 30% 23%;
+        --sidebar-foreground: 38 36% 96%;
+        --sidebar-primary: 40 46% 60%;
+        --sidebar-primary-foreground: 159 30% 23%;
+        --sidebar-accent: 97 21% 80%;
+        --sidebar-accent-foreground: 159 30% 23%;
+        --sidebar-border: 97 21% 45%;
+        --sidebar-ring: 40 46% 60%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: "Cormorant Garamond", serif;
+        overflow-x: clip;
+        font-feature-settings: "kern" 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Cinzel", serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+        @apply text-foreground;
+    }
+
+    h1 {
+        @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight;
+    }
+
+    h2 {
+        @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    }
+
+    h3 {
+        @apply text-2xl md:text-3xl font-bold leading-snug;
+    }
+
+    h4 {
+        @apply text-xl md:text-2xl font-semibold leading-snug;
+    }
+
+    p {
+        @apply leading-relaxed max-w-prose;
+        font-size: 1.125rem;
+    }
+
+    input,
+    textarea,
+    select {
+        font-variant-numeric: tabular-nums;
+    }
+}
+
+@layer components {
+    .mystical-glow {
+        box-shadow: 0 0 20px hsl(var(--gold) / 0.3), 0 0 40px hsl(var(--gold) / 0.1);
+    }
+
+    .mystical-glow-hover {
+        transition: box-shadow 0.3s ease;
+    }
+
+    .mystical-glow-hover:hover {
+        box-shadow: 0 0 30px hsl(var(--gold) / 0.5), 0 0 60px hsl(var(--gold) / 0.2);
+    }
+
+    .gold-gradient {
+        background: hsl(var(--gold)) !important;
+        color: hsl(var(--primary)) !important;
+    }
+
+    .emerald-gradient {
+        background: hsl(var(--primary));
+    }
+
+    .mystical-border {
+        border: 1px solid hsl(var(--border));
+        position: relative;
+    }
+
+    .mystical-border::before {
+        content: none;
+    }
+
+    .sacred-pattern {
+        background-image:
+            radial-gradient(circle at 20% 50%, hsl(var(--gold) / 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 40% 20%, hsl(var(--accent) / 0.05) 0%, transparent 50%);
+    }
+
+    .candlelight-glow {
+        background: radial-gradient(ellipse at center, hsl(var(--gold) / 0.1) 0%, transparent 70%);
+    }
+
+    .glass-card {
+        background: hsl(var(--secondary) / 0.55);
+        backdrop-filter: blur(12px);
+        border: 1px solid hsl(var(--border) / 0.75);
+    }
+
+    button,
+    a[role="button"] {
+        font-family: "Cinzel", serif;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    button[class~="bg-primary"],
+    a[class~="bg-primary"] {
+        color: hsl(var(--primary-foreground)) !important;
+    }
+
+    button.gold-gradient,
+    a.gold-gradient,
+    .gold-gradient button,
+    .gold-gradient a,
+    .gold-gradient span,
+    .gold-gradient svg {
+        color: hsl(var(--primary)) !important;
+        stroke: currentColor;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .transition-mystical {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}

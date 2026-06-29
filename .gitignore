@@ -1,0 +1,9 @@
+node_modules/
+Apps/Web/node_modules/
+dist/
+_screens/
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
