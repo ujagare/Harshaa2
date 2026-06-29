@@ -79,7 +79,10 @@ const ShoppingCart = ({ isCartOpen, setIsCartOpen }) => {
                 <X />
               </Button>
             </div>
-            <div className="flex-grow p-6 overflow-y-auto space-y-4">
+            <div
+              data-lenis-prevent
+              className="flex-grow p-6 overflow-y-auto space-y-4"
+            >
               {cartItems.length === 0 ? (
                 <div className="text-center text-muted-foreground h-full flex flex-col items-center justify-center">
                   <ShoppingCartIcon size={48} className="mb-4" />

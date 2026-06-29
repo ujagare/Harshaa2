@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { AnimatePresence, motion } from "framer-motion";
+import SmoothScroll from "./components/SmoothScroll";
 import ScrollToTop from "./components/ScrollToTop";
 import ShoppingCart from "./components/ShoppingCart";
 import HomePage from "./pages/HomePage";
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <Router>
+      <SmoothScroll />
       <ScrollToTop />
       <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
       <Routes>
