@@ -94,13 +94,21 @@ const ServicesPage = ({ setIsCartOpen }) => {
       <div className="min-h-screen bg-background">
         <Header setIsCartOpen={setIsCartOpen} />
 
-        <section className="py-24 sacred-pattern">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative flex min-h-[820px] items-center overflow-hidden py-32 sacred-pattern">
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <img
+              src={tarotServiceImage}
+              alt=""
+              className="h-full w-full object-contain object-center"
+            />
+          </div>
+
+          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto text-center mb-16"
+              className="mx-auto mb-0 max-w-4xl rounded-2xl bg-background/70 px-6 py-8 text-center shadow-2xl shadow-primary/20 backdrop-blur-sm sm:px-10"
             >
               <AnimatedHeading className="text-5xl md:text-6xl font-bold text-foreground mb-6">
                 Our services
@@ -219,16 +227,6 @@ const ServicesPage = ({ setIsCartOpen }) => {
                 </Button>
               </div>
             </motion.div>
-
-            <div className="relative mb-16">
-              <div className="aspect-[21/9] rounded-2xl overflow-hidden mystical-border">
-                <img
-                  src={tarotServiceImage}
-                  alt="Mystical tarot cards spread on a table with candles"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
               {services.map((service, index) => (
