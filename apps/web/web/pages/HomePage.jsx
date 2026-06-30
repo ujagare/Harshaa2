@@ -63,12 +63,12 @@ const HomePage = ({ setIsCartOpen }) => {
         <Header setIsCartOpen={setIsCartOpen} />
 
         {showProgramPopup && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/60 px-4 py-6 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/60 py-6 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, y: 24, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.35 }}
-              className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-gold/35 bg-background shadow-2xl shadow-primary/30"
+              className="relative mx-4 w-full max-w-2xl md:overflow-hidden rounded-2xl border border-gold/35 bg-background shadow-2xl shadow-primary/30"
             >
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
               <button
@@ -80,14 +80,14 @@ const HomePage = ({ setIsCartOpen }) => {
                 <X className="h-5 w-5" />
               </button>
 
-              <div className="p-7 sm:p-9">
+              <div className="p-5 sm:p-9">
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/35 bg-gold/10 px-4 py-2">
                   <Sparkles className="h-4 w-4 text-gold-dark" />
                   <span className="text-sm font-bold uppercase tracking-[0.18em] text-gold-dark">
                     New program
                   </span>
                 </div>
-                <AnimatedHeading as="h2" className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+                <AnimatedHeading as="h2" className="mb-4 text-2xl font-bold text-foreground sm:text-4xl">
                   Abundance Breakthrough Program
                 </AnimatedHeading>
                 <p className="mb-6 max-w-none text-lg text-muted-foreground">
@@ -99,17 +99,17 @@ const HomePage = ({ setIsCartOpen }) => {
                   confidence and intention into aligned abundance.
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <Button asChild className="gold-gradient h-12 px-6">
+                  <Button asChild className="gold-gradient h-12 px-6 whitespace-normal sm:whitespace-nowrap">
                     <Link to="/services#abundance-breakthrough-program">
                       View program details
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
                     </Link>
                   </Button>
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => setShowProgramPopup(false)}
-                    className="h-12 border-foreground/20 px-6 text-foreground hover:bg-foreground/5"
+                    className="h-12 border-foreground/20 px-6 text-foreground hover:bg-foreground/5 whitespace-normal sm:whitespace-nowrap"
                   >
                     Maybe later
                   </Button>
@@ -175,13 +175,13 @@ const HomePage = ({ setIsCartOpen }) => {
                   transition={{ duration: 0.7, delay: 0.15 }}
                   className="mb-6 text-4xl font-extrabold leading-tight text-foreground drop-shadow-sm sm:text-5xl xl:text-6xl"
                 >
-                  <span className="block whitespace-nowrap">
+                  <span className="block lg:whitespace-nowrap">
                     Unlock abundance
                   </span>
-                  <span className="block whitespace-nowrap">
+                  <span className="block lg:whitespace-nowrap">
                     through
                   </span>
-                  <span className="block whitespace-nowrap">
+                  <span className="block lg:whitespace-nowrap">
                     ancient wisdom
                   </span>
                 </motion.h1>

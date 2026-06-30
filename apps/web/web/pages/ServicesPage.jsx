@@ -94,16 +94,8 @@ const ServicesPage = ({ setIsCartOpen }) => {
       <div className="min-h-screen bg-background">
         <Header setIsCartOpen={setIsCartOpen} />
 
-        <section className="relative flex min-h-[820px] items-center overflow-hidden py-32 sacred-pattern">
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <img
-              src={tarotServiceImage}
-              alt=""
-              className="h-full w-full object-contain object-center"
-            />
-          </div>
-
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden pt-20 pb-8 md:flex md:min-h-[820px] md:items-center md:py-32 sacred-pattern">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:relative md:z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -118,6 +110,14 @@ const ServicesPage = ({ setIsCartOpen }) => {
                 unique gifts on your journey to transformation.
               </p>
             </motion.div>
+          </div>
+
+          <div className="mt-8 md:absolute md:inset-0 md:z-0 md:pointer-events-none md:mt-0">
+            <img
+              src={tarotServiceImage}
+              alt=""
+              className="mx-auto w-full max-h-[400px] object-contain md:h-full md:max-h-none md:object-center"
+            />
           </div>
         </section>
 
