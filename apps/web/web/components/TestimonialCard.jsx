@@ -36,6 +36,7 @@ const TestimonialCard = ({
           {photo ? (
             <img
               src={photo}
+              loading="lazy"
               alt={name}
               className="w-full h-full object-cover"
             />

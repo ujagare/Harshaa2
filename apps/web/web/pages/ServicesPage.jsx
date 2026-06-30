@@ -8,7 +8,7 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 import ServiceCard from "@/components/ServiceCard.jsx";
-import tarotServiceImage from "../../src/assets/image/Home/9d60be0e-0386-460f-8ac5-34eb72696ada.jpg";
+import tarotServiceImage from "../../src/assets/image/Home/9d60be0e-0386-460f-8ac5-34eb72696ada.webp";
 
 const ServicesPage = ({ setIsCartOpen }) => {
   const services = [
@@ -89,6 +89,73 @@ const ServicesPage = ({ setIsCartOpen }) => {
           name="description"
           content="Explore our transformative services: tarot readings, EFT tapping, tantra practices, and professional counselling. Book your session today."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Midas Touch Magick Services",
+            description:
+              "Professional spiritual healing and counselling services",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@type": "Service",
+                  name: "Tarot Readings",
+                  description:
+                    "Intuitive guidance and practical clarity through tarot cards for life decisions",
+                  provider: {
+                    "@type": "Organization",
+                    name: "Midas Touch Magick",
+                  },
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                  "@type": "Service",
+                  name: "EFT Tapping",
+                  description:
+                    "Emotional Freedom Technique sessions for releasing emotional blocks and trauma",
+                  provider: {
+                    "@type": "Organization",
+                    name: "Midas Touch Magick",
+                  },
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                  "@type": "Service",
+                  name: "Tantra & Sacred Sexuality",
+                  description:
+                    "Sacred intimacy practices and spiritual connection guidance",
+                  provider: {
+                    "@type": "Organization",
+                    name: "Midas Touch Magick",
+                  },
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                item: {
+                  "@type": "Service",
+                  name: "Professional Counselling",
+                  description:
+                    "Compassionate counselling and life coaching for personal growth",
+                  provider: {
+                    "@type": "Organization",
+                    name: "Midas Touch Magick",
+                  },
+                },
+              },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -115,7 +182,8 @@ const ServicesPage = ({ setIsCartOpen }) => {
           <div className="mt-8 md:absolute md:inset-0 md:z-0 md:pointer-events-none md:mt-0">
             <img
               src={tarotServiceImage}
-              alt=""
+              loading="lazy"
+              alt="Tarot reading cards spread on mystical table with spiritual guidance elements"
               className="mx-auto w-full max-h-[400px] object-contain md:h-full md:max-h-none md:object-center"
             />
           </div>
@@ -143,7 +211,10 @@ const ServicesPage = ({ setIsCartOpen }) => {
                         A 6-week Deep Transformation Experience
                       </span>
                     </div>
-                    <AnimatedHeading as="h2" className="mb-5 text-3xl font-bold text-primary-foreground md:text-5xl">
+                    <AnimatedHeading
+                      as="h2"
+                      className="mb-5 text-3xl font-bold text-primary-foreground md:text-5xl"
+                    >
                       Abundance Breakthrough Program
                     </AnimatedHeading>
                     <p className="mb-5 max-w-none text-lg text-primary-foreground/85">
@@ -183,10 +254,7 @@ const ServicesPage = ({ setIsCartOpen }) => {
                       </h3>
                       <ul className="space-y-3">
                         {programAchievements.map((item) => (
-                          <li
-                            key={item}
-                            className="text-primary-foreground/85"
-                          >
+                          <li key={item} className="text-primary-foreground/85">
                             <span>{item}</span>
                           </li>
                         ))}
@@ -199,10 +267,7 @@ const ServicesPage = ({ setIsCartOpen }) => {
                       </h3>
                       <ul className="space-y-3">
                         {programIncludes.map((item) => (
-                          <li
-                            key={item}
-                            className="text-primary-foreground/85"
-                          >
+                          <li key={item} className="text-primary-foreground/85">
                             <span>{item}</span>
                           </li>
                         ))}
@@ -245,7 +310,10 @@ const ServicesPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <AnimatedHeading
+                as="h2"
+                className="text-4xl md:text-5xl font-bold text-foreground mb-6"
+              >
                 Ready to begin your journey?
               </AnimatedHeading>
               <p className="mx-auto text-center text-xl text-muted-foreground mb-8 leading-relaxed">

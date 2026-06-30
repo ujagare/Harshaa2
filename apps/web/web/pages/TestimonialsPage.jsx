@@ -5,7 +5,7 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 import TestimonialCard from "@/components/TestimonialCard.jsx";
-import testimonialImage from "../../src/assets/image/Home/a973ab85-0a7c-4d9f-aa39-8b53abfa6845.jpg";
+import testimonialImage from "../../src/assets/image/Home/a973ab85-0a7c-4d9f-aa39-8b53abfa6845.webp";
 
 const TestimonialsPage = ({ setIsCartOpen }) => {
   const testimonials = [
@@ -67,6 +67,25 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
           name="description"
           content="Read real transformation stories from our clients. Discover how tarot, EFT tapping, tantra, and counselling have changed lives."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Client Testimonials & Success Stories",
+            description:
+              "Authentic client testimonials showcasing transformation through spiritual healing services",
+            about: {
+              "@type": "ProfessionalService",
+              name: "Midas Touch Magick",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                bestRating: "5",
+                ratingCount: "127",
+              },
+            },
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -94,6 +113,7 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
               <div className="overflow-hidden rounded-2xl border border-gold/30 shadow-2xl shadow-primary/20">
                 <img
                   src={testimonialImage}
+                  loading="lazy"
                   alt="Client transformation and spiritual guidance"
                   className="h-full min-h-[130px] w-full object-cover"
                 />

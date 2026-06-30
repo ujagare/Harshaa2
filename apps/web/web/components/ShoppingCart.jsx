@@ -96,6 +96,7 @@ const ShoppingCart = ({ isCartOpen, setIsCartOpen }) => {
                   >
                     <img
                       src={item.product.image}
+                      loading="lazy"
                       alt={item.product.title}
                       className="w-20 h-20 object-cover rounded-md"
                     />

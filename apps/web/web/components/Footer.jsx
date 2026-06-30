@@ -23,6 +23,7 @@ const Footer = () => {
             >
               <img
                 src="https://horizons-cdn.hostinger.com/12f1c95e-a67a-464e-a0a4-a46d26305cdc/d9e7723ef011faded6b7146d183ce626.png"
+                loading="lazy"
                 alt="logo"
                 className="h-16 w-auto duration-300 hover:opacity-90"
               />
@@ -82,9 +83,7 @@ const Footer = () => {
           {/* Contact */}
 
           <div>
-            <h3 className="text-lg font-semibold text-gold mb-6">
-              Contact
-            </h3>
+            <h3 className="text-lg font-semibold text-gold mb-6">Contact</h3>
 
             <div className="space-y-5">
               <div className="flex items-start gap-3">
@@ -98,7 +97,9 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-gold" />
 
-                <span className="text-primary-foreground/75">+1 (555) 123-4567</span>
+                <span className="text-primary-foreground/75">
+                  +1 (555) 123-4567
+                </span>
               </div>
 
               <div className="flex items-start gap-3">
@@ -114,9 +115,7 @@ const Footer = () => {
           {/* Social */}
 
           <div>
-            <h3 className="text-lg font-semibold text-gold mb-6">
-              Follow Us
-            </h3>
+            <h3 className="text-lg font-semibold text-gold mb-6">Follow Us</h3>
 
             <div className="flex gap-4">
               {[

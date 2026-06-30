@@ -30,6 +30,7 @@ const Header = ({ setIsCartOpen }) => {
           <Link to="/" className="flex items-center group">
             <img
               src="https://horizons-cdn.hostinger.com/12f1c95e-a67a-464e-a0a4-a46d26305cdc/d9e7723ef011faded6b7146d183ce626.png"
+              loading="eager"
               alt="Midas Touch Magick Triple Moon Symbol Logo"
               className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />

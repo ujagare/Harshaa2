@@ -27,6 +27,7 @@ const ServiceCard = ({
           <div className="-mx-2 mb-6 aspect-[4/3] overflow-hidden rounded-xl border border-gold/25 bg-background">
             <img
               src={image}
+              loading="lazy"
               alt={`${title} service`}
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

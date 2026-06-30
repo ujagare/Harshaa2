@@ -168,6 +168,27 @@ const ContactPage = ({ setIsCartOpen }) => {
           name="description"
           content="Get in touch with Midas Touch Magick. Book a session, ask questions, or learn more about our transformative services."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: "Contact Midas Touch Magick",
+            description:
+              "Book your healing session or get in touch for inquiries",
+            mainEntity: {
+              "@type": "ProfessionalService",
+              name: "Midas Touch Magick",
+              telephone: "+918698304955",
+              email: "hello@midastouchmagick.com",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+918698304955",
+                contactType: "Customer Service",
+                availableLanguage: ["English", "Hindi"],
+              },
+            },
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -200,7 +221,10 @@ const ContactPage = ({ setIsCartOpen }) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <AnimatedHeading as="h2" className="text-3xl font-bold text-foreground mb-8">
+                <AnimatedHeading
+                  as="h2"
+                  className="text-3xl font-bold text-foreground mb-8"
+                >
                   Send us a message
                 </AnimatedHeading>
 
@@ -277,7 +301,10 @@ const ContactPage = ({ setIsCartOpen }) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <AnimatedHeading as="h2" className="text-3xl font-bold text-foreground mb-8">
+                <AnimatedHeading
+                  as="h2"
+                  className="text-3xl font-bold text-foreground mb-8"
+                >
                   Contact information
                 </AnimatedHeading>
 
@@ -313,7 +340,6 @@ const ContactPage = ({ setIsCartOpen }) => {
                     </motion.div>
                   ))}
                 </div>
-
               </motion.div>
 
               <motion.div

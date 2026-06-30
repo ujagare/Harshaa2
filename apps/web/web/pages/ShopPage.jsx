@@ -15,6 +15,60 @@ const ShopPage = ({ setIsCartOpen }) => {
           name="description"
           content="Browse our healing packages and book your transformative session. Tarot readings, EFT tapping, tantra practices, and counselling available."
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Store",
+            name: "Midas Touch Magick Shop",
+            description:
+              "Healing session packages and spiritual guidance services",
+            url: "https://midastouch-magick.com/shop",
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Healing Services & Packages",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "Tarot Reading Session",
+                    description:
+                      "Professional tarot reading for guidance and clarity",
+                    category: "Spiritual Services",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "EFT Tapping Session",
+                    description: "Emotional Freedom Technique healing session",
+                    category: "Energy Healing",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "Tantra Session",
+                    description:
+                      "Sacred intimacy and spiritual connection guidance",
+                    category: "Spiritual Services",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "Counselling Session",
+                    description: "Professional counselling and life coaching",
+                    category: "Counselling",
+                  },
+                },
+              ],
+            },
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">

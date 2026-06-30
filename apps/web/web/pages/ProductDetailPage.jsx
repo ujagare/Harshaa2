@@ -208,6 +208,7 @@ function ProductDetailPage() {
             <div className="relative overflow-hidden rounded-lg shadow-2xl h-96 md:h-[500px]">
               <img
                 src={!currentImage?.url ? placeholderImage : currentImage.url}
+                loading="eager"
                 alt={product.title}
                 className="w-full h-full object-cover"
               />
@@ -269,6 +270,7 @@ function ProductDetailPage() {
                   >
                     <img
                       src={!image.url ? placeholderImage : image.url}
+                      loading="lazy"
                       alt={`${product.title} ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
@@ -287,12 +289,12 @@ function ProductDetailPage() {
             <AnimatedHeading className="text-4xl font-bold text-card-foreground mb-2">
               {product.title}
             </AnimatedHeading>
-            <p className="text-lg text-card-foreground/75 mb-4">{product.subtitle}</p>
+            <p className="text-lg text-card-foreground/75 mb-4">
+              {product.subtitle}
+            </p>
 
             <div className="flex items-baseline gap-3 mb-6">
-              <span className="text-4xl font-bold text-gold">
-                {price}
-              </span>
+              <span className="text-4xl font-bold text-gold">{price}</span>
               {selectedVariant?.sale_price_in_cents && (
                 <span className="text-2xl text-card-foreground/60 line-through">
                   {originalPrice}
@@ -328,7 +330,9 @@ function ProductDetailPage() {
 
             {product.variants.length > 1 && (
               <div className="mb-6">
-                <h3 className="text-sm font-medium text-card-foreground mb-2">Style</h3>
+                <h3 className="text-sm font-medium text-card-foreground mb-2">
+                  Style
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {product.variants.map((variant) => (
                     <Button

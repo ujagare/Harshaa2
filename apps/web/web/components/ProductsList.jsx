@@ -77,6 +77,7 @@ const ProductCard = ({ product, index }) => {
           <div className="relative">
             <img
               src={product.image || placeholderImage}
+              loading="lazy"
               alt={product.title}
               className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
