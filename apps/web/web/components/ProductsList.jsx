@@ -70,14 +70,15 @@ const ProductCard = ({ product, index }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
+      className="h-full"
     >
-      <Link to={`/product/${product.id}`}>
-        <div className="rounded-lg bg-primary text-primary-foreground shadow-xl overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+      <Link to={`/product/${product.id}`} className="block h-full">
+        <div className="group flex h-full flex-col overflow-hidden rounded-xl bg-primary text-primary-foreground shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
           <div className="relative">
             <img
               src={product.image || placeholderImage}
               alt={product.title}
-              className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+              className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/20 transition-all duration-300" />
             {product.ribbon_text && (
@@ -92,14 +93,16 @@ const ProductCard = ({ product, index }) => {
               <span>{displayPrice}</span>
             </div>
           </div>
-          <div className="p-5">
-            <h3 className="text-lg font-bold text-primary-foreground truncate">{product.title}</h3>
-            <p className="text-sm text-primary-foreground/80 h-10 overflow-hidden">
+          <div className="flex flex-1 flex-col p-5">
+            <h3 className="min-h-[3rem] overflow-hidden text-lg font-bold leading-6 text-primary-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
+              {product.title}
+            </h3>
+            <p className="mt-2 min-h-[2.5rem] overflow-hidden text-sm leading-5 text-primary-foreground/80 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
               {product.subtitle || "Check out this amazing product!"}
             </p>
             <Button
               onClick={handleAddToCart}
-              className="w-full mt-5 gold-gradient text-primary font-semibold hover:opacity-90"
+              className="gold-gradient mt-5 w-full font-semibold text-primary hover:opacity-90"
             >
               <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
             </Button>
@@ -190,9 +193,11 @@ const ProductsList = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-7">
       {products.map((product, index) => (
-        <ProductCard key={product.id} product={product} index={index} />
+        <div key={product.id} className="w-full sm:w-[300px]">
+          <ProductCard product={product} index={index} />
+        </div>
       ))}
     </div>
   );

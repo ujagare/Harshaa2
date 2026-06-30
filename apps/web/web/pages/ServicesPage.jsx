@@ -8,9 +8,22 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 import ServiceCard from "@/components/ServiceCard.jsx";
+import tarotServiceImage from "../../src/assets/image/Home/9d60be0e-0386-460f-8ac5-34eb72696ada.jpg";
 
 const ServicesPage = ({ setIsCartOpen }) => {
   const services = [
+    {
+      icon: Sparkles,
+      title: "Tarot readings",
+      description:
+        "Receive intuitive guidance and practical clarity through tarot. Each reading helps you understand the energy around your questions and choose your next step with confidence.",
+      benefits: [
+        "Gain clarity on love, career, and purpose",
+        "Understand hidden patterns and choices",
+        "Receive grounded spiritual guidance",
+        "Move forward with confidence",
+      ],
+    },
     {
       icon: Zap,
       title: "EFT tapping",
@@ -210,14 +223,14 @@ const ServicesPage = ({ setIsCartOpen }) => {
             <div className="relative mb-16">
               <div className="aspect-[21/9] rounded-2xl overflow-hidden mystical-border">
                 <img
-                  src="https://images.unsplash.com/photo-1621298040174-7751b8a05e31"
+                  src={tarotServiceImage}
                   alt="Mystical tarot cards spread on a table with candles"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
               {services.map((service, index) => (
                 <ServiceCard key={index} {...service} index={index} />
               ))}

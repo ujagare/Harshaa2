@@ -7,6 +7,8 @@ import { ArrowRight, Sparkles, Heart, Zap, Eye, X } from "lucide-react";
 import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
+import heroImage from "../../src/assets/image/Home/94df01f4-c24e-4b82-b50a-f0e877274dc5.jpg";
+import homeBackgroundImage from "../../src/assets/image/Home/e5e6ce08-5c58-4867-9dec-0c1d9f9371e4.jpg";
 
 const HomePage = ({ setIsCartOpen }) => {
   const [showProgramPopup, setShowProgramPopup] = useState(false);
@@ -138,12 +140,12 @@ const HomePage = ({ setIsCartOpen }) => {
           </motion.button>
         )}
 
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-background">
+        <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-background py-24">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <img
-              src="https://images.unsplash.com/photo-1556739442-4c892bcbe8ba"
+              src={homeBackgroundImage}
               alt=""
-              className="w-full h-full object-cover opacity-100"
+              className="h-full w-full -scale-x-100 object-cover"
             />
           </div>
 
@@ -152,53 +154,83 @@ const HomePage = ({ setIsCartOpen }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto rounded-3xl border border-white/35 bg-background/60 px-6 py-10 text-center shadow-2xl shadow-primary/20 backdrop-blur-xl sm:px-10 lg:px-14"
+              className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]"
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/40 mb-8 shadow-sm"
-              >
-                <Sparkles className="w-4 h-4 text-gold-dark" />
-                <span className="text-sm font-bold text-foreground">
-                  Transform your reality
-                </span>
-              </motion.div>
+              <div className="text-center lg:text-left">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="mb-8 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 shadow-sm"
+                >
+                  <Sparkles className="h-4 w-4 text-gold-dark" />
+                  <span className="text-sm font-bold text-foreground">
+                    Transform your reality
+                  </span>
+                </motion.div>
 
-              <AnimatedHeading className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 drop-shadow-sm">
-                Unlock abundance through ancient wisdom
-              </AnimatedHeading>
+                <motion.h1
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.15 }}
+                  className="mb-6 text-4xl font-extrabold leading-tight text-foreground drop-shadow-sm sm:text-5xl xl:text-6xl"
+                >
+                  <span className="block whitespace-nowrap">
+                    Unlock abundance
+                  </span>
+                  <span className="block whitespace-nowrap">
+                    through
+                  </span>
+                  <span className="block whitespace-nowrap">
+                    ancient wisdom
+                  </span>
+                </motion.h1>
 
-              <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-12 leading-relaxed max-w-3xl mx-auto">
-                Experience profound transformation through tarot, EFT tapping,
-                tantra, and compassionate counselling. Your journey to healing
-                begins here.
-              </p>
+                <p className="mx-auto mb-12 max-w-2xl text-xl font-medium leading-relaxed text-muted-foreground md:text-2xl lg:mx-0">
+                  Experience profound transformation through tarot, EFT tapping,
+                  tantra, and compassionate counselling. Your journey to healing
+                  begins here.
+                </p>
 
-              <div className="flex flex-col sm:flex-row gap-5 justify-center">
-                <Link to="/services">
-                  <Button
-                    size="lg"
-                    className="gold-gradient text-primary font-bold text-lg px-8 py-7 hover:opacity-95 shadow-lg hover:shadow-xl transition-all duration-200 active:scale-[0.98] group rounded-xl"
-                  >
-                    Explore services
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link to="/shop">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-gold/60 text-foreground hover:bg-gold/10 font-bold text-lg px-8 py-7 transition-all duration-200 active:scale-[0.98] rounded-xl shadow-sm"
-                  >
-                    Book a session
-                  </Button>
-                </Link>
+                <div className="flex flex-col justify-center gap-5 sm:flex-row lg:justify-start">
+                  <Link to="/services">
+                    <Button
+                      size="lg"
+                      className="gold-gradient group rounded-xl px-8 py-7 text-lg font-bold text-primary shadow-lg transition-all duration-200 hover:opacity-95 hover:shadow-xl active:scale-[0.98]"
+                    >
+                      Explore services
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </Link>
+                  <Link to="/shop">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="rounded-xl border-gold/60 px-8 py-7 text-lg font-bold text-foreground shadow-sm transition-all duration-200 hover:bg-gold/10 active:scale-[0.98]"
+                    >
+                      Book a session
+                    </Button>
+                  </Link>
+                </div>
               </div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+                className="relative"
+              >
+                <div className="aspect-[4/5] max-h-[720px] overflow-hidden rounded-3xl border border-gold/30 shadow-2xl shadow-primary/20 lg:aspect-[5/6]">
+                  <img
+                    src={heroImage}
+                    alt="Spiritual guidance and tarot reading"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-8 -left-8 h-36 w-36 rounded-full bg-gold/25 blur-3xl pointer-events-none" />
+              </motion.div>
             </motion.div>
           </div>
-
         </section>
 
         <section className="py-24 relative border-t border-border/40 bg-gradient-to-b from-background to-background/50">

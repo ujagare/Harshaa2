@@ -4,7 +4,14 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const ServiceCard = ({ icon: Icon, title, description, benefits, index }) => {
+const ServiceCard = ({
+  icon: Icon,
+  title,
+  image,
+  description,
+  benefits,
+  index,
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -16,6 +23,16 @@ const ServiceCard = ({ icon: Icon, title, description, benefits, index }) => {
       <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-gold/10 blur-3xl transition-opacity duration-300 group-hover:opacity-80" />
 
       <div className="relative flex h-full flex-col">
+        {image && (
+          <div className="-mx-2 mb-6 aspect-[4/3] overflow-hidden rounded-xl border border-gold/25 bg-background">
+            <img
+              src={image}
+              alt={`${title} service`}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+        )}
+
         <div className="mb-6">
           <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-xl border border-gold/30 bg-primary text-primary-foreground shadow-lg shadow-primary/15 transition-all duration-300 group-hover:scale-105 group-hover:bg-gold group-hover:text-primary">
             <Icon className="h-8 w-8" />

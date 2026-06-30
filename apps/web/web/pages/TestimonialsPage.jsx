@@ -5,12 +5,13 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 import TestimonialCard from "@/components/TestimonialCard.jsx";
+import testimonialImage from "../../src/assets/image/Home/a973ab85-0a7c-4d9f-aa39-8b53abfa6845.jpg";
 
 const TestimonialsPage = ({ setIsCartOpen }) => {
   const testimonials = [
     {
       name: "Priya Sharma",
-      photo: null,
+      photo: testimonialImage,
       testimonial:
         "Working with Midas Touch Magick completely transformed my relationship with abundance. The tarot readings gave me clarity I had been seeking for years, and the EFT tapping sessions released blocks I did not even know I was carrying.",
       transformation:
@@ -71,21 +72,32 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
       <div className="min-h-screen bg-background">
         <Header setIsCartOpen={setIsCartOpen} />
 
-        <section className="py-24 sacred-pattern">
+        <section className="py-4 sacred-pattern">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto text-center mb-16"
+              className="mx-auto grid max-w-6xl items-center gap-6 lg:grid-cols-[0.95fr_1.05fr]"
             >
-              <AnimatedHeading className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-                Transformation stories
-              </AnimatedHeading>
-              <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
-                Real stories from real people who have experienced profound
-                shifts through our work together.
-              </p>
+              <div className="text-center lg:text-left">
+                <h1 className="mb-3 text-4xl font-bold leading-tight text-foreground md:text-5xl">
+                  <span className="block">Transformation</span>
+                  <span className="block">stories</span>
+                </h1>
+                <p className="mx-auto text-lg leading-relaxed text-muted-foreground lg:mx-0">
+                  Real stories from real people who have experienced profound
+                  shifts through our work together.
+                </p>
+              </div>
+
+              <div className="overflow-hidden rounded-2xl border border-gold/30 shadow-2xl shadow-primary/20">
+                <img
+                  src={testimonialImage}
+                  alt="Client transformation and spiritual guidance"
+                  className="h-full min-h-[130px] w-full object-cover"
+                />
+              </div>
             </motion.div>
           </div>
         </section>
