@@ -11,7 +11,7 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
   const testimonials = [
     {
       name: "Priya Sharma",
-      photo: testimonialImage,
+      photo: null,
       testimonial:
         "Working with Midas Touch Magick completely transformed my relationship with abundance. The tarot readings gave me clarity I had been seeking for years, and the EFT tapping sessions released blocks I did not even know I was carrying.",
       transformation:
