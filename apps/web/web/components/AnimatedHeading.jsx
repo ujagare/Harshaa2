@@ -5,6 +5,14 @@ import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
+const styleId = "animated-heading-styles";
+if (!document.getElementById(styleId)) {
+  const style = document.createElement("style");
+  style.id = styleId;
+  style.textContent = `.gsap-word { display: inline-block; white-space: nowrap; }`;
+  document.head.appendChild(style);
+}
+
 const AnimatedHeading = ({ as: Tag = "h1", className = "", children }) => {
   const headingRef = useRef(null);
 
@@ -13,7 +21,11 @@ const AnimatedHeading = ({ as: Tag = "h1", className = "", children }) => {
 
     let split;
     const ctx = gsap.context(() => {
-      split = SplitText.create(headingRef.current, { type: "chars" });
+      split = SplitText.create(headingRef.current, {
+        type: "words,chars",
+        wordsClass: "gsap-word",
+        charsClass: "gsap-char",
+      });
 
       gsap.from(split.chars, {
         y: 40,

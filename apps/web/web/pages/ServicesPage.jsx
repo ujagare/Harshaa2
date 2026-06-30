@@ -102,7 +102,7 @@ const ServicesPage = ({ setIsCartOpen }) => {
               transition={{ duration: 0.6 }}
               className="mx-auto mb-0 max-w-4xl rounded-2xl bg-background/70 px-6 py-8 text-center shadow-2xl shadow-primary/20 backdrop-blur-sm sm:px-10"
             >
-              <AnimatedHeading className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              <AnimatedHeading className="text-4xl md:text-6xl font-bold text-foreground mb-6">
                 Our services
               </AnimatedHeading>
               <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">

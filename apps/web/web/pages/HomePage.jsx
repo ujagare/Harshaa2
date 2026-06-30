@@ -173,7 +173,7 @@ const HomePage = ({ setIsCartOpen }) => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.15 }}
-                  className="mb-6 text-4xl font-extrabold leading-tight text-foreground drop-shadow-sm sm:text-5xl xl:text-6xl"
+                  className="mb-6 text-3xl font-extrabold leading-tight text-foreground drop-shadow-sm sm:text-5xl xl:text-6xl"
                 >
                   <span className="block lg:whitespace-nowrap">
                     Unlock abundance
