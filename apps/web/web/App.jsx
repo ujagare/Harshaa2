@@ -17,6 +17,8 @@ import TestimonialsPage from "./pages/TestimonialsPage";
 import ContactPage from "./pages/ContactPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import SuccessPage from "./pages/SuccessPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import TermsPage from "./pages/TermsPage";
 import { Toaster } from "@/components/ui/toaster";
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
         <Route path="/success" element={<SuccessPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
       </Routes>
       <Toaster />
       <AnimatePresence>
