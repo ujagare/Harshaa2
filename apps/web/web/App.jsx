@@ -17,7 +17,7 @@ import TestimonialsPage from "./pages/TestimonialsPage";
 import ContactPage from "./pages/ContactPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import SuccessPage from "./pages/SuccessPage";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
