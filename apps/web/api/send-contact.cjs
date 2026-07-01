@@ -1,7 +1,8 @@
-import { Resend } from "resend";
+const { Resend } = require("resend");
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "marigoldmagick@harshaagurnani.com";
+const CONTACT_EMAIL =
+  process.env.CONTACT_EMAIL || "marigoldmagick@harshaagurnani.com";
 const FROM_EMAIL = process.env.FROM_EMAIL || "onboarding@resend.dev";
 
 const ALLOWED_ORIGINS = [
@@ -61,13 +62,16 @@ function checkRateLimit(ip) {
 
   entry.count += 1;
   if (entry.count > maxRequests) {
-    return { allowed: false, retryAfter: Math.ceil((windowMs - (now - entry.windowStart)) / 1000) };
+    return {
+      allowed: false,
+      retryAfter: Math.ceil((windowMs - (now - entry.windowStart)) / 1000),
+    };
   }
 
   return { allowed: true };
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const origin = req.headers.origin;
 
   if (origin && isAllowedOrigin(origin)) {
@@ -96,19 +100,25 @@ export default async function handler(req, res) {
   );
   if (!rateLimitResult.allowed) {
     res.setHeader("Retry-After", String(rateLimitResult.retryAfter));
-    return res.status(429).json({ error: "Too many requests. Please try again later." });
+    return res
+      .status(429)
+      .json({ error: "Too many requests. Please try again later." });
   }
 
   try {
     const { name, email, phone, message } = req.body || {};
 
     if (!name || !email || !message) {
-      return res.status(400).json({ error: "Name, email, and message are required" });
+      return res
+        .status(400)
+        .json({ error: "Name, email, and message are required" });
     }
 
     const cleanName = String(name).trim().slice(0, 100);
     const cleanEmail = String(email).trim().toLowerCase().slice(0, 254);
-    const cleanPhone = String(phone || "").trim().slice(0, 20);
+    const cleanPhone = String(phone || "")
+      .trim()
+      .slice(0, 20);
     const cleanMessage = String(message).trim().slice(0, 5000);
 
     if (!isValidEmail(cleanEmail)) {
@@ -116,17 +126,31 @@ export default async function handler(req, res) {
     }
 
     if (cleanName.length < 2) {
-      return res.status(400).json({ error: "Name must be at least 2 characters" });
+      return res
+        .status(400)
+        .json({ error: "Name must be at least 2 characters" });
     }
 
     if (cleanMessage.length < 10) {
-      return res.status(400).json({ error: "Message must be at least 10 characters" });
+      return res
+        .status(400)
+        .json({ error: "Message must be at least 10 characters" });
     }
 
     if (!resend) {
-      console.warn("RESEND_API_KEY not configured. Logging contact submission.");
-      console.log({ name: cleanName, email: cleanEmail, phone: cleanPhone, message: cleanMessage, timestamp: new Date().toISOString() });
-      return res.status(200).json({ success: true, message: "Message received (logging mode)" });
+      console.warn(
+        "RESEND_API_KEY not configured. Logging contact submission.",
+      );
+      console.log({
+        name: cleanName,
+        email: cleanEmail,
+        phone: cleanPhone,
+        message: cleanMessage,
+        timestamp: new Date().toISOString(),
+      });
+      return res
+        .status(200)
+        .json({ success: true, message: "Message received (logging mode)" });
     }
 
     const safeSubject = sanitizeSubject(cleanName);
@@ -159,10 +183,14 @@ export default async function handler(req, res) {
                 <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; vertical-align: top;"><strong>Email:</strong></td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a1a1a;">${htmlEmail}</td>
               </tr>
-              ${htmlPhone ? `<tr>
+              ${
+                htmlPhone
+                  ? `<tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; vertical-align: top;"><strong>Phone:</strong></td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #1a1a1a;">${htmlPhone}</td>
-              </tr>` : ""}
+              </tr>`
+                  : ""
+              }
               <tr>
                 <td style="padding: 12px 0; color: #6b7280; vertical-align: top;"><strong>Message:</strong></td>
                 <td style="padding: 12px 0; color: #1a1a1a; white-space: pre-wrap;">${htmlMessage}</td>
@@ -183,9 +211,11 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Failed to send message" });
     }
 
-    return res.status(200).json({ success: true, message: "Message sent successfully" });
+    return res
+      .status(200)
+      .json({ success: true, message: "Message sent successfully" });
   } catch (err) {
     console.error("Contact form error:", err);
     return res.status(500).json({ error: "Internal server error" });
   }
-}
+};
