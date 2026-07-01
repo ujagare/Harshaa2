@@ -1,0 +1,75 @@
+# robots.txt for Marigold Magick
+# https://marigoldmagick.com
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow specific pages that shouldn't be indexed
+Disallow: /admin
+Disallow: /api/
+Disallow: /checkout
+Disallow: /*.json$
+Disallow: /*?*addToCart=*
+Disallow: /*?*sort=*
+Disallow: /*?*filter=*
+
+# Allow important pages explicitly
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /contact
+Allow: /testimonials
+Allow: /product/*
+
+# Crawl delay (polite crawling - 1 second between requests)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://marigoldmagick.com/sitemap.xml
+Sitemap: https://marigoldmagick.com/sitemap-products.xml
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /

@@ -18,7 +18,7 @@ const TestimonialCard = ({
     >
       <Quote className="w-10 h-10 text-gold/30 mb-4" />
 
-      <p className="text-foreground leading-relaxed mb-6 italic">
+      <p className="text-foreground leading-relaxed mb-6 italic break-words">
         "{testimonial}"
       </p>
 
@@ -27,12 +27,14 @@ const TestimonialCard = ({
           <p className="text-sm font-medium text-gold uppercase tracking-wider mb-2">
             Transformation
           </p>
-          <p className="text-muted-foreground text-sm">{transformation}</p>
+          <p className="text-muted-foreground text-sm break-words">
+            {transformation}
+          </p>
         </div>
       )}
 
       <div className="flex items-center gap-4">
-        <div className="w-14 h-14 rounded-xl overflow-hidden bg-background flex items-center justify-center">
+        <div className="w-14 h-14 rounded-xl overflow-hidden bg-background flex items-center justify-center flex-shrink-0">
           {photo ? (
             <img
               src={photo}
@@ -49,9 +51,11 @@ const TestimonialCard = ({
             </span>
           )}
         </div>
-        <div>
-          <p className="font-semibold text-foreground">{name}</p>
-          <p className="text-sm text-muted-foreground">Midas Touch Client</p>
+        <div className="flex-1 min-w-0">
+          <p className="font-semibold text-foreground break-words">{name}</p>
+          <p className="text-sm text-muted-foreground break-words">
+            Marigold Client
+          </p>
         </div>
       </div>
     </motion.div>

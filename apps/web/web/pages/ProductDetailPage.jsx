@@ -1,20 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getProduct, getProductQuantities } from "@/api/EcommerceApi";
 import { Button } from "@/components/ui/button";
 import AnimatedHeading from "@/components/AnimatedHeading.jsx";
-import { useCart } from "@/hooks/useCart";
-import { useToast } from "@/hooks/use-toast";
 import {
-  ShoppingCart,
   Loader2,
   ArrowLeft,
-  CheckCircle,
-  Minus,
-  Plus,
-  XCircle,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -29,37 +22,16 @@ function ProductDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedVariant, setSelectedVariant] = useState(null);
-  const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { addToCart } = useCart();
-  const { toast } = useToast();
-
-  const handleAddToCart = useCallback(async () => {
-    if (product && selectedVariant) {
-      const availableQuantity = selectedVariant.inventory_quantity;
-      try {
-        await addToCart(product, selectedVariant, quantity, availableQuantity);
-        toast({
-          title: "Added to Cart! 🛒",
-          description: `${quantity} x ${product.title} (${selectedVariant.title}) added.`,
-        });
-      } catch (error) {
-        toast({
-          variant: "destructive",
-          title: "Oh no! Something went wrong.",
-          description: error.message,
-        });
-      }
-    }
-  }, [product, selectedVariant, quantity, addToCart, toast]);
-
-  const handleQuantityChange = useCallback((amount) => {
-    setQuantity((prevQuantity) => {
-      const newQuantity = prevQuantity + amount;
-      if (newQuantity < 1) return 1;
-      return newQuantity;
-    });
-  }, []);
+  const handleBookNow = useCallback(() => {
+    const message = product
+      ? `Hi, I want to book: ${product.title} (${selectedVariant?.title || ""})`
+      : "Hi, I want to book a session";
+    window.open(
+      `https://wa.me/918698304955?text=${encodeURIComponent(message)}`,
+      "_blank",
+    );
+  }, [product, selectedVariant]);
 
   const handlePrevImage = useCallback(() => {
     if (product?.images?.length > 1) {
@@ -172,11 +144,7 @@ function ProductDetailPage() {
   const price =
     selectedVariant?.sale_price_formatted ?? selectedVariant?.price_formatted;
   const originalPrice = selectedVariant?.price_formatted;
-  const availableStock = selectedVariant
-    ? selectedVariant.inventory_quantity
-    : 0;
-  const isStockManaged = selectedVariant?.manage_inventory ?? false;
-  const canAddToCart = !isStockManaged || quantity <= availableStock;
+
 
   const currentImage = product.images[currentImageIndex];
   const hasMultipleImages = product.images.length > 1;
@@ -184,19 +152,130 @@ function ProductDetailPage() {
   return (
     <>
       <Helmet>
-        <title>{product.title} - Our Store</title>
+        <title>{product.title} - Marigold Magick</title>
         <meta
           name="description"
           content={product.description?.substring(0, 160) || product.title}
         />
+        <meta
+          name="keywords"
+          content={`${product.title}, healing session, spiritual service, book session, ${product.subtitle || ""}`}
+        />
+        <meta name="author" content="Marigold Magick" />
+        <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href={`https://marigoldmagick.com/product/${product.id}`}
+        />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="product" />
+        <meta
+          property="og:title"
+          content={`${product.title} - Marigold Magick`}
+        />
+        <meta
+          property="og:description"
+          content={product.subtitle || product.title}
+        />
+        <meta
+          property="og:url"
+          content={`https://marigoldmagick.com/product/${product.id}`}
+        />
+        <meta property="og:site_name" content="Marigold Magick" />
+        <meta
+          property="og:image"
+          content={
+            product.images?.[0]?.url || "https://marigoldmagick.com/logo.png"
+          }
+        />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="600" />
+        <meta
+          property="product:price:amount"
+          content={
+            selectedVariant?.price_in_cents
+              ? (selectedVariant.price_in_cents / 100).toFixed(2)
+              : "0.00"
+          }
+        />
+        <meta property="product:price:currency" content="INR" />
+        <meta
+          property="product:availability"
+          content={
+            product.purchasable ? "in stock" : "out of stock"
+          }
+        />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`${product.title} - Marigold Magick`}
+        />
+        <meta
+          name="twitter:description"
+          content={product.subtitle || product.title}
+        />
+        <meta
+          name="twitter:image"
+          content={
+            product.images?.[0]?.url || "https://marigoldmagick.com/logo.png"
+          }
+        />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.title,
+            description: product.subtitle || product.title,
+            image: product.images?.map((img) => img.url).filter(Boolean) || [],
+            brand: {
+              "@type": "Brand",
+              name: "Marigold Magick",
+            },
+            offers: {
+              "@type": "AggregateOffer",
+              priceCurrency: "INR",
+              lowPrice: selectedVariant?.sale_price_in_cents
+                ? (selectedVariant.sale_price_in_cents / 100).toFixed(2)
+                : selectedVariant?.price_in_cents
+                  ? (selectedVariant.price_in_cents / 100).toFixed(2)
+                  : "0.00",
+              highPrice: selectedVariant?.price_in_cents
+                ? (selectedVariant.price_in_cents / 100).toFixed(2)
+                : "0.00",
+              offerCount: product.variants?.length || 1,
+              availability:
+                product.purchasable
+                  ? "https://schema.org/InStock"
+                  : "https://schema.org/OutOfStock",
+              url: `https://marigoldmagick.com/product/${product.id}`,
+              seller: {
+                "@type": "Organization",
+                name: "Marigold Magick",
+                email: "marigoldmagick@harshaagurnani.com",
+              },
+            },
+            category: "Spiritual Healing Services",
+            aggregateRating:
+              product.reviews_count > 0
+                ? {
+                    "@type": "AggregateRating",
+                    ratingValue: "5.0",
+                    reviewCount: product.reviews_count || "1",
+                  }
+                : undefined,
+          })}
+        </script>
       </Helmet>
       <div className="max-w-5xl mx-auto">
         <Link
-          to="/shop"
+          to="/services#book-session"
           className="inline-flex items-center gap-2 text-primary hover:text-gold transition-colors mb-6"
         >
           <ArrowLeft size={16} />
-          Back to Shop
+          Back to services
         </Link>
         <div className="grid md:grid-cols-2 gap-8 glass-card p-8 rounded-2xl">
           <motion.div
@@ -352,58 +431,18 @@ function ProductDetailPage() {
               </div>
             )}
 
-            <div className="flex items-center gap-4 mb-6">
-              <div className="flex items-center border border-primary-foreground/20 rounded-full p-1">
-                <Button
-                  onClick={() => handleQuantityChange(-1)}
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full h-8 w-8 text-card-foreground hover:bg-primary-foreground/10"
-                >
-                  <Minus size={16} />
-                </Button>
-                <span className="w-10 text-center text-card-foreground font-bold">
-                  {quantity}
-                </span>
-                <Button
-                  onClick={() => handleQuantityChange(1)}
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full h-8 w-8 text-card-foreground hover:bg-primary-foreground/10"
-                >
-                  <Plus size={16} />
-                </Button>
-              </div>
-            </div>
-
             <div className="mt-auto">
               <Button
-                onClick={handleAddToCart}
+                onClick={handleBookNow}
                 size="lg"
-                className="w-full gold-gradient text-primary font-semibold py-3 text-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={!canAddToCart || !product.purchasable}
+                className="w-full gold-gradient text-primary font-semibold py-3 text-lg hover:opacity-90"
               >
-                <ShoppingCart className="mr-2 h-5 w-5" /> Add to Cart
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                  <path d="M3 21l1.65-3.8A9 9 0 1 1 5.2 17.35L3 21z" />
+                  <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                </svg>
+                Book now on WhatsApp
               </Button>
-
-              {isStockManaged && canAddToCart && product.purchasable && (
-                <p className="text-sm text-secondary mt-3 flex items-center justify-center gap-2">
-                  <CheckCircle size={16} /> {availableStock} in stock!
-                </p>
-              )}
-
-              {isStockManaged && !canAddToCart && product.purchasable && (
-                <p className="text-sm text-gold mt-3 flex items-center justify-center gap-2">
-                  <XCircle size={16} /> Not enough stock. Only {availableStock}{" "}
-                  left.
-                </p>
-              )}
-
-              {!product.purchasable && (
-                <p className="text-sm text-destructive mt-3 flex items-center justify-center gap-2">
-                  <XCircle size={16} /> Currently unavailable
-                </p>
-              )}
             </div>
           </motion.div>
         </div>

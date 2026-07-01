@@ -70,7 +70,7 @@ const ServicesPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>Services - Midas Touch Magick</title>
+        <title>Services - Marigold Magick</title>
         <meta
           name="description"
           content="Explore our transformative services: tarot readings, EFT tapping, tantra practices, and professional counselling. Book your session today."

@@ -4,9 +4,7 @@ import {
   Mail,
   Phone,
   MapPin,
-  Facebook,
-  Instagram,
-  Youtube,
+  MessageCircle,
 } from "lucide-react";
 
 const Footer = () => {
@@ -19,14 +17,22 @@ const Footer = () => {
           <div>
             <Link
               to="/"
-              className="mb-6 inline-flex rounded-2xl border border-gold/35 bg-primary-foreground/95 p-3 shadow-xl shadow-black/20 transition-all duration-300 hover:border-gold hover:shadow-gold/10"
+              className="mb-6 inline-flex items-center gap-3 rounded-2xl border border-gold/35 bg-primary-foreground/95 p-3 shadow-xl shadow-black/20 transition-all duration-300 hover:border-gold hover:shadow-gold/10"
             >
               <img
                 src="https://horizons-cdn.hostinger.com/12f1c95e-a67a-464e-a0a4-a46d26305cdc/d9e7723ef011faded6b7146d183ce626.png"
                 loading="lazy"
-                alt="logo"
+                alt="Marigold Magick logo"
                 className="h-16 w-auto duration-300 hover:opacity-90"
               />
+              <span
+                className="text-xl font-bold text-primary transition-opacity duration-300 hover:opacity-90"
+                style={{ fontFamily: "Cinzel, serif" }}
+              >
+                Marigold
+                <br />
+                Magick
+              </span>
             </Link>
 
             <p className="text-primary-foreground/75 leading-8 text-[15px] max-w-xs">
@@ -58,13 +64,6 @@ const Footer = () => {
               </Link>
 
               <Link
-                to="/shop"
-                className="text-primary-foreground/75 hover:text-gold duration-300"
-              >
-                Shop
-              </Link>
-
-              <Link
                 to="/testimonials"
                 className="text-primary-foreground/75 hover:text-gold duration-300"
               >
@@ -89,8 +88,8 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-gold mt-1 flex-shrink-0" />
 
-                <span className="text-primary-foreground/75 break-all">
-                  hello@midastouchmagick.com
+                <span className="text-primary-foreground/75 whitespace-nowrap">
+                  marigoldmagick@harshaagurnani.com
                 </span>
               </div>
 
@@ -98,7 +97,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-gold" />
 
                 <span className="text-primary-foreground/75">
-                  +1 (555) 123-4567
+                  +91 8698304955
                 </span>
               </div>
 
@@ -106,7 +105,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-gold mt-1 flex-shrink-0" />
 
                 <span className="text-primary-foreground/75">
-                  Online & In-Person Sessions
+                  Online & in-person sessions by appointment
                 </span>
               </div>
             </div>
@@ -118,33 +117,32 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gold mb-6">Follow Us</h3>
 
             <div className="flex gap-4">
-              {[
-                {
-                  icon: Facebook,
-                  link: "https://facebook.com",
-                },
-                {
-                  icon: Instagram,
-                  link: "https://instagram.com",
-                },
-                {
-                  icon: Youtube,
-                  link: "https://youtube.com",
-                },
-              ].map((item, i) => (
-                <a
-                  key={i}
-                  href={item.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-12 h-12 rounded-full border border-primary-foreground/25
-                  hover:border-gold
-                  hover:bg-gold
-                  duration-300 flex items-center justify-center group"
-                >
-                  <item.icon className="w-5 h-5 text-primary-foreground/80 group-hover:text-primary duration-300" />
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/harshaa.marigoldmagick?igsh=a2luaWFhdXNwcDZ4&utm_source=qr"
+                target="_blank"
+                rel="noreferrer"
+                className="w-12 h-12 rounded-full border border-primary-foreground/25
+                hover:border-gold
+                hover:bg-gold
+                duration-300 flex items-center justify-center group"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-primary-foreground/80 group-hover:text-primary duration-300">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/918698304955"
+                target="_blank"
+                rel="noreferrer"
+                className="w-12 h-12 rounded-full border border-primary-foreground/25
+                hover:border-gold
+                hover:bg-gold
+                duration-300 flex items-center justify-center group"
+              >
+                <MessageCircle className="w-5 h-5 text-primary-foreground/80 group-hover:text-primary duration-300" />
+              </a>
             </div>
           </div>
         </div>
@@ -153,7 +151,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/15 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center gap-5">
           <p className="text-primary-foreground/60 text-sm text-center">
-            © 2026 Midas Touch Magick. All Rights Reserved.
+            © 2026 Marigold Magick. All Rights Reserved.
           </p>
 
           <div className="flex gap-8">

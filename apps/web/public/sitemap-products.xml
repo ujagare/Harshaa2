@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Products Sitemap -->
+  <!-- This file should be dynamically generated based on your product catalog -->
+  <!-- Example product entries: -->
+
+  <url>
+    <loc>https://marigoldmagick.com/product/tarot-reading-session</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marigoldmagick.com/images/products/tarot-reading.jpg</image:loc>
+      <image:title>Tarot Reading Session</image:title>
+      <image:caption>Professional tarot reading for clarity and spiritual guidance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marigoldmagick.com/product/eft-tapping-session</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marigoldmagick.com/images/products/eft-tapping.jpg</image:loc>
+      <image:title>EFT Tapping Session</image:title>
+      <image:caption>Emotional Freedom Technique healing session</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marigoldmagick.com/product/tantra-session</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marigoldmagick.com/images/products/tantra.jpg</image:loc>
+      <image:title>Tantra & Sacred Sexuality Session</image:title>
+      <image:caption>Sacred intimacy and spiritual connection guidance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marigoldmagick.com/product/counselling-session</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marigoldmagick.com/images/products/counselling.jpg</image:loc>
+      <image:title>Professional Counselling Session</image:title>
+      <image:caption>Compassionate counselling and life coaching</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marigoldmagick.com/product/abundance-breakthrough-program</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://marigoldmagick.com/images/products/abundance-program.jpg</image:loc>
+      <image:title>Abundance Breakthrough Program</image:title>
+      <image:caption>6-week transformation program with Oracle, EFT and counselling</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Add more product URLs as your catalog grows -->
+
+</urlset>

@@ -7,13 +7,13 @@ import Footer from "@/components/Footer.jsx";
 import TestimonialCard from "@/components/TestimonialCard.jsx";
 import testimonialImage from "../../src/assets/image/Home/a973ab85-0a7c-4d9f-aa39-8b53abfa6845.webp";
 
-const TestimonialsPage = ({ setIsCartOpen }) => {
+const TestimonialsPage = () => {
   const testimonials = [
     {
       name: "Priya Sharma",
       photo: null,
       testimonial:
-        "Working with Midas Touch Magick completely transformed my relationship with abundance. The tarot readings gave me clarity I had been seeking for years, and the EFT tapping sessions released blocks I did not even know I was carrying.",
+        "Working with Marigold Magick completely transformed my relationship with abundance. The tarot readings gave me clarity I had been seeking for years, and the EFT tapping sessions released blocks I did not even know I was carrying.",
       transformation:
         "Manifested a 47% increase in income within three months and attracted my dream partnership",
     },
@@ -53,7 +53,7 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
       name: "Rohan Malhotra",
       photo: null,
       testimonial:
-        "After years of feeling stuck, the sessions at Midas Touch Magick helped me break through limiting beliefs about money and success. The shifts have been profound and lasting.",
+        "After years of feeling stuck, the sessions at Marigold Magick helped me break through limiting beliefs about money and success. The shifts have been profound and lasting.",
       transformation:
         "Cleared money blocks, doubled business revenue, and attracted abundant opportunities",
     },
@@ -62,10 +62,55 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>Testimonials - Midas Touch Magick</title>
+        <title>Testimonials - Marigold Magick</title>
         <meta
           name="description"
           content="Read real transformation stories from our clients. Discover how tarot, EFT tapping, tantra, and counselling have changed lives."
+        />
+        <meta
+          name="keywords"
+          content="client testimonials, success stories, healing transformations, tarot reading reviews, EFT tapping results, spiritual guidance testimonials, client reviews"
+        />
+        <meta name="author" content="Marigold Magick" />
+        <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href="https://marigoldmagick.com/testimonials"
+        />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Client Testimonials & Success Stories - Marigold Magick"
+        />
+        <meta
+          property="og:description"
+          content="Read real transformation stories from our clients. Discover how tarot, EFT tapping, tantra, and counselling have changed lives."
+        />
+        <meta
+          property="og:url"
+          content="https://marigoldmagick.com/testimonials"
+        />
+        <meta property="og:site_name" content="Marigold Magick" />
+        <meta
+          property="og:image"
+          content="https://marigoldmagick.com/logo.png"
+        />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Client Testimonials & Success Stories - Marigold Magick"
+        />
+        <meta
+          name="twitter:description"
+          content="Read real transformation stories from our clients who experienced profound shifts through our healing services."
+        />
+        <meta
+          name="twitter:image"
+          content="https://marigoldmagick.com/logo.png"
         />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -76,7 +121,8 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
               "Authentic client testimonials showcasing transformation through spiritual healing services",
             about: {
               "@type": "ProfessionalService",
-              name: "Midas Touch Magick",
+              name: "Marigold Magick",
+              email: "marigoldmagick@harshaagurnani.com",
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5.0",
@@ -89,7 +135,7 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <Header setIsCartOpen={setIsCartOpen} />
+        <Header />
 
         <section className="py-4 sacred-pattern">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">

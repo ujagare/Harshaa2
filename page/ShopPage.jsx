@@ -9,7 +9,7 @@ const ShopPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>Shop - Midas Touch Magick</title>
+        <title>Shop - Marigold Magick</title>
         <meta
           name="description"
           content="Browse our healing packages and book your transformative session. Tarot readings, EFT tapping, tantra practices, and counselling available."

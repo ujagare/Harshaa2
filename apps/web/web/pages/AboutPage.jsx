@@ -6,7 +6,7 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
-const AboutPage = ({ setIsCartOpen }) => {
+const AboutPage = () => {
   const transformationImage =
     "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=85";
 
@@ -20,27 +20,67 @@ const AboutPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>About Midas Touch Magick - Our story and philosophy</title>
+        <title>About Marigold Magick - Our story and philosophy</title>
         <meta
           name="description"
-          content="Discover the journey, philosophy, and credentials behind Midas Touch Magick. Learn how ancient wisdom meets modern healing to create transformation."
+          content="Discover the journey, philosophy, and credentials behind Marigold Magick. Learn how ancient wisdom meets modern healing to create transformation."
+        />
+        <meta
+          name="keywords"
+          content="about marigold magick, certified healer, spiritual practitioner, tarot reader, EFT practitioner, tantra coach, professional counsellor, healing philosophy"
+        />
+        <meta name="author" content="Marigold Magick" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://marigoldmagick.com/about" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="About Marigold Magick - Our story and philosophy"
+        />
+        <meta
+          property="og:description"
+          content="Discover the journey, philosophy, and credentials behind Marigold Magick. Learn how ancient wisdom meets modern healing to create transformation."
+        />
+        <meta property="og:url" content="https://marigoldmagick.com/about" />
+        <meta property="og:site_name" content="Marigold Magick" />
+        <meta
+          property="og:image"
+          content="https://marigoldmagick.com/logo.png"
+        />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="About Marigold Magick - Our story and philosophy"
+        />
+        <meta
+          name="twitter:description"
+          content="Discover the journey, philosophy, and credentials behind Marigold Magick."
+        />
+        <meta
+          name="twitter:image"
+          content="https://marigoldmagick.com/logo.png"
         />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "AboutPage",
-            name: "About Midas Touch Magick",
+            name: "About Marigold Magick",
             description:
-              "The story, philosophy, and credentials behind Midas Touch Magick healing services",
+              "The story, philosophy, and credentials behind Marigold Magick healing services",
             mainEntity: {
               "@type": "Organization",
-              name: "Midas Touch Magick",
+              name: "Marigold Magick",
+              email: "marigoldmagick@harshaagurnani.com",
               description:
                 "Professional healing services combining ancient wisdom with modern techniques",
               foundingDate: "2020",
               founder: {
                 "@type": "Person",
-                name: "Midas Touch Magick Practitioner",
+                name: "Marigold Magick Practitioner",
                 jobTitle: "Certified Healer & Life Coach",
                 hasCredential: [
                   {
@@ -75,7 +115,7 @@ const AboutPage = ({ setIsCartOpen }) => {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <Header setIsCartOpen={setIsCartOpen} />
+        <Header />
 
         <main>
           <section
@@ -93,7 +133,7 @@ const AboutPage = ({ setIsCartOpen }) => {
                   id="about-main-heading"
                   className="text-5xl md:text-6xl font-bold text-foreground mb-6"
                 >
-                  The story of Midas Touch Magick
+                  The story of Marigold Magick
                 </h1>
                 <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
                   Where ancient wisdom meets modern healing to unlock your true
@@ -137,7 +177,7 @@ const AboutPage = ({ setIsCartOpen }) => {
                     A journey of transformation
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    Midas Touch Magick was born from a deep calling to bridge
+                    Marigold Magick was born from a deep calling to bridge
                     the ancient mystical arts with modern healing practices.
                     After years of personal transformation and study across
                     multiple disciplines, I discovered that true abundance flows

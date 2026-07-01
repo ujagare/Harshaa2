@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button";
 import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
+import ProductsList from "@/components/ProductsList.jsx";
 import ServiceCard from "@/components/ServiceCard.jsx";
 import tarotServiceImage from "../../src/assets/image/Home/9d60be0e-0386-460f-8ac5-34eb72696ada.webp";
 
-const ServicesPage = ({ setIsCartOpen }) => {
+const ServicesPage = () => {
   const services = [
     {
       icon: Sparkles,
@@ -84,16 +85,55 @@ const ServicesPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>Services - Midas Touch Magick</title>
+        <title>Services - Marigold Magick</title>
         <meta
           name="description"
           content="Explore our transformative services: tarot readings, EFT tapping, tantra practices, and professional counselling. Book your session today."
+        />
+        <meta
+          name="keywords"
+          content="tarot reading services, EFT tapping sessions, tantra coaching, spiritual counselling, healing packages, abundance breakthrough program, transformation services"
+        />
+        <meta name="author" content="Marigold Magick" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://marigoldmagick.com/services" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Our Transformative Services - Marigold Magick"
+        />
+        <meta
+          property="og:description"
+          content="Explore tarot readings, EFT tapping, tantra practices, and professional counselling. Transform your life with our healing services."
+        />
+        <meta property="og:url" content="https://marigoldmagick.com/services" />
+        <meta property="og:site_name" content="Marigold Magick" />
+        <meta
+          property="og:image"
+          content="https://marigoldmagick.com/logo.png"
+        />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Our Transformative Services - Marigold Magick"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore tarot readings, EFT tapping, tantra practices, and professional counselling."
+        />
+        <meta
+          name="twitter:image"
+          content="https://marigoldmagick.com/logo.png"
         />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            name: "Midas Touch Magick Services",
+            name: "Marigold Magick Services",
             description:
               "Professional spiritual healing and counselling services",
             itemListElement: [
@@ -107,7 +147,8 @@ const ServicesPage = ({ setIsCartOpen }) => {
                     "Intuitive guidance and practical clarity through tarot cards for life decisions",
                   provider: {
                     "@type": "Organization",
-                    name: "Midas Touch Magick",
+                    name: "Marigold Magick",
+                    email: "marigoldmagick@harshaagurnani.com",
                   },
                 },
               },
@@ -121,7 +162,8 @@ const ServicesPage = ({ setIsCartOpen }) => {
                     "Emotional Freedom Technique sessions for releasing emotional blocks and trauma",
                   provider: {
                     "@type": "Organization",
-                    name: "Midas Touch Magick",
+                    name: "Marigold Magick",
+                    email: "marigoldmagick@harshaagurnani.com",
                   },
                 },
               },
@@ -135,7 +177,8 @@ const ServicesPage = ({ setIsCartOpen }) => {
                     "Sacred intimacy practices and spiritual connection guidance",
                   provider: {
                     "@type": "Organization",
-                    name: "Midas Touch Magick",
+                    name: "Marigold Magick",
+                    email: "marigoldmagick@harshaagurnani.com",
                   },
                 },
               },
@@ -149,7 +192,8 @@ const ServicesPage = ({ setIsCartOpen }) => {
                     "Compassionate counselling and life coaching for personal growth",
                   provider: {
                     "@type": "Organization",
-                    name: "Midas Touch Magick",
+                    name: "Marigold Magick",
+                    email: "marigoldmagick@harshaagurnani.com",
                   },
                 },
               },
@@ -159,7 +203,7 @@ const ServicesPage = ({ setIsCartOpen }) => {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <Header setIsCartOpen={setIsCartOpen} />
+        <Header />
 
         <section className="relative overflow-hidden pt-20 pb-8 md:flex md:min-h-[820px] md:items-center md:py-32 sacred-pattern">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:relative md:z-10">
@@ -293,7 +337,7 @@ const ServicesPage = ({ setIsCartOpen }) => {
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {services.map((service, index) => (
                 <ServiceCard key={index} {...service} index={index} />
               ))}
@@ -301,7 +345,7 @@ const ServicesPage = ({ setIsCartOpen }) => {
           </div>
         </section>
 
-        <section className="py-24 bg-card/30">
+        <section id="book-session" className="py-24 bg-card/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -321,11 +365,12 @@ const ServicesPage = ({ setIsCartOpen }) => {
                 holistic approach to transformation. Book your session today and
                 step into your power.
               </p>
+              <ProductsList />
               <Button
                 asChild
-                className="gold-gradient h-12 px-8 shadow-lg shadow-gold/20 hover:opacity-95"
+                className="gold-gradient mt-10 h-12 px-8 shadow-lg shadow-gold/20 hover:opacity-95"
               >
-                <Link to="/shop">Book now</Link>
+                <Link to="/contact">Contact us</Link>
               </Button>
             </motion.div>
           </div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Main pages sitemap -->
+  <sitemap>
+    <loc>https://marigoldmagick.com/sitemap.xml</loc>
+    <lastmod>2025-01-15</lastmod>
+  </sitemap>
+  
+  <!-- Products sitemap -->
+  <sitemap>
+    <loc>https://marigoldmagick.com/sitemap-products.xml</loc>
+    <lastmod>2025-01-15</lastmod>
+  </sitemap>
+
+</sitemapindex>

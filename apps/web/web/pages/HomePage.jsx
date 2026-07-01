@@ -10,7 +10,7 @@ import Footer from "@/components/Footer.jsx";
 import heroImage from "../../src/assets/image/Home/94df01f4-c24e-4b82-b50a-f0e877274dc5.webp";
 import homeBackgroundImage from "../../src/assets/image/Home/e5e6ce08-5c58-4867-9dec-0c1d9f9371e4.webp";
 
-const HomePage = ({ setIsCartOpen }) => {
+const HomePage = () => {
   const [showProgramPopup, setShowProgramPopup] = useState(false);
   const [hasProgramPromptLoaded, setHasProgramPromptLoaded] = useState(false);
 
@@ -73,21 +73,72 @@ const HomePage = ({ setIsCartOpen }) => {
     <>
       <Helmet>
         <title>
-          Midas Touch Magick - Transform your life through ancient wisdom
+          Marigold Magick - Transform your life through ancient wisdom
         </title>
         <meta
           name="description"
           content="Discover abundance, healing, and transformation through tarot readings, EFT tapping, tantra practices, and compassionate counselling. Begin your journey today."
         />
+        <meta
+          name="keywords"
+          content="tarot reading, EFT tapping, tantra practices, spiritual counselling, healing services, spiritual guidance, life coaching, energy healing, transformation, abundance mindset"
+        />
+        <meta name="author" content="Marigold Magick" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href="https://marigoldmagick.com/" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Marigold Magick - Transform your life through ancient wisdom"
+        />
+        <meta
+          property="og:description"
+          content="Discover abundance, healing, and transformation through tarot readings, EFT tapping, tantra practices, and compassionate counselling."
+        />
+        <meta property="og:url" content="https://marigoldmagick.com/" />
+        <meta property="og:site_name" content="Marigold Magick" />
+        <meta
+          property="og:image"
+          content="https://marigoldmagick.com/logo.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Marigold Magick - Transform your life through ancient wisdom"
+        />
+        <meta
+          name="twitter:description"
+          content="Discover abundance, healing, and transformation through tarot readings, EFT tapping, tantra practices, and compassionate counselling."
+        />
+        <meta
+          name="twitter:image"
+          content="https://marigoldmagick.com/logo.png"
+        />
+
+        {/* Additional SEO Meta Tags */}
+        <meta name="theme-color" content="#D4AF37" />
+        <meta name="geo.region" content="IN" />
+        <meta name="geo.placename" content="India" />
+        <meta name="language" content="English" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            name: "Midas Touch Magick",
+            name: "Marigold Magick",
             description:
               "Transform your life through ancient wisdom. Experience profound transformation through tarot, EFT tapping, tantra, and compassionate counselling.",
-            url: "https://midastouch-magick.com",
-            image: "https://midastouch-magick.com/logo.png",
+            url: "https://marigoldmagick.com",
+            image: "https://marigoldmagick.com/logo.png",
+            telephone: "+918698304955",
+            email: "marigoldmagick@harshaagurnani.com",
             address: {
               "@type": "PostalAddress",
               addressCountry: "IN",
@@ -115,6 +166,10 @@ const HomePage = ({ setIsCartOpen }) => {
                     name: "Tarot Reading",
                     description:
                       "Intuitive tarot readings for clarity and guidance",
+                    provider: {
+                      "@type": "Organization",
+                      name: "Marigold Magick",
+                    },
                   },
                 },
                 {
@@ -124,6 +179,10 @@ const HomePage = ({ setIsCartOpen }) => {
                     name: "EFT Tapping",
                     description:
                       "Emotional freedom technique for healing and release",
+                    provider: {
+                      "@type": "Organization",
+                      name: "Marigold Magick",
+                    },
                   },
                 },
                 {
@@ -133,6 +192,10 @@ const HomePage = ({ setIsCartOpen }) => {
                     name: "Tantra Practices",
                     description:
                       "Sacred connection and spiritual intimacy guidance",
+                    provider: {
+                      "@type": "Organization",
+                      name: "Marigold Magick",
+                    },
                   },
                 },
                 {
@@ -142,6 +205,10 @@ const HomePage = ({ setIsCartOpen }) => {
                     name: "Counselling",
                     description:
                       "Compassionate professional counselling and life coaching",
+                    provider: {
+                      "@type": "Organization",
+                      name: "Marigold Magick",
+                    },
                   },
                 },
               ],
@@ -150,13 +217,18 @@ const HomePage = ({ setIsCartOpen }) => {
               "@type": "AggregateRating",
               ratingValue: "5.0",
               reviewCount: "127",
+              bestRating: "5",
+              worstRating: "1",
             },
+            sameAs: [
+              "https://www.instagram.com/harshaa.marigoldmagick",
+            ],
           })}
         </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <Header setIsCartOpen={setIsCartOpen} />
+        <Header />
 
         {showProgramPopup && (
           <div
@@ -326,7 +398,7 @@ const HomePage = ({ setIsCartOpen }) => {
                         <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Button>
                     </Link>
-                    <Link to="/shop">
+                    <Link to="/services#book-session">
                       <Button
                         size="lg"
                         variant="outline"
@@ -378,7 +450,7 @@ const HomePage = ({ setIsCartOpen }) => {
                   id="features-heading"
                   className="text-4xl md:text-5xl font-extrabold text-foreground mb-6"
                 >
-                  Why choose Midas Touch Magick
+                  Why choose Marigold Magick
                 </h2>
                 <p className="text-xl font-medium text-muted-foreground max-w-2xl mx-auto">
                   A unique blend of ancient practices and modern healing
@@ -434,8 +506,8 @@ const HomePage = ({ setIsCartOpen }) => {
                   <p className="text-xl font-semibold text-muted-foreground mb-6 leading-relaxed">
                     Whether you seek clarity through tarot, emotional release
                     through EFT tapping, sacred connection through tantra, or
-                    compassionate support through counselling, Midas Touch
-                    Magick offers a path to your highest self.
+                    compassionate support through counselling, Marigold Magick
+                    offers a path to your highest self.
                   </p>
                   <p className="text-lg font-medium text-muted-foreground mb-10 leading-relaxed">
                     Each session is crafted with deep intention, blending

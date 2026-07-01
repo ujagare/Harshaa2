@@ -11,7 +11,7 @@ const SuccessPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>Order confirmed - Midas Touch Magick</title>
+        <title>Order confirmed - Marigold Magick</title>
         <meta
           name="description"
           content="Your session has been booked successfully. We look forward to guiding you on your transformation journey."
@@ -43,7 +43,7 @@ const SuccessPage = ({ setIsCartOpen }) => {
               </h1>
 
               <p className="mx-auto text-center text-xl text-muted-foreground mb-8 leading-relaxed">
-                Thank you for choosing Midas Touch Magick. You will receive a
+                Thank you for choosing Marigold Magick. You will receive a
                 confirmation email shortly with all the details for your
                 upcoming session.
               </p>

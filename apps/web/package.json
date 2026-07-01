@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite --host :: --port 3000",
     "build": "vite build",
+    "postbuild": "node scripts/generate-sitemap.js",
     "start": "vite preview --host :: --port 3000",
     "lint": "eslint . --quiet",
-    "lint:warn": "eslint ."
+    "lint:warn": "eslint .",
+    "sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -60,6 +62,7 @@
     "react-router-dom": "^7.17.0",
     "recharts": "^2.15.4",
     "sonner": "^2.0.7",
+    "resend": "^4.2.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",

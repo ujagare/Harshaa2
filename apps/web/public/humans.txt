@@ -1,0 +1,47 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Creator & Spiritual Guide: Harshaa
+    Contact: hello [at] marigoldmagick.com
+    Location: India
+
+# THANKS
+
+    To all our clients who trusted us on their transformation journey
+    To the ancient wisdom keepers who paved the path
+    To everyone supporting holistic healing and spiritual growth
+
+# TECHNOLOGY COLOPHON
+
+    Frontend Framework: React
+    Build Tool: Vite
+    Styling: Tailwind CSS
+    UI Components: shadcn/ui
+    Animations: Framer Motion
+    Routing: React Router
+    Hosting: Vercel
+    Version Control: Git
+
+# SITE
+
+    Last update: 2025/01/15
+    Language: English / Hindi
+    Standards: HTML5, CSS3, ES6+, Accessibility, SEO
+    Components: React, JSX
+    IDE: VS Code
+
+# SPECIAL FEATURES
+
+    ✨ Schema Markup for Rich Snippets
+    ✨ Open Graph & Twitter Cards
+    ✨ Responsive Design
+    ✨ Fast Loading (Optimized Images)
+    ✨ Accessible (WCAG Guidelines)
+    ✨ SEO Optimized
+    ✨ Progressive Web App Ready
+
+# VALUES
+
+    Authenticity, Compassion, Transformation, Integrity, Sacred Connection

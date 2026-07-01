@@ -24,6 +24,7 @@ const ContactPage = ({ setIsCartOpen }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,14 +41,40 @@ const ContactPage = ({ setIsCartOpen }) => {
     setIsSubmitting(true);
 
     try {
-      const submissions = JSON.parse(
-        localStorage.getItem("contact_submissions") || "[]",
-      );
-      submissions.push({
-        ...formData,
-        timestamp: new Date().toISOString(),
+      const { name, email, phone, message } = formData;
+
+      if (!name.trim() || !email.trim() || !message.trim()) {
+        throw new Error("All fields are required");
+      }
+
+      if (name.trim().length < 2) {
+        throw new Error("Name must be at least 2 characters");
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+        throw new Error("Please enter a valid email address");
+      }
+
+      if (message.trim().length < 10) {
+        throw new Error("Message must be at least 10 characters");
+      }
+
+      const res = await fetch("/api/send-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          message: message.trim(),
+        }),
       });
-      localStorage.setItem("contact_submissions", JSON.stringify(submissions));
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
 
       toast({
         title: "Message sent",
@@ -55,12 +82,12 @@ const ContactPage = ({ setIsCartOpen }) => {
           "Thank you for reaching out. We will respond within 24 hours.",
       });
 
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       toast({
         title: "Error",
         description:
-          "There was a problem sending your message. Please try again.",
+          error.message || "There was a problem sending your message. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -72,8 +99,8 @@ const ContactPage = ({ setIsCartOpen }) => {
     {
       icon: Mail,
       title: "Email",
-      content: "hello@midastouchmagick.com",
-      link: "mailto:hello@midastouchmagick.com",
+      content: "marigoldmagick@harshaagurnani.com",
+      link: "mailto:marigoldmagick@harshaagurnani.com",
     },
     {
       icon: Phone,
@@ -85,7 +112,7 @@ const ContactPage = ({ setIsCartOpen }) => {
       icon: MapPin,
       title: "Location",
       content: "Online & In-Person Sessions Available",
-      link: null,
+      link: "https://maps.google.com/maps/?q=18.556222,73.807889",
     },
     {
       icon: Clock,
@@ -162,10 +189,10 @@ const ContactPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>Contact - Midas Touch Magick</title>
+        <title>Contact - Marigold Magick</title>
         <meta
           name="description"
-          content="Get in touch with Midas Touch Magick. Book a session, ask questions, or learn more about our transformative services."
+          content="Get in touch with Marigold Magick. Book a session, ask questions, or learn more about our transformative services."
         />
       </Helmet>
 
@@ -244,6 +271,24 @@ const ContactPage = ({ setIsCartOpen }) => {
 
                   <div>
                     <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
+                      Phone (optional)
+                    </label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full bg-card text-foreground border-border placeholder:text-muted-foreground"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
+
+                  <div>
+                    <label
                       htmlFor="message"
                       className="block text-sm font-medium text-foreground mb-2"
                     >
@@ -289,9 +334,20 @@ const ContactPage = ({ setIsCartOpen }) => {
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       className="glass-card mystical-border rounded-xl p-6 flex items-start gap-4"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-6 h-6 text-gold" />
-                      </div>
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          target={info.link.includes("maps.google") ? "_blank" : undefined}
+                          rel={info.link.includes("maps.google") ? "noopener noreferrer" : undefined}
+                          className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0 hover:bg-gold/10 transition-colors duration-200"
+                        >
+                          <info.icon className="w-6 h-6 text-gold" />
+                        </a>
+                      ) : (
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0">
+                          <info.icon className="w-6 h-6 text-gold" />
+                        </div>
+                      )}
                       <div>
                         <h3 className="text-lg font-semibold text-foreground mb-1">
                           {info.title}
@@ -299,6 +355,8 @@ const ContactPage = ({ setIsCartOpen }) => {
                         {info.link ? (
                           <a
                             href={info.link}
+                            target={info.link.includes("maps.google") ? "_blank" : undefined}
+                            rel={info.link.includes("maps.google") ? "noopener noreferrer" : undefined}
                             className="text-muted-foreground hover:text-gold transition-colors duration-200"
                           >
                             {info.content}
@@ -312,7 +370,6 @@ const ContactPage = ({ setIsCartOpen }) => {
                     </motion.div>
                   ))}
                 </div>
-
               </motion.div>
 
               <motion.div
@@ -322,6 +379,40 @@ const ContactPage = ({ setIsCartOpen }) => {
                 className="lg:col-span-2"
               >
                 <BookingInfoCard />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-2"
+              >
+                <div className="relative overflow-hidden rounded-2xl border border-gold/25 bg-card shadow-xl shadow-primary/10">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+                  <div className="p-1 relative">
+                    <iframe
+                      src="https://maps.google.com/maps?q=18.556222,73.807889&z=14&output=embed"
+                      width="100%"
+                      height="400"
+                      style={{ border: 0, borderRadius: "12px" }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      title="Marigold Magick Location"
+                    />
+                    <a
+                      href="https://maps.google.com/maps/?q=18.556222,73.807889"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute bottom-4 right-4 z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-gold/50 bg-primary shadow-lg shadow-gold/20 transition-all duration-200 hover:scale-105 hover:bg-gold hover:text-primary active:scale-95"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>

@@ -45,7 +45,7 @@ const HomePage = ({ setIsCartOpen }) => {
     <>
       <Helmet>
         <title>
-          Midas Touch Magick - Transform your life through ancient wisdom
+          Marigold Magick - Transform your life through ancient wisdom
         </title>
         <meta
           name="description"
@@ -207,7 +207,7 @@ const HomePage = ({ setIsCartOpen }) => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-6">
-                Why choose Midas Touch Magick
+                Why choose Marigold Magick
               </h2>
               <p className="text-xl font-medium text-muted-foreground max-w-2xl mx-auto">
                 A unique blend of ancient practices and modern healing
@@ -257,7 +257,7 @@ const HomePage = ({ setIsCartOpen }) => {
                 <p className="text-xl font-semibold text-muted-foreground mb-6 leading-relaxed">
                   Whether you seek clarity through tarot, emotional release
                   through EFT tapping, sacred connection through tantra, or
-                  compassionate support through counselling, Midas Touch Magick
+                  compassionate support through counselling, Marigold Magick
                   offers a path to your highest self.
                 </p>
                 <p className="text-lg font-medium text-muted-foreground mb-10 leading-relaxed">

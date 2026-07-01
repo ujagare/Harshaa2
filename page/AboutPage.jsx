@@ -16,10 +16,10 @@ const AboutPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>About Midas Touch Magick - Our story and philosophy</title>
+        <title>About Marigold Magick - Our story and philosophy</title>
         <meta
           name="description"
-          content="Discover the journey, philosophy, and credentials behind Midas Touch Magick. Learn how ancient wisdom meets modern healing to create transformation."
+          content="Discover the journey, philosophy, and credentials behind Marigold Magick. Learn how ancient wisdom meets modern healing to create transformation."
         />
       </Helmet>
 
@@ -35,7 +35,7 @@ const AboutPage = ({ setIsCartOpen }) => {
               className="max-w-4xl mx-auto text-center mb-16"
             >
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-                The story of Midas Touch Magick
+                The story of Marigold Magick
               </h1>
               <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
                 Where ancient wisdom meets modern healing to unlock your true
@@ -75,7 +75,7 @@ const AboutPage = ({ setIsCartOpen }) => {
                   A journey of transformation
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Midas Touch Magick was born from a deep calling to bridge the
+                  Marigold Magick was born from a deep calling to bridge the
                   ancient mystical arts with modern healing practices. After
                   years of personal transformation and study across multiple
                   disciplines, I discovered that true abundance flows when we

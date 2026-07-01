@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  BrowserRouter as Router,
+} from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { AnimatePresence, motion } from "framer-motion";
 import SmoothScroll from "./components/SmoothScroll";
 import HeadingAnimations from "./components/HeadingAnimations";
 import ScrollToTop from "./components/ScrollToTop";
-import ShoppingCart from "./components/ShoppingCart";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
-import ShopPage from "./pages/ShopPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import ContactPage from "./pages/ContactPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
@@ -17,7 +20,6 @@ import SuccessPage from "./pages/SuccessPage";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -33,37 +35,15 @@ function App() {
       <SmoothScroll />
       <HeadingAnimations />
       <ScrollToTop />
-      <ShoppingCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
       <Routes>
-        <Route path="/" element={<HomePage setIsCartOpen={setIsCartOpen} />} />
-        <Route
-          path="/about"
-          element={<AboutPage setIsCartOpen={setIsCartOpen} />}
-        />
-        <Route
-          path="/services"
-          element={<ServicesPage setIsCartOpen={setIsCartOpen} />}
-        />
-        <Route
-          path="/shop"
-          element={<ShopPage setIsCartOpen={setIsCartOpen} />}
-        />
-        <Route
-          path="/testimonials"
-          element={<TestimonialsPage setIsCartOpen={setIsCartOpen} />}
-        />
-        <Route
-          path="/contact"
-          element={<ContactPage setIsCartOpen={setIsCartOpen} />}
-        />
-        <Route
-          path="/product/:id"
-          element={<ProductDetailPage setIsCartOpen={setIsCartOpen} />}
-        />
-        <Route
-          path="/success"
-          element={<SuccessPage setIsCartOpen={setIsCartOpen} />}
-        />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/shop" element={<Navigate to="/services" replace />} />
+        <Route path="/testimonials" element={<TestimonialsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/product/:id" element={<ProductDetailPage />} />
+        <Route path="/success" element={<SuccessPage />} />
       </Routes>
       <Toaster />
       <AnimatePresence>

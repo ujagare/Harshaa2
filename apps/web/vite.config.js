@@ -12,4 +12,12 @@ export default defineConfig({
       { find: "@", replacement: path.resolve(__dirname, "web") },
     ],
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:3001",
+        changeOrigin: true,
+      },
+    },
+  },
 });

@@ -38,10 +38,10 @@ const ServiceCard = ({
           <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-xl border border-gold/30 bg-primary text-primary-foreground shadow-lg shadow-primary/15 transition-all duration-300 group-hover:scale-105 group-hover:bg-gold group-hover:text-primary">
             <Icon className="h-8 w-8" />
           </div>
-          <h3 className="mb-3 text-2xl font-semibold text-foreground">
+          <h3 className="mb-3 text-2xl font-semibold text-foreground break-words">
             {title}
           </h3>
-          <p className="text-base leading-relaxed text-muted-foreground">
+          <p className="text-base leading-relaxed text-muted-foreground break-words">
             {description}
           </p>
         </div>
@@ -55,7 +55,7 @@ const ServiceCard = ({
               {benefits.map((benefit, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start gap-3 text-muted-foreground"
+                  className="flex items-start gap-3 text-muted-foreground break-words"
                 >
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold" />
                   <span>{benefit}</span>
@@ -66,7 +66,7 @@ const ServiceCard = ({
         )}
 
         <div className="mt-auto">
-          <Link to="/shop">
+          <Link to="/services#book-session">
             <Button className="gold-gradient group w-full rounded-xl font-semibold shadow-lg shadow-gold/15 transition-all duration-200 hover:opacity-95 active:scale-[0.98]">
               Book now
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

@@ -8,19 +8,80 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
-const SuccessPage = ({ setIsCartOpen }) => {
+const SuccessPage = () => {
   return (
     <>
       <Helmet>
-        <title>Order confirmed - Midas Touch Magick</title>
+        <title>Order Confirmed - Marigold Magick</title>
         <meta
           name="description"
           content="Your session has been booked successfully. We look forward to guiding you on your transformation journey."
         />
+        <meta
+          name="keywords"
+          content="order confirmation, session booked, booking confirmed, healing appointment confirmed"
+        />
+        <meta name="author" content="Marigold Magick" />
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href="https://marigoldmagick.com/success" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Booking Confirmed - Marigold Magick"
+        />
+        <meta
+          property="og:description"
+          content="Your healing session has been booked successfully. Thank you for choosing Marigold Magick."
+        />
+        <meta
+          property="og:url"
+          content="https://marigoldmagick.com/success"
+        />
+        <meta property="og:site_name" content="Marigold Magick" />
+        <meta
+          property="og:image"
+          content="https://marigoldmagick.com/logo.png"
+        />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="Booking Confirmed - Marigold Magick"
+        />
+        <meta
+          name="twitter:description"
+          content="Your healing session has been booked successfully."
+        />
+        <meta
+          name="twitter:image"
+          content="https://marigoldmagick.com/logo.png"
+        />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "OrderConfirmation",
+            name: "Session Booking Confirmation",
+            description:
+              "Your healing session booking has been confirmed successfully",
+            url: "https://marigoldmagick.com/success",
+            provider: {
+              "@type": "ProfessionalService",
+              name: "Marigold Magick",
+              telephone: "+918698304955",
+              email: "marigoldmagick@harshaagurnani.com",
+              url: "https://marigoldmagick.com",
+            },
+            confirmationNumber: `MTM-${Date.now()}`,
+            orderStatus: "https://schema.org/OrderProcessing",
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <Header setIsCartOpen={setIsCartOpen} />
+        <Header />
 
         <section className="py-24 min-h-[80vh] flex items-center justify-center sacred-pattern">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +105,7 @@ const SuccessPage = ({ setIsCartOpen }) => {
               </AnimatedHeading>
 
               <p className="mx-auto text-center text-xl text-muted-foreground mb-8 leading-relaxed">
-                Thank you for choosing Midas Touch Magick. You will receive a
+                Thank you for choosing Marigold Magick. You will receive a
                 confirmation email shortly with all the details for your
                 upcoming session.
               </p>
@@ -52,7 +113,10 @@ const SuccessPage = ({ setIsCartOpen }) => {
               <div className="glass-card mystical-border rounded-2xl p-8 mb-8">
                 <div className="flex items-center gap-2 justify-center mb-4">
                   <Sparkles className="w-5 h-5 text-gold" />
-                  <AnimatedHeading as="h2" className="text-2xl font-semibold text-foreground">
+                  <AnimatedHeading
+                    as="h2"
+                    className="text-2xl font-semibold text-foreground"
+                  >
                     What happens next
                   </AnimatedHeading>
                 </div>
@@ -96,7 +160,7 @@ const SuccessPage = ({ setIsCartOpen }) => {
                     Return home
                   </Button>
                 </Link>
-                <Link to="/shop">
+                <Link to="/services#book-session">
                   <Button
                     size="lg"
                     variant="outline"

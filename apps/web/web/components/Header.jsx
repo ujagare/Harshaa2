@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ShoppingCart, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCart } from "@/hooks/useCart";
 
-const Header = ({ setIsCartOpen }) => {
+const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { cartItems } = useCart();
   const location = useLocation();
-
-  const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/services", label: "Services" },
-    { path: "/shop", label: "Shop" },
     { path: "/testimonials", label: "Testimonials" },
     { path: "/contact", label: "Contact" },
   ];
@@ -27,13 +22,19 @@ const Header = ({ setIsCartOpen }) => {
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center gap-3 group">
             <img
               src="https://horizons-cdn.hostinger.com/12f1c95e-a67a-464e-a0a4-a46d26305cdc/d9e7723ef011faded6b7146d183ce626.png"
               loading="eager"
-              alt="Midas Touch Magick Triple Moon Symbol Logo"
+              alt="Marigold Magick Triple Moon Symbol Logo"
               className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
+            <span
+              className="text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-gold hidden sm:block"
+              style={{ fontFamily: "Cinzel, serif" }}
+            >
+              Marigold Magick
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -60,19 +61,14 @@ const Header = ({ setIsCartOpen }) => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button
-              onClick={() => setIsCartOpen(true)}
-              variant="ghost"
-              size="icon"
-              className="relative text-foreground hover:text-gold transition-colors duration-200"
+            <a
+              href="https://wa.me/918698304955"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full border border-gold/50 bg-gold/10 flex items-center justify-center group hover:border-gold hover:bg-gold duration-300"
             >
-              <ShoppingCart className="h-5 w-5" />
-              {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full gold-gradient text-primary text-xs font-bold flex items-center justify-center">
-                  {itemCount}
-                </span>
-              )}
-            </Button>
+              <MessageCircle className="w-5 h-5 text-gold group-hover:text-primary duration-300" />
+            </a>
 
             <Button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -114,7 +110,7 @@ const Header = ({ setIsCartOpen }) => {
                       Menu
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      Explore Midas Touch Magick
+                      Explore Marigold Magick
                     </p>
                   </div>
                   <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-bold text-gold-dark">
@@ -149,7 +145,7 @@ const Header = ({ setIsCartOpen }) => {
                 </div>
 
                 <Link
-                  to="/shop"
+                  to="/services"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="gold-gradient mt-5 flex h-12 items-center justify-center rounded-xl font-bold shadow-lg shadow-gold/15 transition-all duration-200 active:scale-[0.98]"
                 >

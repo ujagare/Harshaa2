@@ -1,0 +1,22 @@
+Contact: mailto:marigoldmagick@harshaagurnani.com
+Expires: 2026-01-15T00:00:00.000Z
+Preferred-Languages: en, hi
+Canonical: https://marigoldmagick.com/.well-known/security.txt
+
+# Security Policy for Marigold Magick
+# If you discover a security vulnerability, please report it responsibly
+
+Contact: https://marigoldmagick.com/contact
+Policy: https://marigoldmagick.com/security-policy
+Acknowledgments: https://marigoldmagick.com/security-acknowledgments
+Contact: mailto:marigoldmagick@harshaagurnani.com
+Expires: 2026-01-15T00:00:00.000Z
+Preferred-Languages: en, hi
+Canonical: https://marigoldmagick.com/.well-known/security.txt
+
+# Security Policy for Marigold Magick
+# If you discover a security vulnerability, please report it responsibly
+
+Contact: https://marigoldmagick.com/contact
+Policy: https://marigoldmagick.com/security-policy
+Acknowledgments: https://marigoldmagick.com/security-acknowledgments

@@ -11,7 +11,7 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
       name: "Maya Chen",
       photo: null,
       testimonial:
-        "Working with Midas Touch Magick completely transformed my relationship with abundance. The tarot readings gave me clarity I had been seeking for years, and the EFT tapping sessions released blocks I did not even know I was carrying.",
+        "Working with Marigold Magick completely transformed my relationship with abundance. The tarot readings gave me clarity I had been seeking for years, and the EFT tapping sessions released blocks I did not even know I was carrying.",
       transformation:
         "Manifested a 47% increase in income within three months and attracted my dream partnership",
     },
@@ -51,7 +51,7 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
       name: "Chen Wei",
       photo: null,
       testimonial:
-        "After years of feeling stuck, the sessions at Midas Touch Magick helped me break through limiting beliefs about money and success. The shifts have been profound and lasting.",
+        "After years of feeling stuck, the sessions at Marigold Magick helped me break through limiting beliefs about money and success. The shifts have been profound and lasting.",
       transformation:
         "Cleared money blocks, doubled business revenue, and attracted abundant opportunities",
     },
@@ -60,7 +60,7 @@ const TestimonialsPage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>Testimonials - Midas Touch Magick</title>
+        <title>Testimonials - Marigold Magick</title>
         <meta
           name="description"
           content="Read real transformation stories from our clients. Discover how tarot, EFT tapping, tantra, and counselling have changed lives."
