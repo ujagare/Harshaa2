@@ -14,5 +14,8 @@
 	},
 	"workspaces": [
 		"apps/*"
-	]
+	],
+	"dependencies": {
+		"resend": "^6.16.0"
+	}
 }
