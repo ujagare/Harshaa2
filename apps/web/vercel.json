@@ -27,6 +27,16 @@
   ],
   "routes": [
     {
+      "src": "/sitemap(-.*)?\\.(xml|txt)",
+      "headers": { "Content-Type": "application/xml; charset=utf-8" },
+      "dest": "/$0"
+    },
+    {
+      "src": "/robots\\.txt",
+      "headers": { "Content-Type": "text/plain; charset=utf-8" },
+      "dest": "/robots.txt"
+    },
+    {
       "src": "/api/send-contact",
       "dest": "/api/send-contact.cjs"
     },
