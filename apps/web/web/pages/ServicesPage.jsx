@@ -261,12 +261,9 @@ const ServicesPage = () => {
                         A 6-week Deep Transformation Experience
                       </span>
                     </div>
-                    <AnimatedHeading
-                      as="h2"
-                      className="mb-5 text-3xl font-bold text-primary-foreground md:text-5xl"
-                    >
+                    <h2 className="mb-5 text-3xl font-bold text-primary-foreground md:text-5xl">
                       Abundance Breakthrough Program
-                    </AnimatedHeading>
+                    </h2>
                     <p className="mb-5 max-w-none text-lg text-primary-foreground/85">
                       A transformative 4 session package combining Oracle, EFT
                       and counselling to unlock your full abundance potential.
@@ -360,12 +357,9 @@ const ServicesPage = () => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <AnimatedHeading
-                as="h2"
-                className="text-4xl md:text-5xl font-bold text-foreground mb-6"
-              >
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Ready to begin your journey?
-              </AnimatedHeading>
+              </h2>
               <p className="mx-auto text-center text-xl text-muted-foreground mb-8 leading-relaxed">
                 Each service can be experienced individually or combined for a
                 holistic approach to transformation. Book your session today and
