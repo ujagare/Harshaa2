@@ -206,45 +206,41 @@ const ServicesPage = () => {
         <Header />
 
         <section className="relative overflow-hidden pt-20 pb-8 md:pt-32 md:pb-16 sacred-pattern">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid md:grid-cols-2 gap-8 items-center min-h-[500px]">
-              {/* Text Content - Left Side */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="order-2 md:order-1"
-              >
-                <div className="max-w-2xl">
-                  <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                    Our services
-                  </AnimatedHeading>
-                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Choose the path that calls to your soul. Each modality
-                    offers unique gifts on your journey to transformation.
-                  </p>
-                </div>
-              </motion.div>
+          {/* Background Image */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 z-0"
+          >
+            <img
+              src={tarotServiceImage}
+              loading="eager"
+              width="1920"
+              height="1080"
+              alt="Tarot reading cards spread on mystical table with spiritual guidance elements"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
 
-              {/* Image - Right Side */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="order-1 md:order-2"
-              >
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src={tarotServiceImage}
-                    loading="eager"
-                    width="600"
-                    height="800"
-                    alt="Tarot reading cards spread on mystical table with spiritual guidance elements"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </motion.div>
-            </div>
+          {/* Centered Text Content */}
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl mx-auto text-center py-24 md:py-32"
+            >
+              <div className="backdrop-blur-md bg-background/95 rounded-2xl p-8 md:p-12 shadow-2xl border border-border/50">
+                <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+                  Our services
+                </AnimatedHeading>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  Choose the path that calls to your soul. Each modality offers
+                  unique gifts on your journey to transformation.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
 
