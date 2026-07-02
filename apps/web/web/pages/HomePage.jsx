@@ -558,7 +558,8 @@ const HomePage = () => {
                     id="transformation-heading"
                     className="text-4xl md:text-6xl font-extrabold text-foreground mb-8 leading-tight"
                   >
-                    Begin your transformation
+                    <span className="block whitespace-nowrap">Begin your</span>
+                    <span className="block whitespace-nowrap">transformation</span>
                   </h2>
                   <p className="text-xl font-semibold text-muted-foreground mb-6 leading-relaxed">
                     Whether you seek clarity through tarot, emotional release
