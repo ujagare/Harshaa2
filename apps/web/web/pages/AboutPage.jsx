@@ -6,10 +6,9 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
-const AboutPage = () => {
-  const transformationImage =
-    "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=85";
+import heroImage from "../../src/assets/image/Home/photo-1506126613408-eca07ce68773.avif";
 
+const AboutPage = () => {
   const credentials = [
     { icon: Award, text: "Certified Tarot Reader & Intuitive Guide" },
     { icon: Heart, text: "Licensed EFT Practitioner" },
@@ -20,10 +19,10 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Marigold Magick - Our story and philosophy</title>
+        <title>About Harshaa Gurnani - Marigold Magick</title>
         <meta
           name="description"
-          content="Discover the journey, philosophy, and credentials behind Marigold Magick. Learn how ancient wisdom meets modern healing to create transformation."
+          content="Meet Harshaa Gurnani, the practitioner behind Marigold Magick, and discover her journey, philosophy, and healing credentials."
         />
         <meta
           name="keywords"
@@ -37,11 +36,11 @@ const AboutPage = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="About Marigold Magick - Our story and philosophy"
+          content="About Harshaa Gurnani - Marigold Magick"
         />
         <meta
           property="og:description"
-          content="Discover the journey, philosophy, and credentials behind Marigold Magick. Learn how ancient wisdom meets modern healing to create transformation."
+          content="Meet Harshaa Gurnani, the practitioner behind Marigold Magick, and discover her journey, philosophy, and healing credentials."
         />
         <meta property="og:url" content="https://marigoldmagick.com/about" />
         <meta property="og:site_name" content="Marigold Magick" />
@@ -54,11 +53,11 @@ const AboutPage = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="About Marigold Magick - Our story and philosophy"
+          content="About Harshaa Gurnani - Marigold Magick"
         />
         <meta
           name="twitter:description"
-          content="Discover the journey, philosophy, and credentials behind Marigold Magick."
+          content="Meet Harshaa Gurnani, the practitioner behind Marigold Magick."
         />
         <meta
           name="twitter:image"
@@ -80,7 +79,7 @@ const AboutPage = () => {
               foundingDate: "2020",
               founder: {
                 "@type": "Person",
-                name: "Marigold Magick Practitioner",
+                name: "Harshaa Gurnani",
                 jobTitle: "Certified Healer & Life Coach",
                 hasCredential: [
                   {
@@ -133,11 +132,11 @@ const AboutPage = () => {
                   id="about-main-heading"
                   className="text-5xl md:text-6xl font-bold text-foreground mb-6"
                 >
-                  The story of Marigold Magick
+                  Meet Harshaa Gurnani
                 </h1>
                 <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
-                  Where ancient wisdom meets modern healing to unlock your true
-                  potential
+                  The heart behind Marigold Magick, where ancient wisdom meets
+                  modern healing.
                 </p>
               </motion.div>
             </div>
@@ -155,9 +154,11 @@ const AboutPage = () => {
                 >
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden mystical-border">
                     <img
-                      src={transformationImage}
+                      src={heroImage}
                       loading="lazy"
-                      alt="Woman meditating in a peaceful healing practice"
+                      width="600"
+                      height="750"
+                      alt="Spiritual healing and meditation practice for inner transformation"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -177,11 +178,13 @@ const AboutPage = () => {
                     A journey of transformation
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    Marigold Magick was born from a deep calling to bridge
-                    the ancient mystical arts with modern healing practices.
-                    After years of personal transformation and study across
-                    multiple disciplines, I discovered that true abundance flows
-                    when we align our inner wisdom with practical action.
+                    I am Harshaa Gurnani, the founder and practitioner behind
+                    Marigold Magick. This work was born from a deep calling to
+                    bridge the ancient mystical arts with modern healing
+                    practices. After years of personal transformation and study
+                    across multiple disciplines, I discovered that true
+                    abundance flows when we align our inner wisdom with
+                    practical action.
                   </p>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     My path began with a profound spiritual awakening that led

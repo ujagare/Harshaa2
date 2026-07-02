@@ -38,10 +38,10 @@ const ServiceCard = ({
           <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-xl border border-gold/30 bg-primary text-primary-foreground shadow-lg shadow-primary/15 transition-all duration-300 group-hover:scale-105 group-hover:bg-gold group-hover:text-primary">
             <Icon className="h-8 w-8" />
           </div>
-          <h3 className="mb-3 text-2xl font-semibold text-foreground break-words">
+          <h3 className="mb-3 text-2xl font-semibold text-foreground word-break-safe">
             {title}
           </h3>
-          <p className="text-base leading-relaxed text-muted-foreground break-words">
+          <p className="text-base leading-relaxed text-muted-foreground word-break-safe">
             {description}
           </p>
         </div>
@@ -55,10 +55,10 @@ const ServiceCard = ({
               {benefits.map((benefit, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start gap-3 text-muted-foreground break-words"
+                  className="flex items-start gap-3 text-muted-foreground word-break-safe"
                 >
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold" />
-                  <span>{benefit}</span>
+                  <span className="word-break-safe">{benefit}</span>
                 </li>
               ))}
             </ul>

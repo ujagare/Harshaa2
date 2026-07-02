@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import {
   Navigate,
   Route,
@@ -7,19 +7,32 @@ import {
 } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { AnimatePresence, motion } from "framer-motion";
-import SmoothScroll from "./components/SmoothScroll";
-import HeadingAnimations from "./components/HeadingAnimations";
-import ScrollToTop from "./components/ScrollToTop";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ServicesPage from "./pages/ServicesPage";
-import TestimonialsPage from "./pages/TestimonialsPage";
-import ContactPage from "./pages/ContactPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
-import SuccessPage from "./pages/SuccessPage";
-import PrivacyPage from "./pages/PrivacyPage";
-import TermsPage from "./pages/TermsPage";
+
+// Lazy load pages for code splitting
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const TestimonialsPage = lazy(() => import("./pages/TestimonialsPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const ProductDetailPage = lazy(() => import("./pages/ProductDetailPage"));
+const SuccessPage = lazy(() => import("./pages/SuccessPage"));
+const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
+const TermsPage = lazy(() => import("./pages/TermsPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+
+// Lazy load heavy components
+const SmoothScroll = lazy(() => import("./components/SmoothScroll"));
+const HeadingAnimations = lazy(() => import("./components/HeadingAnimations"));
+const ScrollToTop = lazy(() => import("./components/ScrollToTop"));
+
 import { Toaster } from "@/components/ui/toaster";
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-screen bg-background">
+    <div className="h-16 w-16 animate-spin rounded-full border-4 border-gold border-t-transparent"></div>
+  </div>
+);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,28 +40,33 @@ function App() {
   useEffect(() => {
     const timer = window.setTimeout(() => {
       setIsLoading(false);
-    }, 1800);
+    }, 1800); // Original 1.8 seconds
 
     return () => window.clearTimeout(timer);
   }, []);
 
   return (
     <Router>
-      <SmoothScroll />
-      <HeadingAnimations />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/shop" element={<Navigate to="/services" replace />} />
-        <Route path="/testimonials" element={<TestimonialsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/product/:id" element={<ProductDetailPage />} />
-        <Route path="/success" element={<SuccessPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/terms" element={<TermsPage />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <SmoothScroll />
+        <HeadingAnimations />
+        <ScrollToTop />
+      </Suspense>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/shop" element={<Navigate to="/services" replace />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/success" element={<SuccessPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
       <Toaster />
       <AnimatePresence>
         {isLoading && (

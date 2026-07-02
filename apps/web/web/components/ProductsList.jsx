@@ -8,6 +8,20 @@ import { getProducts, getProductQuantities } from "@/api/EcommerceApi";
 const placeholderImage =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzc0MTUxIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzlDQTNBRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pgo8L3N2Zz4K";
 
+const ProductTitle = ({ title }) => {
+  const words = title.split(/\s+/).filter(Boolean);
+
+  return (
+    <span className="flex flex-wrap justify-center gap-x-1.5 gap-y-0">
+      {words.map((word, wordIndex) => (
+        <span key={`${word}-${wordIndex}`} className="whitespace-nowrap">
+          {word}
+        </span>
+      ))}
+    </span>
+  );
+};
+
 const ProductCard = ({ product, index }) => {
   const navigate = useNavigate();
 
@@ -42,11 +56,27 @@ const ProductCard = ({ product, index }) => {
               </div>
             )}
           </div>
-          <div className="flex flex-1 flex-col p-5">
-            <h3 className="mb-2 text-xl font-bold leading-tight text-foreground">
-              {product.title}
+          <div className="flex flex-1 flex-col p-5 text-center">
+            <h3
+              className="mb-2 text-lg font-bold leading-snug text-foreground md:text-xl"
+              style={{
+                hyphens: "none",
+                overflowWrap: "normal",
+                textWrap: "normal",
+                wordBreak: "normal",
+              }}
+            >
+              <ProductTitle title={product.title} />
             </h3>
-            <p className="mb-5 text-sm leading-relaxed text-muted-foreground line-clamp-2">
+            <p
+              className="mx-auto mb-5 text-sm leading-relaxed text-muted-foreground line-clamp-2"
+              style={{
+                hyphens: "none",
+                overflowWrap: "normal",
+                textWrap: "normal",
+                wordBreak: "normal",
+              }}
+            >
               {product.subtitle || "Check out this amazing product!"}
             </p>
             <div className="mt-auto">
@@ -145,7 +175,7 @@ const ProductsList = () => {
   }
 
   return (
-    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mx-auto grid max-w-6xl grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
       {products.map((product, index) => (
         <div key={product.id} className="h-full">
           <ProductCard product={product} index={index} />

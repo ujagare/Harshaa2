@@ -26,11 +26,17 @@ const HealingPackageCard = ({ packageData, index }) => {
       className="glass-card mystical-border rounded-2xl p-8 hover:shadow-2xl transition-mystical flex flex-col h-full"
     >
       <div className="flex-grow">
-        <h3 className="text-2xl font-semibold text-foreground mb-3 break-words">
+        <h3
+          className="text-2xl font-semibold text-foreground mb-3"
+          style={{ wordBreak: "keep-all", overflowWrap: "normal" }}
+        >
           {packageData.title}
         </h3>
         {packageData.subtitle && (
-          <p className="text-muted-foreground mb-4 break-words">
+          <p
+            className="text-muted-foreground mb-4"
+            style={{ wordBreak: "keep-all", overflowWrap: "normal" }}
+          >
             {packageData.subtitle}
           </p>
         )}
@@ -59,7 +65,18 @@ const HealingPackageCard = ({ packageData, index }) => {
           onClick={handleBookNow}
           className="w-full gold-gradient text-primary font-semibold hover:opacity-90 transition-all duration-200 active:scale-[0.98]"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="mr-2"
+          >
             <path d="M3 21l1.65-3.8A9 9 0 1 1 5.2 17.35L3 21z" />
             <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
           </svg>

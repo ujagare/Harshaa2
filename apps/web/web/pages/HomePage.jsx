@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -6,14 +6,22 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Heart, Zap, Eye, X } from "lucide-react";
 import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
-import Footer from "@/components/Footer.jsx";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register GSAP ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Lazy load Footer (below the fold)
+const Footer = lazy(() => import("@/components/Footer.jsx"));
+
 import heroImage from "../../src/assets/image/Home/94df01f4-c24e-4b82-b50a-f0e877274dc5.webp";
 import homeBackgroundImage from "../../src/assets/image/Home/e5e6ce08-5c58-4867-9dec-0c1d9f9371e4.webp";
+import transformationImage from "../../src/assets/image/Home/photo-1506126613408-eca07ce68773.avif";
 
 const HomePage = () => {
   const [showProgramPopup, setShowProgramPopup] = useState(false);
   const [hasProgramPromptLoaded, setHasProgramPromptLoaded] = useState(false);
-
   // Disable body overflow when popup is open
   useEffect(() => {
     if (showProgramPopup) {
@@ -35,9 +43,6 @@ const HomePage = () => {
       };
     }
   }, [showProgramPopup]);
-
-  const transformationImage =
-    "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=85";
 
   const features = [
     {
@@ -64,9 +69,35 @@ const HomePage = () => {
     const timer = window.setTimeout(() => {
       setHasProgramPromptLoaded(true);
       setShowProgramPopup(true);
-    }, 3600);
+    }, 5000); // Increased to 5 seconds to not block initial render
 
     return () => window.clearTimeout(timer);
+  }, []);
+
+  // GSAP Image Reveal Animation
+  useEffect(() => {
+    // Set initial clip-path for images
+    gsap.set(".image", {
+      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+    });
+
+    // Animate images on scroll
+    gsap.to(".image", {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      duration: 1.2,
+      ease: "power3.inOut",
+      scrollTrigger: {
+        trigger: ".image",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      stagger: 0.2, // Stagger animation if multiple images
+    });
+
+    // Cleanup ScrollTrigger on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
@@ -141,7 +172,16 @@ const HomePage = () => {
             email: "marigoldmagick@harshaagurnani.com",
             address: {
               "@type": "PostalAddress",
+              streetAddress: "Wakad",
+              addressLocality: "Pune",
+              addressRegion: "Maharashtra",
+              postalCode: "411057",
               addressCountry: "IN",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: "18.556222",
+              longitude: "73.807889",
             },
             priceRange: "$$",
             serviceType: [
@@ -155,6 +195,21 @@ const HomePage = () => {
               "@type": "Country",
               name: "Worldwide",
             },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ],
+                opens: "09:00",
+                closes: "18:00",
+              },
+            ],
             hasOfferCatalog: {
               "@type": "OfferCatalog",
               name: "Healing Services",
@@ -220,9 +275,7 @@ const HomePage = () => {
               bestRating: "5",
               worstRating: "1",
             },
-            sameAs: [
-              "https://www.instagram.com/harshaa.marigoldmagick",
-            ],
+            sameAs: ["https://www.instagram.com/harshaa.marigoldmagick"],
           })}
         </script>
       </Helmet>
@@ -342,8 +395,10 @@ const HomePage = () => {
               <img
                 src={homeBackgroundImage}
                 loading="lazy"
+                width="1920"
+                height="1080"
                 alt="Mystical healing background with spiritual energy and sacred ambiance"
-                className="h-full w-full -scale-x-100 object-cover"
+                className="image h-full w-full -scale-x-100 object-cover"
               />
             </div>
 
@@ -421,8 +476,10 @@ const HomePage = () => {
                     <img
                       src={heroImage}
                       loading="eager"
+                      width="800"
+                      height="1000"
                       alt="Spiritual guidance and tarot reading"
-                      className="h-full w-full object-cover"
+                      className="image w-full h-full object-cover"
                     />
                   </div>
                   <div
@@ -538,8 +595,10 @@ const HomePage = () => {
                     <img
                       src={transformationImage}
                       loading="lazy"
+                      width="800"
+                      height="1000"
                       alt="Woman meditating in a peaceful healing practice"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      className="image w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
                   <div
@@ -552,7 +611,9 @@ const HomePage = () => {
           </section>
         </main>
 
-        <Footer />
+        <Suspense fallback={<div className="h-20"></div>}>
+          <Footer />
+        </Suspense>
       </div>
     </>
   );

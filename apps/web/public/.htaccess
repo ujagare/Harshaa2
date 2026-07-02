@@ -135,9 +135,9 @@ ServerSignature Off
   Satisfy All
 </FilesMatch>
 
-# Custom Error Pages (create these pages if needed)
-# ErrorDocument 404 /404.html
-# ErrorDocument 500 /500.html
+# Custom Error Pages
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
 
 # Charset
 AddDefaultCharset UTF-8

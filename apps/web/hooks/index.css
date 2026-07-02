@@ -125,6 +125,8 @@
     font-weight: 700;
     letter-spacing: -0.02em;
     text-wrap: balance;
+    word-break: keep-all;
+    overflow-wrap: normal;
     @apply text-foreground;
   }
 
@@ -147,6 +149,8 @@
   p {
     @apply leading-relaxed max-w-prose;
     font-size: 1.125rem;
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
 
   input,
@@ -192,7 +196,8 @@
   }
 
   .sacred-pattern {
-    background-image: radial-gradient(
+    background-image:
+      radial-gradient(
         circle at 20% 50%,
         hsl(var(--gold) / 0.05) 0%,
         transparent 50%
@@ -270,5 +275,23 @@
 
   .line-clamp-3 {
     -webkit-line-clamp: 3;
+  }
+
+  .word-break-normal {
+    word-break: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  .word-break-safe {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+
+  .image {
+    will-change: clip-path;
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
 }

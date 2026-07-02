@@ -12,6 +12,34 @@ export default defineConfig({
       { find: "@", replacement: path.resolve(__dirname, "web") },
     ],
   },
+  build: {
+    // Optimize build output
+    target: "esnext",
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.logs in production
+        drop_debugger: true,
+        pure_funcs: ["console.log", "console.info"],
+      },
+    },
+    rollupOptions: {
+      output: {
+        // Manual chunk splitting for better caching
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "animation-vendor": ["framer-motion", "@lottiefiles/dotlottie-react"],
+          "ui-vendor": ["lucide-react"],
+        },
+      },
+    },
+    // Increase chunk size warning limit
+    chunkSizeWarningLimit: 1000,
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    // Source maps only for errors
+    sourcemap: false,
+  },
   server: {
     proxy: {
       "/api": {
@@ -19,5 +47,9 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-router-dom", "framer-motion"],
   },
 });
