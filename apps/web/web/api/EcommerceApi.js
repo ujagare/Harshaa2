@@ -58,7 +58,7 @@ const products = [
   },
   {
     id: "full-healing-journey",
-    title: "Full Healing Journey (6 Weeks)",
+    title: "Full Healing Journey\n(6 Weeks)",
     subtitle: "A complete guided path for deep energetic transformation.",
     description:
       "<p>A six-week healing journey combining intuitive guidance, energy alignment, and practical integration.</p>",

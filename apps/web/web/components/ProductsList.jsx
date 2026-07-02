@@ -9,8 +9,17 @@ const placeholderImage =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzc0MTUxIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzlDQTNBRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pgo8L3N2Zz4K";
 
 const ProductTitle = ({ title }) => {
+  if (title.includes("\n")) {
+    const lines = title.split("\n");
+    return (
+      <span className="flex flex-col items-center">
+        {lines.map((line, i) => (
+          <span key={i} className="block whitespace-nowrap">{line.trim()}</span>
+        ))}
+      </span>
+    );
+  }
   const words = title.split(/\s+/).filter(Boolean);
-
   return (
     <span className="flex flex-wrap justify-center gap-x-1.5 gap-y-0">
       {words.map((word, wordIndex) => (

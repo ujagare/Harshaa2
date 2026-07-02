@@ -299,7 +299,8 @@ const ServicesPage = () => {
                   <div className="grid gap-5">
                     <div className="rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 p-6">
                       <h3 className="mb-4 text-xl font-semibold text-primary-foreground">
-                        What you will achieve -
+                        <span className="block whitespace-nowrap">What you will</span>
+                        <span className="block whitespace-nowrap">achieve -</span>
                       </h3>
                       <ul className="space-y-3">
                         {programAchievements.map((item) => (
@@ -331,7 +332,8 @@ const ServicesPage = () => {
                   Jump in to experience a mindset shift like never before!
                 </p>
                 <p className="relative mt-3 max-w-none text-lg font-semibold text-primary-foreground">
-                  WhatsApp to Harshaa on +91 8698304955 to sign up.
+                  <span className="block whitespace-nowrap">WhatsApp to Harshaa</span>
+                  <span className="block whitespace-nowrap">on +91 8698304955 to sign up.</span>
                 </p>
                 <Button
                   asChild
