@@ -53,7 +53,8 @@ const HomePage = () => {
     },
     {
       icon: Heart,
-      title: "Compassionate guidance",
+      titleLine1: "Compassionate",
+      titleLine2: "guidance",
       description:
         "Experience healing in a safe, nurturing space meticulously designed for your personal transformation.",
     },
@@ -507,7 +508,8 @@ const HomePage = () => {
                   id="features-heading"
                   className="text-4xl md:text-5xl font-extrabold text-foreground mb-6"
                 >
-                  Why choose Marigold Magick
+                  <span className="block whitespace-nowrap">Why choose</span>
+                  <span className="block whitespace-nowrap">Marigold Magick</span>
                 </h2>
                 <p className="text-xl font-medium text-muted-foreground max-w-2xl mx-auto">
                   A unique blend of ancient practices and modern healing
@@ -531,7 +533,9 @@ const HomePage = () => {
                       <feature.icon className="w-8 h-8 text-gold-light" />
                     </div>
                     <h3 className="text-2xl font-bold text-card-foreground mb-4">
-                      {feature.title}
+                      {feature.titleLine1 ? (
+                        <><span className="block">{feature.titleLine1}</span><span className="block">{feature.titleLine2}</span></>
+                      ) : feature.title}
                     </h3>
                     <p className="text-card-foreground/80 font-medium leading-relaxed">
                       {feature.description}
