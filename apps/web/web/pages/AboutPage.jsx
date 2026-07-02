@@ -6,7 +6,7 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
-import heroImage from "../../src/assets/image/Home/photo-1506126613408-eca07ce68773.avif";
+import heroImage from "../../src/assets/image/Home/c729208d-761f-45e5-aa20-3155e416cea5.jpg";
 
 const AboutPage = () => {
   const credentials = [
@@ -130,9 +130,10 @@ const AboutPage = () => {
               >
                 <h1
                   id="about-main-heading"
-                  className="text-5xl md:text-6xl font-bold text-foreground mb-6"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6"
                 >
-                  Meet Harshaa Gurnani
+                  <span className="block whitespace-nowrap">Meet</span>
+                  <span className="block whitespace-nowrap">Harshaa Gurnani</span>
                 </h1>
                 <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
                   The heart behind Marigold Magick, where ancient wisdom meets
@@ -175,7 +176,8 @@ const AboutPage = () => {
                     id="journey-heading"
                     className="text-4xl font-bold text-foreground mb-6"
                   >
-                    A journey of transformation
+                    <span className="block whitespace-nowrap">A journey of</span>
+                    <span className="block whitespace-nowrap">transformation</span>
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     I am Harshaa Gurnani, the founder and practitioner behind
@@ -298,7 +300,8 @@ const AboutPage = () => {
                     </div>
                     <div>
                       <h3 className="mb-4 text-2xl font-semibold text-foreground">
-                        Empowerment through wisdom
+                        <span className="block whitespace-nowrap">Empowerment</span>
+                        <span className="block whitespace-nowrap">through wisdom</span>
                       </h3>
                       <p className="text-lg leading-relaxed text-muted-foreground">
                         Our goal is not to create dependency, but to empower you
@@ -326,7 +329,8 @@ const AboutPage = () => {
                   id="credentials-heading"
                   className="text-4xl md:text-5xl font-bold text-foreground mb-6"
                 >
-                  Credentials & training
+                  <span className="block whitespace-nowrap">Credentials &</span>
+                  <span className="block whitespace-nowrap">training</span>
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                   Years of dedicated study and practice across multiple healing
