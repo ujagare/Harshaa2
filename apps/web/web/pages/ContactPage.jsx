@@ -138,7 +138,8 @@ const ContactPage = () => {
               Private appointments
             </p>
             <h3 className="text-2xl font-semibold text-primary-foreground">
-              Booking information
+              <span className="block whitespace-nowrap">Booking</span>
+              <span className="block whitespace-nowrap">information</span>
             </h3>
           </div>
         </div>

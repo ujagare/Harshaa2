@@ -310,7 +310,9 @@ const ServicesPage = () => {
 
                     <div className="rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 p-6">
                       <h3 className="mb-4 text-xl font-semibold text-primary-foreground">
-                        A 6-week Deep Transformation Experience Includes
+                        <span className="block whitespace-nowrap">A 6-week Deep</span>
+                        <span className="block whitespace-nowrap">Transformation</span>
+                        <span className="block whitespace-nowrap">Experience Includes</span>
                       </h3>
                       <ul className="space-y-3">
                         {programIncludes.map((item) => (
@@ -358,7 +360,8 @@ const ServicesPage = () => {
               className="max-w-4xl mx-auto text-center"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Ready to begin your journey?
+                <span className="block whitespace-nowrap">Ready to begin</span>
+                <span className="block whitespace-nowrap">your journey?</span>
               </h2>
               <p className="mx-auto text-center text-xl text-muted-foreground mb-8 leading-relaxed">
                 Each service can be experienced individually or combined for a
