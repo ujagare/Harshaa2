@@ -8,6 +8,8 @@ const FROM_EMAIL = process.env.FROM_EMAIL || "onboarding@resend.dev";
 const ALLOWED_ORIGINS = [
   "https://marigoldmagick.com",
   "https://www.marigoldmagick.com",
+  "https://harshaagurnani.com",
+  "https://www.harshaagurnani.com",
   process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
   "http://localhost:3000",
   "http://localhost:3001",
@@ -42,6 +44,8 @@ function isAllowedOrigin(origin) {
     // Allow marigoldmagick.com, all vercel.app preview URLs, and localhost
     if (parsed.hostname === "marigoldmagick.com") return true;
     if (parsed.hostname === "www.marigoldmagick.com") return true;
+    if (parsed.hostname === "harshaagurnani.com") return true;
+    if (parsed.hostname === "www.harshaagurnani.com") return true;
     if (parsed.hostname.endsWith(".vercel.app")) return true;
     if (parsed.hostname === "localhost") return true;
     return ALLOWED_ORIGINS.some(
