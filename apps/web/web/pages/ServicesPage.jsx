@@ -200,6 +200,64 @@ const ServicesPage = () => {
             ],
           })}
         </script>
+
+        {/* FAQ Schema for AEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What healing services are offered at Marigold Magick?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Marigold Magick offers four main services: Tarot Readings for intuitive guidance, EFT Tapping for emotional release, Tantra Practices for sacred connection, and Professional Counselling for life transformation. All services are available online and offline.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long is a typical session?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Session durations vary by service: Tarot readings are 45-60 minutes, EFT tapping and counselling sessions are 60 minutes, and tantra sessions are 90 minutes. The Abundance Breakthrough Program includes 4 sessions over 6 weeks.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What is EFT tapping and how does it work?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "EFT (Emotional Freedom Technique) combines ancient acupressure with modern psychology. By tapping on specific meridian points while focusing on emotional issues, you can release anxiety, clear money blocks, heal trauma, and boost confidence.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Are services available online?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! Tarot readings, EFT tapping, and counselling are fully available online via video call. Tantra sessions are preferably conducted offline for deeper work but online options are available upon request.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What can I expect from a tarot reading?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "In a tarot reading, you'll receive intuitive guidance on your questions about love, career, or life purpose. The reading helps you understand energy patterns, hidden choices, and provides grounded spiritual guidance to move forward with confidence.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How much does the Abundance Breakthrough Program cost?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "The Abundance Breakthrough Program is Rs. 1,00,000 for 6 weeks. It includes 4 private 1:1 sessions combining Oracle guidance, EFT healing, and abundance mindset coaching to unlock your full potential.",
+                },
+              },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -263,7 +321,9 @@ const ServicesPage = () => {
                     </div>
                     <h2 className="mb-5 text-3xl font-bold text-primary-foreground md:text-5xl">
                       <span className="block whitespace-nowrap">Abundance</span>
-                      <span className="block whitespace-nowrap">Breakthrough</span>
+                      <span className="block whitespace-nowrap">
+                        Breakthrough
+                      </span>
                       <span className="block whitespace-nowrap">Program</span>
                     </h2>
                     <p className="mb-5 max-w-none text-lg text-primary-foreground/85">
@@ -299,8 +359,12 @@ const ServicesPage = () => {
                   <div className="grid gap-5">
                     <div className="rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 p-6">
                       <h3 className="mb-4 text-xl font-semibold text-primary-foreground">
-                        <span className="block whitespace-nowrap">What you will</span>
-                        <span className="block whitespace-nowrap">achieve -</span>
+                        <span className="block whitespace-nowrap">
+                          What you will
+                        </span>
+                        <span className="block whitespace-nowrap">
+                          achieve -
+                        </span>
                       </h3>
                       <ul className="space-y-3">
                         {programAchievements.map((item) => (
@@ -313,9 +377,15 @@ const ServicesPage = () => {
 
                     <div className="rounded-xl border border-primary-foreground/15 bg-primary-foreground/8 p-6">
                       <h3 className="mb-4 text-xl font-semibold text-primary-foreground">
-                        <span className="block whitespace-nowrap">A 6-week Deep</span>
-                        <span className="block whitespace-nowrap">Transformation</span>
-                        <span className="block whitespace-nowrap">Experience Includes</span>
+                        <span className="block whitespace-nowrap">
+                          A 6-week Deep
+                        </span>
+                        <span className="block whitespace-nowrap">
+                          Transformation
+                        </span>
+                        <span className="block whitespace-nowrap">
+                          Experience Includes
+                        </span>
                       </h3>
                       <ul className="space-y-3">
                         {programIncludes.map((item) => (
@@ -332,8 +402,12 @@ const ServicesPage = () => {
                   Jump in to experience a mindset shift like never before!
                 </p>
                 <p className="relative mt-3 max-w-none text-lg font-semibold text-primary-foreground">
-                  <span className="block whitespace-nowrap">WhatsApp to Harshaa</span>
-                  <span className="block whitespace-nowrap">on +91 8698304955 to sign up.</span>
+                  <span className="block whitespace-nowrap">
+                    WhatsApp to Harshaa
+                  </span>
+                  <span className="block whitespace-nowrap">
+                    on +91 8698304955 to sign up.
+                  </span>
                 </p>
                 <Button
                   asChild

@@ -1,0 +1,178 @@
+{
+  "businessName": "Marigold Magick",
+  "tagline": "Spiritual Healing, Tarot & Transformation in Pune",
+  "description": "Professional spiritual healing services including tarot readings, EFT tapping, tantra practices, and counselling in Pune, Maharashtra. Founded by Harshaa Gurnani, a certified spiritual healer and tarot reader.",
+  "founder": {
+    "name": "Harshaa Gurnani",
+    "role": "Spiritual Healer & Tarot Reader",
+    "expertise": ["Tarot Reading", "EFT Tapping", "Tantra Coaching", "Counselling"],
+    "experience": "5+ years",
+    "certifications": ["Certified Tarot Reader", "EFT Practitioner", "Spiritual Counsellor"]
+  },
+  "services": [
+    {
+      "name": "Tarot Readings",
+      "description": "Intuitive guidance and practical clarity through tarot cards for life decisions, relationships, career, and spiritual growth",
+      "duration": "45-60 minutes",
+      "format": "Online & Offline",
+      "bestFor": ["Life decisions", "Relationship guidance", "Career clarity", "Spiritual insight"],
+      "whatToExpect": "Receive intuitive guidance through tarot cards, understand energy patterns, and gain clarity on your path forward"
+    },
+    {
+      "name": "EFT Tapping",
+      "description": "Emotional Freedom Technique sessions for releasing emotional blocks, trauma, limiting beliefs about money, anxiety, and stress",
+      "duration": "60 minutes",
+      "format": "Online & Offline",
+      "bestFor": ["Releasing anxiety", "Clearing money blocks", "Healing trauma", "Boosting confidence"],
+      "whatToExpect": "Learn tapping techniques to release emotional blocks, clear limiting beliefs, and experience immediate relief"
+    },
+    {
+      "name": "Tantra & Sacred Sexuality",
+      "description": "Sacred intimacy practices and spiritual connection guidance to awaken your sacred energy and deepen relationships",
+      "duration": "90 minutes",
+      "format": "Offline preferred",
+      "bestFor": ["Deepening intimacy", "Awakening sacred sexuality", "Healing relationship wounds", "Embodying authentic power"],
+      "whatToExpect": "Explore sacred practices, deepen connection to yourself and partner, and awaken your divine energy"
+    },
+    {
+      "name": "Professional Counselling",
+      "description": "Compassionate counselling blending traditional therapeutic approaches with spiritual wisdom for life transitions and personal growth",
+      "duration": "60 minutes",
+      "format": "Online & Offline",
+      "bestFor": ["Life transitions", "Trauma healing", "Building healthy relationships", "Creating positive change"],
+      "whatToExpect": "Safe space to explore fears and desires, gain practical tools, and receive both spiritual and therapeutic guidance"
+    }
+  ],
+  "programs": [
+    {
+      "name": "Abundance Breakthrough Program",
+      "description": "A 6-week deep transformation experience combining Oracle readings, EFT tapping, and counselling to unlock your full abundance potential",
+      "duration": "6 weeks (4 sessions)",
+      "investment": "Rs. 1,00,000",
+      "format": "Mix of online and offline sessions",
+      "includes": [
+        "4 private 1:1 sessions",
+        "Personalized Oracle Guidance",
+        "EFT healing sessions",
+        "Abundance Mindset Coaching",
+        "Final Integration and Future Alignment Session"
+      ],
+      "outcomes": [
+        "Gain clarity around financial and personal growth blocks",
+        "Develop healthier relationship with abundance",
+        "Increase confidence and self-worth",
+        "Release fear, doubt, and self-sabotaging patterns",
+        "Feel aligned with opportunities and purposeful action"
+      ]
+    }
+  ],
+  "location": {
+    "city": "Pune",
+    "area": "Wakad",
+    "state": "Maharashtra",
+    "country": "India",
+    "postalCode": "411057",
+    "serviceArea": ["Pune", "Mumbai", "Pan-India (Online)"],
+    "languages": ["English", "Hindi"]
+  },
+  "contact": {
+    "email": "marigoldmagick@harshaagurnani.com",
+    "phone": "+91 8698304955",
+    "whatsapp": "+91 8698304955",
+    "website": "https://www.harshaagurnani.com",
+    "alternateWebsite": "https://www.marigoldmagick.com",
+    "socialMedia": {
+      "instagram": "https://www.instagram.com/marigold.magick"
+    }
+  },
+  "pricing": {
+    "tarotReading": "Starting from Rs. 1,500",
+    "eftTapping": "Starting from Rs. 2,000",
+    "tantraSession": "Starting from Rs. 3,000",
+    "counselling": "Starting from Rs. 2,500",
+    "abundanceProgram": "Rs. 1,00,000 (6 weeks)"
+  },
+  "bookingProcess": {
+    "steps": [
+      "Visit the website and explore services",
+      "Contact via WhatsApp (+91 8698304955) or email",
+      "Schedule an initial consultation",
+      "Receive session details and payment information",
+      "Attend your session (online or offline)"
+    ],
+    "paymentMethods": ["Bank Transfer", "UPI", "Online Payment"],
+    "cancellationPolicy": "24-hour advance notice required for cancellations"
+  },
+  "faq": [
+    {
+      "question": "What is tarot reading and how can it help me?",
+      "answer": "Tarot reading is an intuitive practice that provides guidance and clarity on life decisions, relationships, career, and spiritual growth. Each reading helps you understand the energy around your questions and empowers you to make confident choices."
+    },
+    {
+      "question": "How does EFT tapping work?",
+      "answer": "EFT (Emotional Freedom Technique) combines ancient acupressure with modern psychology. By tapping on specific meridian points while focusing on emotional issues, you can release blocks, reduce anxiety, and clear limiting beliefs."
+    },
+    {
+      "question": "Do you offer online sessions?",
+      "answer": "Yes! Tarot readings, EFT tapping, and counselling are available both online and offline. Tantra sessions are preferably conducted offline for deeper work, but online options are available."
+    },
+    {
+      "question": "How much does a session cost?",
+      "answer": "Prices vary by service: Tarot readings start from Rs. 1,500, EFT tapping from Rs. 2,000, Tantra sessions from Rs. 3,000, and Counselling from Rs. 2,500. The Abundance Breakthrough Program is Rs. 1,00,000 for 6 weeks."
+    },
+    {
+      "question": "Where are you located?",
+      "answer": "We are based in Wakad, Pune, Maharashtra, India. We serve clients in Pune, Mumbai, and across India through online sessions."
+    },
+    {
+      "question": "How do I book a session?",
+      "answer": "You can book by contacting us on WhatsApp at +91 8698304955 or emailing marigoldmagick@harshaagurnani.com. We'll schedule a consultation and provide all session details."
+    },
+    {
+      "question": "What should I expect in my first session?",
+      "answer": "Your first session will be a warm, safe space to share your concerns. We'll discuss your goals, explain the process, and begin the healing work tailored to your needs."
+    },
+    {
+      "question": "Is everything confidential?",
+      "answer": "Absolutely. All sessions are completely confidential. Your privacy and trust are our top priorities."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Priya Sharma",
+      "service": "Tarot & EFT",
+      "transformation": "Manifested 47% income increase and dream partnership within 3 months",
+      "quote": "Working with Marigold Magick completely transformed my relationship with abundance."
+    },
+    {
+      "name": "Raj Patel",
+      "service": "Counselling",
+      "transformation": "Left corporate to launch successful creative business",
+      "quote": "Found courage to leave draining career and step into true purpose."
+    },
+    {
+      "name": "Neha Verma",
+      "service": "EFT Tapping",
+      "transformation": "Released chronic anxiety and stepped into leadership role",
+      "quote": "Years of anxiety melted away in just a few sessions."
+    }
+  ],
+  "uniqueValue": [
+    "Personalized approach combining multiple healing modalities",
+    "5+ years of experience with proven results",
+    "Safe, non-judgmental space for deep transformation",
+    "Integration of spiritual wisdom with practical tools",
+    "Flexible online and offline session options",
+    "Evidence-based techniques (EFT, counselling) combined with intuitive guidance",
+    "Specialization in abundance mindset and relationship healing"
+  ],
+  "idealClients": [
+    "People seeking clarity on life decisions",
+    "Those struggling with abundance or money blocks",
+    "Individuals wanting to deepen intimacy and relationships",
+    "Anyone experiencing anxiety, stress, or emotional blocks",
+    "Seekers on a spiritual growth journey",
+    "Professionals navigating career transitions",
+    "Couples wanting to enhance sacred connection"
+  ]
+}

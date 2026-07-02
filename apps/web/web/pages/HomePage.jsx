@@ -279,6 +279,298 @@ const HomePage = () => {
             sameAs: ["https://www.instagram.com/harshaa.marigoldmagick"],
           })}
         </script>
+
+        {/* GEO (Generative Engine Optimization) - Comprehensive Business Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://www.harshaagurnani.com/#organization",
+                name: "Marigold Magick",
+                url: "https://www.harshaagurnani.com",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.harshaagurnani.com/logo.png",
+                  width: 512,
+                  height: 512,
+                },
+                description:
+                  "Professional spiritual healing services in Pune offering tarot readings, EFT tapping, tantra practices, and counselling by certified healer Harshaa Gurnani",
+                slogan: "Transform Your Life Through Sacred Healing",
+                foundingDate: "2019",
+                founder: {
+                  "@type": "Person",
+                  name: "Harshaa Gurnani",
+                  jobTitle: "Spiritual Healer & Tarot Reader",
+                },
+                sameAs: [
+                  "https://www.instagram.com/marigold.magick",
+                  "https://wa.me/918698304955",
+                  "https://www.marigoldmagick.com",
+                ],
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  telephone: "+918698304955",
+                  contactType: "Customer Service",
+                  email: "marigoldmagick@harshaagurnani.com",
+                  availableLanguage: ["English", "Hindi"],
+                  areaServed: "IN",
+                },
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://www.harshaagurnani.com/#website",
+                url: "https://www.harshaagurnani.com",
+                name: "Marigold Magick",
+                description:
+                  "Professional spiritual healing, tarot readings, and transformation services",
+                publisher: {
+                  "@id": "https://www.harshaagurnani.com/#organization",
+                },
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: {
+                    "@type": "EntryPoint",
+                    urlTemplate:
+                      "https://www.harshaagurnani.com/?s={search_term_string}",
+                  },
+                  "query-input": "required name=search_term_string",
+                },
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.harshaagurnani.com/#webpage",
+                url: "https://www.harshaagurnani.com",
+                name: "Marigold Magick - Spiritual Healing, Tarot & EFT in Pune",
+                isPartOf: {
+                  "@id": "https://www.harshaagurnani.com/#website",
+                },
+                about: {
+                  "@id": "https://www.harshaagurnani.com/#organization",
+                },
+                description:
+                  "Transform your life with professional spiritual healing services in Pune. Expert tarot readings, EFT tapping, tantra practices, and counselling by certified healer Harshaa Gurnani.",
+                inLanguage: "en-US",
+              },
+              {
+                "@type": "ProfessionalService",
+                "@id": "https://www.harshaagurnani.com/#service",
+                name: "Marigold Magick Healing Services",
+                image: "https://www.harshaagurnani.com/logo.png",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Wakad",
+                  addressLocality: "Pune",
+                  addressRegion: "Maharashtra",
+                  postalCode: "411057",
+                  addressCountry: "IN",
+                },
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "87",
+                  bestRating: "5",
+                },
+                priceRange: "₹₹",
+                telephone: "+918698304955",
+                email: "marigoldmagick@harshaagurnani.com",
+                url: "https://www.harshaagurnani.com",
+                serviceType: [
+                  "Spiritual Healing",
+                  "Tarot Reading",
+                  "EFT Tapping",
+                  "Tantra Coaching",
+                  "Counselling",
+                ],
+                areaServed: {
+                  "@type": "City",
+                  name: "Pune",
+                },
+                hasOfferCatalog: {
+                  "@type": "OfferCatalog",
+                  name: "Healing Services",
+                  itemListElement: [
+                    {
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Tarot Reading",
+                        description:
+                          "Intuitive guidance through tarot cards for life decisions",
+                        serviceOutput:
+                          "Clarity on love, career, purpose, and hidden patterns",
+                      },
+                      price: "1500",
+                      priceCurrency: "INR",
+                    },
+                    {
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "EFT Tapping",
+                        description:
+                          "Release anxiety, trauma, and money blocks through tapping",
+                        serviceOutput:
+                          "Emotional release and clearing of limiting beliefs",
+                      },
+                      price: "2000",
+                      priceCurrency: "INR",
+                    },
+                    {
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Tantra Practice",
+                        description: "Awaken sacred energy and deepen intimacy",
+                        serviceOutput:
+                          "Enhanced connection, sacred sexuality, authentic power",
+                      },
+                      price: "3000",
+                      priceCurrency: "INR",
+                    },
+                    {
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Counselling",
+                        description:
+                          "Professional guidance with spiritual wisdom",
+                        serviceOutput:
+                          "Life transformation and lasting positive change",
+                      },
+                      price: "2500",
+                      priceCurrency: "INR",
+                    },
+                    {
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Service",
+                        name: "Abundance Breakthrough Program",
+                        description:
+                          "6-week transformation combining Oracle, EFT, and coaching",
+                        serviceOutput:
+                          "Financial clarity, increased abundance, confidence boost",
+                      },
+                      price: "100000",
+                      priceCurrency: "INR",
+                    },
+                  ],
+                },
+              },
+            ],
+          })}
+        </script>
+
+        {/* FAQ Schema for AEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What services does Marigold Magick offer in Pune?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Marigold Magick offers tarot readings, EFT tapping, tantra practices, and professional counselling in Pune. All services are available both online and offline.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How much does a tarot reading cost at Marigold Magick?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Tarot reading sessions start from Rs. 1,500. EFT tapping starts from Rs. 2,000, tantra sessions from Rs. 3,000, and counselling from Rs. 2,500.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Where is Marigold Magick located?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Marigold Magick is located in Wakad, Pune, Maharashtra 411057, India. We offer both in-person sessions in Pune and online sessions for clients across India.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do I book a healing session with Harshaa?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "You can book a session by contacting us on WhatsApp at +91 8698304955 or emailing marigoldmagick@harshaagurnani.com. We'll schedule a consultation and provide all details.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Does Marigold Magick offer online sessions?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! Tarot readings, EFT tapping, and counselling are available online via video call. Tantra sessions are preferably conducted offline but online options are available.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What is the Abundance Breakthrough Program?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "The Abundance Breakthrough Program is a 6-week transformation experience combining Oracle readings, EFT tapping, and counselling. It includes 4 private sessions and costs Rs. 1,00,000. The program helps clear financial blocks and increase abundance.",
+                },
+              },
+            ],
+          })}
+        </script>
+
+        {/* HowTo Schema - How to Book a Session (GEO) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Book a Healing Session with Marigold Magick",
+            description:
+              "Step-by-step guide to booking a tarot reading, EFT tapping, tantra, or counselling session with Harshaa Gurnani in Pune",
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Choose Your Service",
+                text: "Visit our services page and explore tarot readings, EFT tapping, tantra practices, counselling, or the Abundance Breakthrough Program",
+                url: "https://www.harshaagurnani.com/services",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Contact Us",
+                text: "Reach out via WhatsApp at +91 8698304955 or email marigoldmagick@harshaagurnani.com",
+                url: "https://www.harshaagurnani.com/contact",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Schedule Consultation",
+                text: "We'll respond within 24 hours to schedule consultation and discuss your needs",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Receive Session Details",
+                text: "Get pricing, format (online/offline), and payment information",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Attend Your Session",
+                text: "Join your scheduled session and begin your transformation journey",
+              },
+            ],
+            totalTime: "PT24H",
+            estimatedCost: {
+              "@type": "MonetaryAmount",
+              currency: "INR",
+              value: "1500",
+            },
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -509,7 +801,9 @@ const HomePage = () => {
                   className="text-4xl md:text-5xl font-extrabold text-foreground mb-6"
                 >
                   <span className="block whitespace-nowrap">Why choose</span>
-                  <span className="block whitespace-nowrap">Marigold Magick</span>
+                  <span className="block whitespace-nowrap">
+                    Marigold Magick
+                  </span>
                 </h2>
                 <p className="text-xl font-medium text-muted-foreground max-w-2xl mx-auto">
                   A unique blend of ancient practices and modern healing
@@ -534,8 +828,13 @@ const HomePage = () => {
                     </div>
                     <h3 className="text-2xl font-bold text-card-foreground mb-4">
                       {feature.titleLine1 ? (
-                        <><span className="block">{feature.titleLine1}</span><span className="block">{feature.titleLine2}</span></>
-                      ) : feature.title}
+                        <>
+                          <span className="block">{feature.titleLine1}</span>
+                          <span className="block">{feature.titleLine2}</span>
+                        </>
+                      ) : (
+                        feature.title
+                      )}
                     </h3>
                     <p className="text-card-foreground/80 font-medium leading-relaxed">
                       {feature.description}
@@ -563,7 +862,9 @@ const HomePage = () => {
                     className="text-4xl md:text-6xl font-extrabold text-foreground mb-8 leading-tight"
                   >
                     <span className="block whitespace-nowrap">Begin your</span>
-                    <span className="block whitespace-nowrap">transformation</span>
+                    <span className="block whitespace-nowrap">
+                      transformation
+                    </span>
                   </h2>
                   <p className="text-xl font-semibold text-muted-foreground mb-6 leading-relaxed">
                     Whether you seek clarity through tarot, emotional release

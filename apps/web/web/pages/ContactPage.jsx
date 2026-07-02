@@ -88,7 +88,8 @@ const ContactPage = () => {
       toast({
         title: "Error",
         description:
-          error.message || "There was a problem sending your message. Please try again.",
+          error.message ||
+          "There was a problem sending your message. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -211,10 +212,7 @@ const ContactPage = () => {
           property="og:description"
           content="Get in touch with Marigold Magick. Book a session, ask questions, or learn more about our transformative services."
         />
-        <meta
-          property="og:url"
-          content="https://marigoldmagick.com/contact"
-        />
+        <meta property="og:url" content="https://marigoldmagick.com/contact" />
         <meta property="og:site_name" content="Marigold Magick" />
         <meta
           property="og:image"
@@ -251,6 +249,56 @@ const ContactPage = () => {
                 availableLanguage: ["English", "Hindi"],
               },
             },
+          })}
+        </script>
+
+        {/* FAQ Schema for AEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How do I book a session with Marigold Magick?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "You can book a session by contacting us via WhatsApp at +91 8698304955, emailing marigoldmagick@harshaagurnani.com, or filling out the contact form on our website. We'll respond within 24 hours to schedule your session.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What are the session timings?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We offer flexible session timings from Monday to Saturday, 10:00 AM to 6:00 PM IST. Online sessions can be scheduled for international time zones as well.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Where is Marigold Magick located?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Marigold Magick is located in Wakad, Pune, Maharashtra 411057, India. We offer in-person sessions in Pune and online sessions for clients worldwide.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How quickly will I get a response?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We typically respond to all inquiries within 24 hours. For urgent requests, please contact us on WhatsApp at +91 8698304955 for faster response.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What payment methods do you accept?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We accept bank transfers, UPI payments, and online payment methods. Payment details will be provided after booking confirmation.",
+                },
+              },
+            ],
           })}
         </script>
       </Helmet>
@@ -402,8 +450,16 @@ const ContactPage = () => {
                       {info.link ? (
                         <a
                           href={info.link}
-                          target={info.link.includes("maps.google") ? "_blank" : undefined}
-                          rel={info.link.includes("maps.google") ? "noopener noreferrer" : undefined}
+                          target={
+                            info.link.includes("maps.google")
+                              ? "_blank"
+                              : undefined
+                          }
+                          rel={
+                            info.link.includes("maps.google")
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
                           className="w-12 h-12 rounded-lg bg-background flex items-center justify-center flex-shrink-0 hover:bg-gold/10 transition-colors duration-200"
                         >
                           <info.icon className="w-6 h-6 text-gold" />
@@ -420,8 +476,16 @@ const ContactPage = () => {
                         {info.link ? (
                           <a
                             href={info.link}
-                            target={info.link.includes("maps.google") ? "_blank" : undefined}
-                            rel={info.link.includes("maps.google") ? "noopener noreferrer" : undefined}
+                            target={
+                              info.link.includes("maps.google")
+                                ? "_blank"
+                                : undefined
+                            }
+                            rel={
+                              info.link.includes("maps.google")
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
                             className="text-muted-foreground hover:text-gold transition-colors duration-200"
                           >
                             {info.content}
@@ -471,7 +535,18 @@ const ContactPage = () => {
                       rel="noopener noreferrer"
                       className="absolute bottom-4 right-4 z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-gold/50 bg-primary shadow-lg shadow-gold/20 transition-all duration-200 hover:scale-105 hover:bg-gold hover:text-primary active:scale-95"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-gold"
+                      >
                         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                         <circle cx="12" cy="10" r="3" />
                       </svg>

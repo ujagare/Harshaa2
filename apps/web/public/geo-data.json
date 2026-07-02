@@ -1,0 +1,332 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Marigold Magick",
+  "alternateName": "Harshaa Gurnani Spiritual Healing",
+  "description": "Professional spiritual healing services in Pune offering tarot readings, EFT tapping, tantra practices, and counselling. Founded by certified healer Harshaa Gurnani with 5+ years experience. We provide personalized healing sessions both online and offline to help you transform your life, release blocks, and manifest abundance.",
+  
+  "foundingDate": "2019",
+  "founder": {
+    "@type": "Person",
+    "name": "Harshaa Gurnani",
+    "jobTitle": "Spiritual Healer & Tarot Reader",
+    "description": "Certified tarot reader, EFT practitioner, and spiritual counsellor with 5+ years of experience helping clients transform their lives through intuitive guidance and evidence-based healing techniques.",
+    "knowsAbout": [
+      "Tarot Reading",
+      "Emotional Freedom Technique (EFT)",
+      "Tantra and Sacred Sexuality",
+      "Spiritual Counselling",
+      "Abundance Mindset Coaching",
+      "Trauma Healing",
+      "Relationship Counselling"
+    ],
+    "hasCredential": [
+      "Certified Tarot Reader",
+      "EFT Practitioner",
+      "Professional Counsellor",
+      "Life Coach"
+    ]
+  },
+  
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Wakad",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411057",
+    "addressCountry": "IN"
+  },
+  
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "18.6098",
+    "longitude": "73.7693"
+  },
+  
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Pune",
+      "containedIn": {
+        "@type": "State",
+        "name": "Maharashtra"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Mumbai"
+    },
+    {
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      "@type": "Place",
+      "name": "Worldwide (Online)"
+    }
+  ],
+  
+  "telephone": "+918698304955",
+  "email": "marigoldmagick@harshaagurnani.com",
+  "url": "https://www.harshaagurnani.com",
+  "sameAs": [
+    "https://www.instagram.com/marigold.magick",
+    "https://wa.me/918698304955",
+    "https://www.marigoldmagick.com"
+  ],
+  
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "18:00"
+    }
+  ],
+  
+  "priceRange": "₹₹",
+  
+  "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer", "UPI"],
+  
+  "currenciesAccepted": "INR",
+  
+  "availableLanguage": [
+    {
+      "@type": "Language",
+      "name": "English"
+    },
+    {
+      "@type": "Language",
+      "name": "Hindi"
+    }
+  ],
+  
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Healing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Tarot Reading Session",
+          "description": "Receive intuitive guidance and practical clarity through tarot cards. 45-60 minute session covering love, career, purpose, and life decisions.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Marigold Magick"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1500",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.harshaagurnani.com/services"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "EFT Tapping Session",
+          "description": "Release emotional blocks and limiting beliefs through Emotional Freedom Technique. 60-minute session for anxiety, trauma, and abundance blocks.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Marigold Magick"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "2000",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.harshaagurnani.com/services"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Tantra Practice Session",
+          "description": "Awaken sacred energy and deepen connection through tantra. 90-minute session for intimacy, sexuality, and authentic power.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Marigold Magick"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "3000",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.harshaagurnani.com/services"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Counselling Session",
+          "description": "Professional counselling blending therapeutic approaches with spiritual wisdom. 60-minute session for life transitions and transformation.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Marigold Magick"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "2500",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.harshaagurnani.com/services"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Abundance Breakthrough Program",
+          "description": "6-week transformation program with 4 private sessions combining Oracle guidance, EFT healing, and abundance coaching.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Marigold Magick"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "100000",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.harshaagurnani.com/services#abundance-breakthrough-program"
+          }
+        }
+      }
+    ]
+  },
+  
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "87",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Priya Sharma"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Working with Marigold Magick completely transformed my relationship with abundance. The tarot readings gave me clarity I had been seeking for years, and the EFT tapping sessions released blocks I did not even know I was carrying. Manifested a 47% increase in income within three months."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Raj Patel"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The counselling sessions provided a safe space to explore my deepest fears and desires. I finally found the courage to leave a career that was draining my soul and step into my true purpose as a creative entrepreneur."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Neha Verma"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "EFT tapping was a revelation. Years of anxiety and self-doubt melted away in just a few sessions. I feel lighter, more confident, and finally able to show up authentically in my relationships and work."
+    }
+  ],
+  
+  "potentialAction": [
+    {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://wa.me/918698304955",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Book a Healing Session"
+      }
+    },
+    {
+      "@type": "CommunicateAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "mailto:marigoldmagick@harshaagurnani.com",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      }
+    }
+  ],
+  
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "serviceType": "Spiritual Healing",
+        "category": "Health & Wellness"
+      },
+      "availableDeliveryMethod": [
+        "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
+        "http://purl.org/goodrelations/v1#DeliveryModeDirectDownload"
+      ]
+    }
+  ],
+  
+  "slogan": "Transform Your Life Through Sacred Healing",
+  
+  "knowsAbout": [
+    "Tarot Card Reading",
+    "Emotional Freedom Technique",
+    "EFT Tapping",
+    "Tantra Practices",
+    "Sacred Sexuality",
+    "Spiritual Counselling",
+    "Life Coaching",
+    "Abundance Mindset",
+    "Manifestation",
+    "Energy Healing",
+    "Intuitive Guidance",
+    "Trauma Release",
+    "Relationship Healing",
+    "Personal Transformation"
+  ],
+  
+  "additionalType": [
+    "https://schema.org/HealthAndBeautyBusiness",
+    "https://schema.org/ProfessionalService"
+  ],
+  
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=18.6098,73.7693",
+  
+  "publicAccess": true,
+  
+  "smokingAllowed": false,
+  
+  "isAccessibleForFree": false
+}

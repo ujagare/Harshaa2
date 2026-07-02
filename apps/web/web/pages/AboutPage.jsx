@@ -111,6 +111,70 @@ const AboutPage = () => {
             },
           })}
         </script>
+
+        {/* Breadcrumb Schema for AEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.harshaagurnani.com/",
+              },
+              {
+                "@type": "Question",
+                position: 2,
+                name: "About",
+                item: "https://www.harshaagurnani.com/about",
+              },
+            ],
+          })}
+        </script>
+
+        {/* FAQ Schema for AEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Who is Harshaa Gurnani?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Harshaa Gurnani is a professional spiritual healer, certified tarot reader, and counsellor based in Pune, India. She is the founder of Marigold Magick and specializes in tarot readings, EFT tapping, tantra practices, and spiritual counselling with 5+ years of experience.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What are Harshaa's qualifications?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Harshaa is a certified tarot reader, EFT practitioner, and professional counsellor. She combines traditional therapeutic approaches with spiritual wisdom and has helped hundreds of clients transform their lives.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What is Harshaa's healing approach?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Harshaa's approach integrates multiple healing modalities including tarot for intuitive guidance, EFT tapping for emotional release, tantra for sacred connection, and counselling for practical transformation. She creates a safe, non-judgmental space for deep healing.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can I work with Harshaa online?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! Harshaa offers online sessions for tarot readings, EFT tapping, and counselling via video call. She works with clients across India and internationally. Tantra sessions are preferably offline but online options are available.",
+                },
+              },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -133,7 +197,9 @@ const AboutPage = () => {
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6"
                 >
                   <span className="block whitespace-nowrap">Meet</span>
-                  <span className="block whitespace-nowrap">Harshaa Gurnani</span>
+                  <span className="block whitespace-nowrap">
+                    Harshaa Gurnani
+                  </span>
                 </h1>
                 <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
                   The heart behind Marigold Magick, where ancient wisdom meets
@@ -176,8 +242,12 @@ const AboutPage = () => {
                     id="journey-heading"
                     className="text-4xl font-bold text-foreground mb-6"
                   >
-                    <span className="block whitespace-nowrap">A journey of</span>
-                    <span className="block whitespace-nowrap">transformation</span>
+                    <span className="block whitespace-nowrap">
+                      A journey of
+                    </span>
+                    <span className="block whitespace-nowrap">
+                      transformation
+                    </span>
                   </h2>
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     I am Harshaa Gurnani, the founder and practitioner behind
@@ -300,8 +370,12 @@ const AboutPage = () => {
                     </div>
                     <div>
                       <h3 className="mb-4 text-2xl font-semibold text-foreground">
-                        <span className="block whitespace-nowrap">Empowerment</span>
-                        <span className="block whitespace-nowrap">through wisdom</span>
+                        <span className="block whitespace-nowrap">
+                          Empowerment
+                        </span>
+                        <span className="block whitespace-nowrap">
+                          through wisdom
+                        </span>
                       </h3>
                       <p className="text-lg leading-relaxed text-muted-foreground">
                         Our goal is not to create dependency, but to empower you
