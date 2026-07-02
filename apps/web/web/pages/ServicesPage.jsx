@@ -205,31 +205,46 @@ const ServicesPage = () => {
       <div className="min-h-screen bg-background">
         <Header />
 
-        <section className="relative overflow-hidden pt-20 pb-8 md:flex md:min-h-[820px] md:items-center md:py-32 sacred-pattern">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 md:relative md:z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mx-auto mb-0 max-w-4xl rounded-2xl bg-background/70 px-6 py-8 text-center shadow-2xl shadow-primary/20 backdrop-blur-sm sm:px-10"
-            >
-              <AnimatedHeading className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-                Our services
-              </AnimatedHeading>
-              <p className="mx-auto text-center text-xl text-muted-foreground leading-relaxed">
-                Choose the path that calls to your soul. Each modality offers
-                unique gifts on your journey to transformation.
-              </p>
-            </motion.div>
-          </div>
+        <section className="relative overflow-hidden pt-20 pb-8 md:pt-32 md:pb-16 sacred-pattern">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid md:grid-cols-2 gap-8 items-center min-h-[500px]">
+              {/* Text Content - Left Side */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="order-2 md:order-1"
+              >
+                <div className="max-w-2xl">
+                  <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+                    Our services
+                  </AnimatedHeading>
+                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                    Choose the path that calls to your soul. Each modality
+                    offers unique gifts on your journey to transformation.
+                  </p>
+                </div>
+              </motion.div>
 
-          <div className="mt-8 md:absolute md:inset-0 md:z-0 md:pointer-events-none md:mt-0">
-            <img
-              src={tarotServiceImage}
-              loading="lazy"
-              alt="Tarot reading cards spread on mystical table with spiritual guidance elements"
-              className="mx-auto w-full max-h-[400px] object-contain md:h-full md:max-h-none md:object-center"
-            />
+              {/* Image - Right Side */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="order-1 md:order-2"
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src={tarotServiceImage}
+                    loading="eager"
+                    width="600"
+                    height="800"
+                    alt="Tarot reading cards spread on mystical table with spiritual guidance elements"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
