@@ -118,7 +118,7 @@ const AboutPage = () => {
 
         <main>
           <section
-            className="py-24 sacred-pattern"
+            className="py-8 sm:py-16 sacred-pattern"
             aria-labelledby="about-main-heading"
           >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,7 +126,7 @@ const AboutPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="max-w-4xl mx-auto text-center mb-16"
+                className="max-w-4xl mx-auto text-center mb-6 sm:mb-16"
               >
                 <h1
                   id="about-main-heading"
@@ -143,9 +143,9 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="py-16" aria-labelledby="journey-heading">
+          <section className="py-6 lg:py-16" aria-labelledby="journey-heading">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center max-w-6xl mx-auto">
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -153,7 +153,7 @@ const AboutPage = () => {
                   transition={{ duration: 0.6 }}
                   className="relative"
                 >
-                  <div className="aspect-[4/5] rounded-2xl overflow-hidden mystical-border">
+                  <div className="aspect-auto h-[70vh] lg:aspect-[4/5] lg:h-auto rounded-2xl overflow-hidden mystical-border">
                     <img
                       src={heroImageUrl}
                       loading="lazy"
