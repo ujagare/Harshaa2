@@ -1,5 +1,5 @@
 # robots.txt for Marigold Magick
-# https://marigoldmagick.com
+# https://www.harshaagurnani.com
 
 # Allow all search engines to crawl the site
 User-agent: *
@@ -20,14 +20,14 @@ Allow: /about
 Allow: /services
 Allow: /contact
 Allow: /testimonials
-Allow: /product/*
 
 # Crawl delay (polite crawling - 1 second between requests)
 Crawl-delay: 1
 
-# Sitemap location
-Sitemap: https://marigoldmagick.com/sitemap.xml
-Sitemap: https://marigoldmagick.com/sitemap-products.xml
+# Sitemap locations
+Sitemap: https://www.harshaagurnani.com/sitemap-index.xml
+Sitemap: https://www.harshaagurnani.com/sitemap.xml
+Sitemap: https://www.harshaagurnani.com/sitemap-products.xml
 
 # Specific rules for major search engines
 User-agent: Googlebot
