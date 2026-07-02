@@ -262,7 +262,9 @@ const ServicesPage = () => {
                       </span>
                     </div>
                     <h2 className="mb-5 text-3xl font-bold text-primary-foreground md:text-5xl">
-                      Abundance Breakthrough Program
+                      <span className="block whitespace-nowrap">Abundance</span>
+                      <span className="block whitespace-nowrap">Breakthrough</span>
+                      <span className="block whitespace-nowrap">Program</span>
                     </h2>
                     <p className="mb-5 max-w-none text-lg text-primary-foreground/85">
                       A transformative 4 session package combining Oracle, EFT
