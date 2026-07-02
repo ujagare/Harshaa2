@@ -159,6 +159,7 @@ module.exports = async function handler(req, res) {
     const htmlPhone = cleanPhone ? escapeHtml(cleanPhone) : null;
     const htmlMessage = escapeHtml(cleanMessage).replace(/\n/g, "<br>");
 
+    // Send notification email to admin
     const { data, error } = await resend.emails.send({
       from: `Marigold Magick <${FROM_EMAIL}>`,
       to: [CONTACT_EMAIL],
@@ -209,6 +210,93 @@ module.exports = async function handler(req, res) {
     if (error) {
       console.error("Resend error:", error);
       return res.status(500).json({ error: "Failed to send message" });
+    }
+
+    // Send auto-reply confirmation email to user
+    try {
+      await resend.emails.send({
+        from: `Marigold Magick <${FROM_EMAIL}>`,
+        to: [cleanEmail],
+        subject: "Thank you for contacting Marigold Magick",
+        html: `
+          <!DOCTYPE html>
+          <html>
+          <head><meta charset="utf-8"></head>
+          <body style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">
+            <div style="background: #D4AF37; padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
+              <h1 style="color: #1a1a1a; margin: 0; font-size: 28px;">&#10022; Marigold Magick &#10022;</h1>
+            </div>
+            <div style="background: #ffffff; padding: 40px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
+              <h2 style="color: #1a1a1a; font-size: 24px; margin-top: 0;">Thank you for reaching out, ${htmlName}!</h2>
+              <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 20px 0;">
+                We have received your message and appreciate you taking the time to contact us.
+              </p>
+              <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 20px 0;">
+                Our team will review your inquiry and respond within <strong>24-48 hours</strong>. We're excited to connect with you on your journey.
+              </p>
+              
+              <div style="background: #fef3c7; border-left: 4px solid #D4AF37; padding: 20px; margin: 30px 0; border-radius: 4px;">
+                <p style="color: #92400e; font-size: 14px; margin: 0; font-weight: 600;">
+                  ✨ Your Message Summary
+                </p>
+                <p style="color: #78350f; font-size: 14px; margin: 10px 0 0 0; line-height: 1.5;">
+                  ${htmlMessage.substring(0, 150)}${cleanMessage.length > 150 ? "..." : ""}
+                </p>
+              </div>
+
+              <div style="margin: 30px 0; padding: 20px; background: #f3f4f6; border-radius: 8px;">
+                <p style="color: #1f2937; font-size: 14px; margin: 0 0 10px 0; font-weight: 600;">
+                  In the meantime, explore our services:
+                </p>
+                <ul style="color: #4b5563; font-size: 14px; line-height: 1.8; margin: 10px 0; padding-left: 20px;">
+                  <li><strong>Tarot Readings</strong> - Intuitive guidance for your life path</li>
+                  <li><strong>EFT Tapping</strong> - Release emotional blocks and limiting beliefs</li>
+                  <li><strong>Tantra Practices</strong> - Awaken your sacred energy</li>
+                  <li><strong>Counselling</strong> - Professional guidance with spiritual wisdom</li>
+                </ul>
+                <p style="text-align: center; margin: 20px 0 0 0;">
+                  <a href="https://www.harshaagurnani.com/services" style="display: inline-block; background: #D4AF37; color: #1a1a1a; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+                    Explore Our Services
+                  </a>
+                </p>
+              </div>
+
+              <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+              
+              <p style="color: #6b7280; font-size: 14px; line-height: 1.6; margin: 20px 0;">
+                For urgent inquiries, feel free to reach us directly:<br>
+                📧 Email: <a href="mailto:marigoldmagick@harshaagurnani.com" style="color: #D4AF37; text-decoration: none;">marigoldmagick@harshaagurnani.com</a><br>
+                📱 WhatsApp: <a href="https://wa.me/918698304955" style="color: #D4AF37; text-decoration: none;">+91 8698304955</a>
+              </p>
+
+              <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center;">
+                <p style="color: #9ca3af; font-size: 12px; margin: 5px 0;">
+                  With gratitude and blessings ✨
+                </p>
+                <p style="color: #9ca3af; font-size: 12px; margin: 5px 0;">
+                  <strong>Harshaa - Marigold Magick</strong>
+                </p>
+                <p style="color: #9ca3af; font-size: 11px; margin: 15px 0 0 0;">
+                  Wakad, Pune, Maharashtra 411057, India
+                </p>
+              </div>
+            </div>
+
+            <div style="text-align: center; padding: 20px; color: #9ca3af; font-size: 11px;">
+              <p style="margin: 5px 0;">
+                This is an automated confirmation email.
+              </p>
+              <p style="margin: 5px 0;">
+                © ${new Date().getFullYear()} Marigold Magick. All rights reserved.
+              </p>
+            </div>
+          </body>
+          </html>
+        `,
+      });
+    } catch (autoReplyError) {
+      console.error("Auto-reply email error:", autoReplyError);
+      // Don't fail the main request if auto-reply fails
     }
 
     return res
