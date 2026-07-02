@@ -58,14 +58,11 @@ const HeadingAnimations = () => {
 
     scheduleAnimation();
 
-    const observer = new MutationObserver(scheduleAnimation);
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
+    // Delay second pass for dynamically rendered content (no MutationObserver - too heavy on iOS)
+    const retryTimer = window.setTimeout(scheduleAnimation, 600);
 
     return () => {
-      observer.disconnect();
+      window.clearTimeout(retryTimer);
 
       if (frameId) {
         window.cancelAnimationFrame(frameId);

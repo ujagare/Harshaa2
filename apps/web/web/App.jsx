@@ -34,13 +34,16 @@ const PageLoader = () => (
   </div>
 );
 
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
       setIsLoading(false);
-    }, 1800); // Original 1.8 seconds
+    }, isIOS ? 800 : 1800);
 
     return () => window.clearTimeout(timer);
   }, []);
@@ -84,15 +87,17 @@ function App() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="h-[48rem] w-[48rem] max-h-[110vw] max-w-[110vw] [&_canvas]:!h-full [&_canvas]:!w-full [&_svg]:!h-full [&_svg]:!w-full"
             >
-              <DotLottieReact
-                src="https://lottie.host/f88d5899-2066-4124-8c1c-0903fd2cd38b/0MBkmLNf1I.lottie"
-                loop
-                autoplay
-                style={{
-                  filter:
-                    "brightness(0) saturate(100%) invert(70%) sepia(31%) saturate(517%) hue-rotate(3deg) brightness(91%) contrast(86%)",
-                }}
-              />
+              {!isIOS && (
+                <DotLottieReact
+                  src="https://lottie.host/f88d5899-2066-4124-8c1c-0903fd2cd38b/0MBkmLNf1I.lottie"
+                  loop
+                  autoplay
+                  style={{
+                    filter:
+                      "brightness(0) saturate(100%) invert(70%) sepia(31%) saturate(517%) hue-rotate(3deg) brightness(91%) contrast(86%)",
+                  }}
+                />
+              )}
             </motion.div>
           </motion.div>
         )}

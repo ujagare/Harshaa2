@@ -14,7 +14,7 @@ export default defineConfig({
   },
   build: {
     // Optimize build output
-    target: "esnext",
+    target: ["es2015", "safari13"],
     minify: "terser",
     terserOptions: {
       compress: {
