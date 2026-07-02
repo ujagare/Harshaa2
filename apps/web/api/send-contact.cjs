@@ -36,9 +36,14 @@ function isValidEmail(email) {
 }
 
 function isAllowedOrigin(origin) {
-  if (!origin) return false;
+  if (!origin) return true;
   try {
     const parsed = new URL(origin);
+    // Allow marigoldmagick.com, all vercel.app preview URLs, and localhost
+    if (parsed.hostname === "marigoldmagick.com") return true;
+    if (parsed.hostname === "www.marigoldmagick.com") return true;
+    if (parsed.hostname.endsWith(".vercel.app")) return true;
+    if (parsed.hostname === "localhost") return true;
     return ALLOWED_ORIGINS.some(
       (allowed) => allowed && parsed.origin === new URL(allowed).origin,
     );
