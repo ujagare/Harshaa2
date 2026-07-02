@@ -6,7 +6,7 @@ import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 
-import heroImage from "../../src/assets/image/Home/c729208d-761f-45e5-aa20-3155e416cea5.jpg";
+const heroImageUrl = "/c729208d-761f-45e5-aa20-3155e416cea5.jpg";
 
 const AboutPage = () => {
   const credentials = [
@@ -155,7 +155,7 @@ const AboutPage = () => {
                 >
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden mystical-border">
                     <img
-                      src={heroImage}
+                      src={heroImageUrl}
                       loading="lazy"
                       width="600"
                       height="750"
