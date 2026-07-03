@@ -644,14 +644,29 @@ const HomePage = () => {
                       <ArrowRight className="h-4 w-4 flex-shrink-0" />
                     </Link>
                   </Button>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => setShowProgramPopup(false)}
-                    className="h-11 w-full border-foreground/20 px-4 text-sm font-semibold text-foreground hover:bg-foreground/5 sm:h-12 sm:text-base"
-                  >
-                    Maybe later
-                  </Button>
+                  <div className="grid grid-cols-2 gap-3">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => setShowProgramPopup(false)}
+                      className="h-11 w-full border-foreground/20 px-4 text-sm font-semibold text-foreground hover:bg-foreground/5 sm:h-12 sm:text-base"
+                    >
+                      Maybe later
+                    </Button>
+                    <Button
+                      type="button"
+                      className="gold-gradient h-11 w-full px-4 text-sm font-semibold shadow-lg shadow-gold/20 hover:opacity-95 sm:h-12 sm:text-base"
+                      onClick={() => {
+                        window.open(
+                          "https://wa.me/918698304955?text=Hi%20Harshaa%2C%20I%20want%20to%20know%20more%20about%20the%20Abundance%20Breakthrough%20Program",
+                          "_blank",
+                        );
+                        setShowProgramPopup(false);
+                      }}
+                    >
+                      Book Now
+                    </Button>
+                  </div>
                 </div>
               </div>
             </motion.div>
