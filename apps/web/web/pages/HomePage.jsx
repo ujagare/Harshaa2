@@ -18,6 +18,7 @@ const Footer = lazy(() => import("@/components/Footer.jsx"));
 import heroImage from "../../src/assets/image/Home/94df01f4-c24e-4b82-b50a-f0e877274dc5.webp";
 import homeBackgroundImage from "../../src/assets/image/Home/e5e6ce08-5c58-4867-9dec-0c1d9f9371e4.webp";
 import transformationImage from "../../src/assets/image/Home/photo-1506126613408-eca07ce68773.avif";
+import marigoldImage from "../../src/assets/image/Home/MariGold-removebg-preview.png";
 
 const HomePage = () => {
   const [showProgramPopup, setShowProgramPopup] = useState(false);
@@ -94,6 +95,48 @@ const HomePage = () => {
       },
       stagger: 0.2, // Stagger animation if multiple images
     });
+
+    // Promise text word-by-word animation with golden color
+    const promiseTextElement = document.querySelector(".promise-text");
+    if (promiseTextElement) {
+      // Split text into words
+      const text = promiseTextElement.textContent;
+      const words = text.split(" ");
+      promiseTextElement.innerHTML = words
+        .map((word) => `<span class="word">${word}</span>`)
+        .join(" ");
+
+      // Animate words to golden color
+      gsap.to(".promise-text .word", {
+        color: "#C8A96A",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".promise-text",
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      });
+    }
+
+    // MariGold image clip-path reveal animation from left
+    const marigoldImage = document.querySelector(".marigold-image");
+    if (marigoldImage) {
+      gsap.set(marigoldImage, {
+        clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
+      });
+
+      gsap.to(marigoldImage, {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        duration: 1.2,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: marigoldImage,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+    }
 
     // Cleanup ScrollTrigger on unmount
     return () => {
@@ -797,6 +840,85 @@ const HomePage = () => {
                 </motion.figure>
               </motion.div>
             </div>
+          </section>
+
+          {/* My Promise Section with MariGold Image */}
+          <section
+            className="relative py-20 overflow-hidden border-y border-gold/20"
+            style={{ backgroundColor: "#294C40" }}
+            aria-label="My Promise to You"
+          >
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                {/* Left Side - MariGold Image */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="relative"
+                >
+                  <div className="relative aspect-square max-w-xl mx-auto lg:mx-0">
+                    <div className="absolute inset-0 bg-gold/30 rounded-full blur-[100px] animate-pulse"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-transparent to-gold/10 rounded-full"></div>
+                    <img
+                      src={marigoldImage}
+                      alt="MariGold flower symbolizing transformation and promise"
+                      className="marigold-image relative z-10 w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(212,175,55,0.4)]"
+                      loading="lazy"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Right Side - Promise Text with GSAP Animation */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="space-y-6"
+                >
+                  <h2
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+                    style={{ fontFamily: "Cinzel, serif" }}
+                  >
+                    My Promise to You
+                  </h2>
+                  <p
+                    className="promise-text text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed"
+                    style={{
+                      lineHeight: "1.8",
+                      color: "rgba(255, 255, 255, 0.75)",
+                      textShadow: "0 2px 10px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    I won't tell you who to become. I'll help you remember who
+                    you've always been. Through healing, awareness, and honest
+                    conversation, we'll gently release the patterns that no
+                    longer serve you. This is not about fixing you. It's about
+                    helping you come home to yourself.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Premium Decorative Elements */}
+            <div
+              className="absolute top-0 right-0 h-96 w-96 rounded-full bg-gradient-radial from-gold/20 to-transparent blur-3xl pointer-events-none opacity-50"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-gradient-radial from-gold/20 to-transparent blur-3xl pointer-events-none opacity-50"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent"
+              aria-hidden="true"
+            />
           </section>
 
           <section
