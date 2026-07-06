@@ -34,16 +34,20 @@ const PageLoader = () => (
   </div>
 );
 
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+const isIOS =
+  /iPad|iPhone|iPod/.test(navigator.userAgent) ||
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setIsLoading(false);
-    }, isIOS ? 800 : 1800);
+    const timer = window.setTimeout(
+      () => {
+        setIsLoading(false);
+      },
+      isIOS ? 800 : 1800,
+    );
 
     return () => window.clearTimeout(timer);
   }, []);
@@ -78,25 +82,54 @@ function App() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#294C40]"
+            className="fixed inset-0 z-50 bg-[#294C40]"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+            }}
           >
             <motion.div
               initial={{ scale: 0.94, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 1.08, opacity: 0.9 }}
+              exit={{ scale: 1, opacity: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="h-[48rem] w-[48rem] max-h-[110vw] max-w-[110vw] [&_canvas]:!h-full [&_canvas]:!w-full [&_svg]:!h-full [&_svg]:!w-full"
+              className="relative"
+              style={{
+                width: "clamp(280px, 80vw, 600px)",
+                height: "clamp(280px, 80vw, 600px)",
+                maxWidth: "100%",
+                maxHeight: "100%",
+              }}
             >
               {!isIOS && (
-                <DotLottieReact
-                  src="https://lottie.host/f88d5899-2066-4124-8c1c-0903fd2cd38b/0MBkmLNf1I.lottie"
-                  loop
-                  autoplay
+                <div
                   style={{
-                    filter:
-                      "brightness(0) saturate(100%) invert(70%) sepia(31%) saturate(517%) hue-rotate(3deg) brightness(91%) contrast(86%)",
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                />
+                >
+                  <DotLottieReact
+                    src="https://lottie.host/f88d5899-2066-4124-8c1c-0903fd2cd38b/0MBkmLNf1I.lottie"
+                    loop
+                    autoplay
+                    style={{
+                      filter:
+                        "brightness(0) saturate(100%) invert(70%) sepia(31%) saturate(517%) hue-rotate(3deg) brightness(91%) contrast(86%)",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
               )}
             </motion.div>
           </motion.div>

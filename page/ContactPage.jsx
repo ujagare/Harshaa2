@@ -105,8 +105,8 @@ const ContactPage = ({ setIsCartOpen }) => {
     {
       icon: Phone,
       title: "Phone",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      content: "+91 8698304955",
+      link: "tel:+918698304955",
     },
     {
       icon: MapPin,
