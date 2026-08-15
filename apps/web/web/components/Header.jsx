@@ -21,18 +21,23 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
       {/* Top Announcement Bar for The Remembering */}
-      <div className="bg-gradient-to-r from-[#12231D] via-[#1C362E] to-[#12231D] border-b border-[#D4AF37]/30 py-2 px-4 text-center text-xs sm:text-sm font-semibold text-[#F9F6F0]">
+      <div className="bg-gradient-to-r from-[#12231D] via-[#1C362E] to-[#12231D] border-b border-[#D4AF37]/30 py-2 px-3 text-center text-xs sm:text-sm font-semibold text-[#F9F6F0] overflow-hidden">
         <Link
           to="/services#the-remembering-journey"
-          className="inline-flex items-center justify-center gap-2 hover:text-[#FFE082] transition-colors"
+          className="inline-flex items-center justify-center gap-1.5 sm:gap-2 hover:text-[#FFE082] transition-colors max-w-full"
         >
-          <span className="rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/40 px-2.5 py-0.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#FFE082]">
+          <span className="hidden sm:inline-flex rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/40 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#FFE082] flex-shrink-0">
             New Journey
           </span>
-          <span className="truncate">
+          {/* Mobile: Short text */}
+          <span className="sm:hidden text-[11px] font-semibold text-center leading-tight">
+            ✨ <strong>THE REMEMBERING</strong> — 6-Session Journey
+          </span>
+          {/* Desktop: Full text */}
+          <span className="hidden sm:inline truncate">
             ✨ Introducing <strong>THE REMEMBERING</strong> — A 6-Session Journey To Uncover Your Gifts
           </span>
-          <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-[#D4AF37]" />
+          <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 flex-shrink-0 text-[#D4AF37]" />
         </Link>
       </div>
 
