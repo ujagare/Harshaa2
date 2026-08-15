@@ -20,6 +20,22 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
+      {/* Top Announcement Bar for The Remembering */}
+      <div className="bg-gradient-to-r from-[#12231D] via-[#1C362E] to-[#12231D] border-b border-[#D4AF37]/30 py-2 px-4 text-center text-xs sm:text-sm font-semibold text-[#F9F6F0]">
+        <Link
+          to="/services#the-remembering-journey"
+          className="inline-flex items-center justify-center gap-2 hover:text-[#FFE082] transition-colors"
+        >
+          <span className="rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/40 px-2.5 py-0.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#FFE082]">
+            New Journey
+          </span>
+          <span className="truncate">
+            ✨ Introducing <strong>THE REMEMBERING</strong> — A 6-Session Journey To Uncover Your Gifts
+          </span>
+          <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-[#D4AF37]" />
+        </Link>
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">

@@ -19,6 +19,7 @@ import { useToast } from "@/hooks/use-toast";
 import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
+import TheRememberingCard from "@/components/TheRememberingCard.jsx";
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -325,8 +326,12 @@ const ContactPage = () => {
           </div>
         </section>
 
-        <section className="py-16 pb-24">
+        <section className="py-12 pb-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-16">
+              <TheRememberingCard />
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}

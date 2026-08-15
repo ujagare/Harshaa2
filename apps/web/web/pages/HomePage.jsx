@@ -3,9 +3,10 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Heart, Zap, Eye, X } from "lucide-react";
+import { ArrowRight, Sparkles, Heart, Zap, Eye, X, MessageCircle } from "lucide-react";
 import AnimatedHeading from "@/components/AnimatedHeading.jsx";
 import Header from "@/components/Header.jsx";
+import TheRememberingCard from "@/components/TheRememberingCard.jsx";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -23,6 +24,48 @@ import marigoldImage from "../../src/assets/image/Home/MariGold-removebg-preview
 const HomePage = () => {
   const [showProgramPopup, setShowProgramPopup] = useState(false);
   const [hasProgramPromptLoaded, setHasProgramPromptLoaded] = useState(false);
+
+  const rememberingSteps = [
+    {
+      num: 1,
+      title: "UNRAVEL",
+      subtitle: "Phase 01",
+      desc: "Uncover what's keeping you stuck",
+    },
+    {
+      num: 2,
+      title: "RELEASE",
+      subtitle: "Phase 02",
+      desc: "Release limiting beliefs & emotional blocks",
+    },
+    {
+      num: 3,
+      title: "DISCOVER",
+      subtitle: "Phase 03",
+      desc: "Discover your innate gifts & strengths",
+    },
+    {
+      num: 4,
+      title: "REMEMBER",
+      subtitle: "Phase 04",
+      desc: "Reconnect with your authentic self",
+    },
+    {
+      num: 5,
+      title: "ACTIVATE",
+      subtitle: "Phase 05",
+      desc: "Activate your unique potential & purpose",
+    },
+    {
+      num: 6,
+      title: "EMBODY",
+      subtitle: "Phase 06",
+      desc: "Embody the person you're here to become",
+    },
+  ];
+
+  const rememberingWhatsAppLink =
+    "https://wa.me/918698304955?text=Hi%20Harshaa%2C%20I%20want%20to%20explore%20The%20Remembering%20journey.";
   // Disable body overflow when popup is open
   useEffect(() => {
     if (showProgramPopup) {
@@ -657,22 +700,20 @@ const HomePage = () => {
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/35 bg-gold/10 px-3 py-1.5 sm:mb-5 sm:px-4 sm:py-2">
                   <Sparkles className="h-3.5 w-3.5 flex-shrink-0 text-gold-dark sm:h-4 sm:w-4" />
                   <span className="text-xs font-bold uppercase tracking-[0.15em] text-gold-dark sm:text-sm sm:tracking-[0.18em]">
-                    New program
+                    New Transformational Journey
                   </span>
                 </div>
                 <h2
-                  className="mb-3 pr-8 text-lg font-bold leading-tight text-foreground sm:mb-4 sm:pr-10 sm:text-2xl"
+                  className="mb-2 pr-8 text-xl font-bold leading-tight text-foreground sm:mb-3 sm:pr-10 sm:text-2xl"
                   style={{ fontFamily: "Cinzel, serif" }}
                 >
-                  Abundance Breakthrough Program
+                  THE REMEMBERING
                 </h2>
-                <p className="mb-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  A transformative 4 session package combining Oracle, EFT and
-                  counselling to unlock your full abundance potential.
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gold-dark sm:text-sm">
+                  A 6-Session Journey (Tarot • EFT • Coaching)
                 </p>
-                <p className="mb-5 text-xs leading-relaxed text-muted-foreground sm:mb-6 sm:text-sm">
-                  Transform scarcity into possibility, self-doubt into
-                  confidence and intention into aligned abundance.
+                <p className="mb-4 text-xs italic leading-relaxed text-muted-foreground sm:text-sm">
+                  “What if your greatest gift isn’t something you need to find... but something you need to remember?”
                 </p>
                 <div className="flex flex-col gap-3">
                   <Button
@@ -680,10 +721,11 @@ const HomePage = () => {
                     className="gold-gradient h-11 w-full px-4 text-sm font-semibold sm:h-12 sm:text-base"
                   >
                     <Link
-                      to="/services#abundance-breakthrough-program"
+                      to="/services#the-remembering-journey"
+                      onClick={() => setShowProgramPopup(false)}
                       className="flex items-center justify-center gap-2"
                     >
-                      <span>View program details</span>
+                      <span>Explore 6-Session Journey</span>
                       <ArrowRight className="h-4 w-4 flex-shrink-0" />
                     </Link>
                   </Button>
@@ -701,13 +743,13 @@ const HomePage = () => {
                       className="gold-gradient h-11 w-full px-4 text-sm font-semibold shadow-lg shadow-gold/20 hover:opacity-95 sm:h-12 sm:text-base"
                       onClick={() => {
                         window.open(
-                          "https://wa.me/918698304955?text=Hi%20Harshaa%2C%20I%20want%20to%20know%20more%20about%20the%20Abundance%20Breakthrough%20Program",
+                          "https://wa.me/918698304955?text=Hi%20Harshaa%2C%20I%20want%20to%20explore%20The%20Remembering%20journey.",
                           "_blank",
                         );
                         setShowProgramPopup(false);
                       }}
                     >
-                      Book Now
+                      WhatsApp Now
                     </Button>
                   </div>
                 </div>
@@ -726,13 +768,13 @@ const HomePage = () => {
             className="fixed bottom-4 left-4 right-4 z-40 mx-auto max-w-sm rounded-2xl border border-gold/40 bg-primary px-4 py-3 text-left text-primary-foreground shadow-2xl shadow-primary/25 transition-all duration-300 hover:-translate-y-1 hover:border-gold sm:bottom-5 sm:left-auto sm:right-5 sm:max-w-xs sm:px-5 sm:py-4"
           >
             <span className="mb-1 block text-xs font-bold uppercase tracking-[0.15em] text-gold-light sm:tracking-[0.18em]">
-              New program
+              Featured Journey
             </span>
             <span className="block text-sm font-bold sm:text-base">
-              Abundance Breakthrough
+              The Remembering (6 Sessions)
             </span>
             <span className="mt-1 block text-xs text-primary-foreground/75 sm:text-sm">
-              Tap to view details
+              Tap to view full journey
             </span>
           </motion.button>
         )}
@@ -839,6 +881,13 @@ const HomePage = () => {
                   />
                 </motion.figure>
               </motion.div>
+            </div>
+          </section>
+
+          {/* THE REMEMBERING - Poster UI Component Section on Homepage */}
+          <section id="the-remembering-journey" className="py-16 bg-background">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <TheRememberingCard />
             </div>
           </section>
 

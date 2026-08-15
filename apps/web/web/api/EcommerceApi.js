@@ -57,6 +57,29 @@ const products = [
     ],
   },
   {
+    id: "the-remembering-journey",
+    title: "THE REMEMBERING\n(6-Session Journey)",
+    subtitle: "Uncover your gifts & become more fully you through Tarot, EFT & Coaching.",
+    description:
+      "<p>A transformational 6-session journey guided through Unravel, Release, Discover, Remember, Activate & Embody phases.</p>",
+    image: fullHealingImage,
+    images: [{ id: "remembering-1", url: fullHealingImage }],
+    ribbon_text: "Featured",
+    purchasable: true,
+    additional_info: [],
+    variants: [
+      {
+        id: "the-remembering-6-sessions",
+        title: "6 Sessions",
+        price_in_cents: 66000,
+        sale_price_in_cents: null,
+        currency_info: currencyInfo,
+        manage_inventory: false,
+        inventory_quantity: 10,
+      },
+    ],
+  },
+  {
     id: "full-healing-journey",
     title: "Full Healing Journey\n(6 Weeks)",
     subtitle: "A complete guided path for deep energetic transformation.",

@@ -9,6 +9,7 @@ import Header from "@/components/Header.jsx";
 import Footer from "@/components/Footer.jsx";
 import ProductsList from "@/components/ProductsList.jsx";
 import ServiceCard from "@/components/ServiceCard.jsx";
+import TheRememberingCard from "@/components/TheRememberingCard.jsx";
 import tarotServiceImage from "../../src/assets/image/Home/9d60be0e-0386-460f-8ac5-34eb72696ada.webp";
 
 const ServicesPage = () => {
@@ -79,8 +80,44 @@ const ServicesPage = () => {
     "🌿Final Integration and Future Alignment Session",
   ];
 
+  const rememberingSteps = [
+    {
+      num: 1,
+      title: "UNRAVEL",
+      desc: "Uncover what's keeping you stuck",
+    },
+    {
+      num: 2,
+      title: "RELEASE",
+      desc: "Release limiting beliefs & emotional blocks",
+    },
+    {
+      num: 3,
+      title: "DISCOVER",
+      desc: "Discover your innate gifts & strengths",
+    },
+    {
+      num: 4,
+      title: "REMEMBER",
+      desc: "Reconnect with your authentic self",
+    },
+    {
+      num: 5,
+      title: "ACTIVATE",
+      desc: "Activate your unique potential & purpose",
+    },
+    {
+      num: 6,
+      title: "EMBODY",
+      desc: "Embody the person you're here to become",
+    },
+  ];
+
   const whatsAppLink =
     "https://wa.me/918698304955?text=Hi%20Harshaa%2C%20I%20want%20to%20sign%20up%20for%20the%20Abundance%20Breakthrough%20Program.";
+
+  const rememberingWhatsAppLink =
+    "https://wa.me/918698304955?text=Hi%20Harshaa%2C%20I%20want%20to%20explore%20The%20Remembering%20journey.";
 
   return (
     <>
@@ -299,6 +336,10 @@ const ServicesPage = () => {
 
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-16">
+              <TheRememberingCard />
+            </div>
+
             <motion.div
               id="abundance-breakthrough-program"
               initial={{ opacity: 0, y: 24 }}
