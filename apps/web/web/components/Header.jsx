@@ -35,7 +35,8 @@ const Header = () => {
           </span>
           {/* Desktop: Full text */}
           <span className="hidden sm:inline truncate">
-            ✨ Introducing <strong>THE REMEMBERING</strong> — A 6-Session Journey To Uncover Your Gifts
+            ✨ Introducing <strong>THE REMEMBERING</strong> — A 6-Session
+            Journey To Uncover Your Gifts
           </span>
           <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 flex-shrink-0 text-[#D4AF37]" />
         </Link>
@@ -43,15 +44,15 @@ const Header = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
             <img
-              src="https://horizons-cdn.hostinger.com/12f1c95e-a67a-464e-a0a4-a46d26305cdc/d9e7723ef011faded6b7146d183ce626.png"
+              src="/logo.png"
               loading="eager"
               alt="Marigold Magick Triple Moon Symbol Logo"
-              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <span
-              className="text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-gold hidden sm:block"
+              className="text-lg sm:text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-gold hidden sm:block"
               style={{ fontFamily: "Cinzel, serif" }}
             >
               Marigold Magick
@@ -81,12 +82,12 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
             <a
               href="https://wa.me/918698304955"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-gold/50 bg-gold/10 flex items-center justify-center group hover:border-gold hover:bg-gold duration-300"
+              className="w-10 h-10 rounded-full border border-gold/50 bg-gold/10 flex items-center justify-center group hover:border-gold hover:bg-gold duration-300 flex-shrink-0"
             >
               <MessageCircle className="w-5 h-5 text-gold group-hover:text-primary duration-300" />
             </a>
@@ -95,13 +96,13 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               variant="ghost"
               size="icon"
-              className="md:hidden rounded-xl border border-border/70 bg-card/70 text-foreground shadow-sm backdrop-blur transition-all duration-200 hover:border-gold/50 hover:text-gold"
+              className="md:hidden w-11 h-11 rounded-xl border-2 border-primary bg-primary/5 shadow-lg backdrop-blur transition-all duration-200 hover:border-gold hover:bg-gold/10 flex-shrink-0 flex items-center justify-center"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-7 w-7 text-primary stroke-[3]" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-7 w-7 text-primary stroke-[3]" />
               )}
             </Button>
           </div>
@@ -114,7 +115,7 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="md:hidden fixed inset-x-0 top-20 z-30 bg-primary/35 px-4 pb-4 pt-3 backdrop-blur-sm"
+            className="md:hidden fixed inset-x-0 top-[120px] z-30 bg-primary/35 px-4 pb-4 pt-3 backdrop-blur-sm"
           >
             <motion.nav
               initial={{ opacity: 0, y: -12, scale: 0.98 }}
